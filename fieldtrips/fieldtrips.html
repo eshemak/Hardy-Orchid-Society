@@ -111,8 +111,12 @@
     header h1 {
       margin: 0;
       font-size: 2.4rem;
-      color: var(--green);
+      color: #000; /* black */
       font-weight: 700;
+    }
+
+    header p {
+      color: #000; /* black */
     }
 
     main {
@@ -123,7 +127,7 @@
 
     h2 {
       margin-top: 3rem;
-      color: var(--green);
+      color: #000; /* black */
       font-size: 1.8rem;
     }
 
@@ -133,6 +137,7 @@
       padding: 1rem 1.2rem;
       border-radius: var(--radius);
       margin: 2rem 0;
+      color: #000; /* black text inside notice */
     }
 
     /* COLLAPSIBLE TRIPS */
@@ -150,7 +155,7 @@
       padding: 1.2rem 1.5rem;
       list-style: none;
       font-size: 1.2rem;
-      color: var(--green);
+      color: #000; /* black */
       font-weight: 600;
       display: flex;
       justify-content: space-between;
@@ -167,7 +172,7 @@
       height: 1.2rem;
       flex-shrink: 0;
       transition: transform 0.25s ease;
-      color: var(--green);
+      color: #000; /* black icon */
     }
 
     details[open] .chevron {
@@ -179,6 +184,7 @@
       overflow: hidden;
       padding: 0 1.5rem;
       transition: max-height 0.35s ease, padding 0.35s ease;
+      color: #000; /* black */
     }
 
     details[open] .content {
@@ -188,26 +194,24 @@
 
     .meta {
       font-size: 0.95rem;
-      color: var(--muted);
+      color: #000; /* black */
       margin-bottom: 0.8rem;
     }
 
     .status {
       font-weight: 700;
+      color: #000; /* keep status text black too */
     }
-    .status.full { color: #b00020; }
-    .status.waiting { color: #b06a00; }
-    .status.open { color: var(--green); }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: #000; /* black */
     }
 
     a {
-      color: var(--green);
+      color: var(--green); /* links stay green for contrast */
       text-decoration: none;
     }
     a:hover {
@@ -278,7 +282,7 @@
   <section>
     <h2>2026 Field Trip Programme</h2>
 
-    <!-- TRIP 1 -->
+    <!-- Example trip; add the rest of your trips here in the same pattern -->
     <details>
       <summary>
         <span>Tuesday 26 May — East Kent</span>
@@ -289,7 +293,7 @@
       <div class="content">
         <div class="meta">
           Leader: Colin Sillence • Sites: Parkgate & Denge Wood  
-          <span class="status full">Fully booked</span>
+          <span class="status">Fully booked</span>
         </div>
         <p>
           A classic Kent orchid day: Monkey, Lady, Fly and Greater Butterfly orchids, with up to
@@ -298,624 +302,14 @@
       </div>
     </details>
 
-    <!-- TRIP 2 -->
-    <details>
-      <summary>
-        <span>Thursday 28 May — Warburg Reserve, Henley‑on‑Thames</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Keith Boseley  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          A rich Chilterns reserve with Fly, Bird’s‑nest, Early Purple and Greater Butterfly orchids.
-          Some steep inclines. Guided by a long‑term volunteer.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 3 -->
-    <details>
-      <summary>
-        <span>Saturday 30 May — Box Hill, Surrey</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Richard Kulczycki</div>
-        <p>
-          A strenuous 10‑mile downland walk with around ten orchid species. Loop route starting
-          near Box Hill & West Humble station. Option to join later for Brockham Quarry only.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 4 -->
-    <details>
-      <summary>
-        <span>Thursday 4 June — Folkestone & East Kent</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Ian Hadingham  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Multi‑site day covering <em>Ophrys fuciflora</em>, <em>Orchis purpurea</em>,
-          <em>Ophrys apifera</em>, <em>Himantoglossum hircinum</em> and more. Significant driving required.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 5 -->
-    <details>
-      <summary>
-        <span>Saturday 13 June — Braunton Burrows, North Devon</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Roger Harding</div>
-        <p>
-          A three‑hour walk through one of Britain’s finest dune systems. Early summer orchids
-          include Early Marsh, Southern Marsh, Bee, Pyramidal and Twayblade.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 6 -->
-    <details>
-      <summary>
-        <span>Sunday 14 June — Waitby Greenriggs, Cumbria</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Charlie Philpotts</div>
-        <p>
-          One of Britain’s best orchid reserves. Fly Orchids should be at their peak. Date may
-          shift depending on flowering.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 7 -->
-    <details>
-      <summary>
-        <span>Saturday 20 June — Three Sites near Leeds</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Charlie Philpotts</div>
-        <p>
-          Three contrasting sites with Northern Marsh‑orchid, Southern Marsh‑orchid, Bee Orchid,
-          Twayblade and hybrids.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 8 -->
-    <details>
-      <summary>
-        <span>Saturday 20 June — Windsor Hill</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Registration: <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
-        </div>
-        <p>
-          To see Red Helleborine. Viewing from an enclosure; flowering varies year to year.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 9 -->
-    <details>
-      <summary>
-        <span>Sunday 21 June — Kenfig Dunes, Glamorgan</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Steve Parsons  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Focus on Fen Orchid, plus high‑summer species. Guided by the site warden.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 10 -->
-    <details>
-      <summary>
-        <span>Saturday 27 June — Ladle Hill, Hampshire Downs</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Simon Melville  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Burnt Orchids, Frog Orchids, Fragrant‑orchids and chalk grassland flora. Easy 25‑minute walk.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 11 -->
-    <details>
-      <summary>
-        <span>Saturday 4 July — Noar Hill, North Hampshire</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leaders: Ken & Gillian Elsom  
-          <span class="status waiting">Waiting list only</span>
-        </div>
-        <p>
-          A diverse medieval chalk site with Musk Orchid, Fragrant‑orchid, Fly Orchid and more.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 12 -->
-    <details>
-      <summary>
-        <span>Sunday 12 July — Waitby Greenriggs & Augill Pasture</span>
-        <svg class="chevron" viewBox
-
-    .burger {
-      width: 28px;
-      height: 28px;
-      stroke: #000;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-    }
-
-    #nav-toggle {
-      display: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 0.8rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #000;
-      font-size: 1rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    @media (max-width: 760px) {
-      .nav-toggle-label {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        padding-top: 1rem;
-      }
-
-      #nav-toggle:checked + .nav-links {
-        display: flex;
-      }
-    }
-
-    /* HEADER */
-    header {
-      padding: 3rem 1.5rem;
-      text-align: center;
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    h2 {
-      margin-top: 3rem;
-      color: var(--green);
-      font-size: 1.8rem;
-    }
-
-    .notice {
-      background: var(--green-light);
-      border-left: 4px solid var(--green);
-      padding: 1rem 1.2rem;
-      border-radius: var(--radius);
-      margin: 2rem 0;
-    }
-
-    /* COLLAPSIBLE TRIPS */
-    details {
-      background: white;
-      border-radius: var(--radius);
-      border: 1px solid #eee;
-      margin: 1rem 0;
-      overflow: hidden;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    }
-
-    summary {
-      cursor: pointer;
-      padding: 1.2rem 1.5rem;
-      list-style: none;
-      font-size: 1.2rem;
-      color: var(--green);
-      font-weight: 600;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .chevron {
-      width: 1.2rem;
-      height: 1.2rem;
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
-      color: var(--green);
-    }
-
-    details[open] .chevron {
-      transform: rotate(180deg);
-    }
-
-    details .content {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.5rem;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-    }
-
-    details[open] .content {
-      max-height: 2000px;
-      padding: 1rem 1.5rem 1.5rem;
-    }
-
-    .meta {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .status {
-      font-weight: 700;
-    }
-    .status.full { color: #b00020; }
-    .status.waiting { color: #b06a00; }
-    .status.open { color: var(--green); }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-<nav class="nav-container">
-  <div class="nav-header">
-    <span class="nav-title">Hardy Orchid Society</span>
-
-    <label for="nav-toggle" class="nav-toggle-label">
-      <svg viewBox="0 0 24 24" class="burger">
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
-      </svg>
-    </label>
-  </div>
-
-  <input type="checkbox" id="nav-toggle">
-
-  <div class="nav-links">
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/">Home</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/fieldtrips/fieldtrips.html">Field Trips</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/cultivation/cultivation.html">Cultivation</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/seedbank/seedbank.html">Seed Bank</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/about/about.html">About</a>
-  </div>
-</nav>
-
-<header>
-  <h1>Field Trips 2026</h1>
-  <p>Explore Britain’s orchids with experienced leaders and fellow enthusiasts.</p>
-</header>
-
-<main>
-
-  <section>
-    <h2>Before You Book</h2>
-
-    <p>
-      HOS members are welcome to join any field trip, but you must register with the trip leader.
-      Many trips fill quickly — early booking is recommended.
-    </p>
-
-    <div class="notice">
-      <strong>Important:</strong> You are responsible for your own safety.  
-      Conditions can be uneven, steep or weather‑affected. Prepare as for a countryside walk.
-    </div>
-
-    <p>
-      Register by emailing the trip leader (addresses in the <em>Spring 2026 Journal</em>).  
-      For general enquiries:  
-      <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
-    </p>
-
-    <div class="notice">
-      <strong>Membership required:</strong> You must be a member of the Hardy Orchid Society to book.  
-      <a href="https://www.hardyorchidsociety.org">Join the Society</a>
-    </div>
   </section>
 
-  <section>
-    <h2>2026 Field Trip Programme</h2>
+</main>
 
-    <!-- TRIP 1 -->
-    <details>
-      <summary>
-        <span>Tuesday 26 May — East Kent</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Colin Sillence • Sites: Parkgate & Denge Wood  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          A classic Kent orchid day: Monkey, Lady, Fly and Greater Butterfly orchids, with up to
-          twelve species possible. Easy walking; car sharing required due to limited parking.
-        </p>
-      </div>
-    </details>
+<footer>
+  For all enquiries:  
+  <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
+</footer>
 
-    <!-- TRIP 2 -->
-    <details>
-      <summary>
-        <span>Thursday 28 May — Warburg Reserve, Henley‑on‑Thames</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Keith Boseley  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          A rich Chilterns reserve with Fly, Bird’s‑nest, Early Purple and Greater Butterfly orchids.
-          Some steep inclines. Guided by a long‑term volunteer.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 3 -->
-    <details>
-      <summary>
-        <span>Saturday 30 May — Box Hill, Surrey</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Richard Kulczycki</div>
-        <p>
-          A strenuous 10‑mile downland walk with around ten orchid species. Loop route starting
-          near Box Hill & West Humble station. Option to join later for Brockham Quarry only.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 4 -->
-    <details>
-      <summary>
-        <span>Thursday 4 June — Folkestone & East Kent</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Ian Hadingham  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Multi‑site day covering <em>Ophrys fuciflora</em>, <em>Orchis purpurea</em>,
-          <em>Ophrys apifera</em>, <em>Himantoglossum hircinum</em> and more. Significant driving required.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 5 -->
-    <details>
-      <summary>
-        <span>Saturday 13 June — Braunton Burrows, North Devon</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Roger Harding</div>
-        <p>
-          A three‑hour walk through one of Britain’s finest dune systems. Early summer orchids
-          include Early Marsh, Southern Marsh, Bee, Pyramidal and Twayblade.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 6 -->
-    <details>
-      <summary>
-        <span>Sunday 14 June — Waitby Greenriggs, Cumbria</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Charlie Philpotts</div>
-        <p>
-          One of Britain’s best orchid reserves. Fly Orchids should be at their peak. Date may
-          shift depending on flowering.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 7 -->
-    <details>
-      <summary>
-        <span>Saturday 20 June — Three Sites near Leeds</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">Leader: Charlie Philpotts</div>
-        <p>
-          Three contrasting sites with Northern Marsh‑orchid, Southern Marsh‑orchid, Bee Orchid,
-          Twayblade and hybrids.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 8 -->
-    <details>
-      <summary>
-        <span>Saturday 20 June — Windsor Hill</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Registration: <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
-        </div>
-        <p>
-          To see Red Helleborine. Viewing from an enclosure; flowering varies year to year.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 9 -->
-    <details>
-      <summary>
-        <span>Sunday 21 June — Kenfig Dunes, Glamorgan</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Steve Parsons  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Focus on Fen Orchid, plus high‑summer species. Guided by the site warden.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 10 -->
-    <details>
-      <summary>
-        <span>Saturday 27 June — Ladle Hill, Hampshire Downs</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leader: Simon Melville  
-          <span class="status full">Fully booked</span>
-        </div>
-        <p>
-          Burnt Orchids, Frog Orchids, Fragrant‑orchids and chalk grassland flora. Easy 25‑minute walk.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 11 -->
-    <details>
-      <summary>
-        <span>Saturday 4 July — Noar Hill, North Hampshire</span>
-        <svg class="chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </summary>
-      <div class="content">
-        <div class="meta">
-          Leaders: Ken & Gillian Elsom  
-          <span class="status waiting">Waiting list only</span>
-        </div>
-        <p>
-          A diverse medieval chalk site with Musk Orchid, Fragrant‑orchid, Fly Orchid and more.
-        </p>
-      </div>
-    </details>
-
-    <!-- TRIP 12 -->
-    <details>
-      <summary>
-        <span>Sunday 12 July — Waitby Greenriggs & Augill Pasture</span>
-        <svg class="chevron" viewBox
+</body>
+</html>
