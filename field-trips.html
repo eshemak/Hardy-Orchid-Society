@@ -63,8 +63,10 @@
       border-radius: var(--radius);
       border: 1px solid #eee;
       margin: 1rem 0;
+      padding: 0;
       overflow: hidden;
       box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
     }
 
     summary {
@@ -77,43 +79,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
     }
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    /* SVG chevron */
-    .chevron {
-      width: 1.2rem;
-      height: 1.2rem;
-      flex-shrink: 0;
-      transition: transform 0.25s ease;
-      color: var(--green);
-    }
-
-    details[open] .chevron {
-      transform: rotate(180deg);
-    }
-
-    /* Smooth slide-down animation */
-    details .content {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.5rem;
-      transition: max-height 0.35s ease, padding 0.35s ease;
-    }
-
-    details[open] .content {
-      max-height: 500px;
-      padding: 1rem 1.5rem 1.5rem;
-    }
-
     .meta {
       font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 0.8rem;
+    }
+
+    .content {
+      padding: 0 1.5rem 1.5rem;
+      animation: fade 0.25s ease;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .status {
@@ -159,4 +144,204 @@
 
     <div class="notice">
       <strong>Important:</strong> You are responsible for your own safety.  
-      Conditions
+      Conditions can be uneven, steep or weather‑affected. Prepare as for a countryside walk.
+    </div>
+
+    <p>
+      Register by emailing the trip leader (addresses in the <em>Spring 2026 Journal</em>).
+      For general enquiries:  
+      <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
+    </p>
+
+    <div class="notice">
+      <strong>Membership required:</strong> You must be a member of the Hardy Orchid Society to book.  
+      <a href="https://www.hardyorchidsociety.org">Join the Society</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>2026 Field Trip Programme</h2>
+
+    <!-- Trip 1 -->
+    <details>
+      <summary>Tuesday 26 May — East Kent</summary>
+      <div class="content">
+        <div class="meta">
+          Leader: Colin Sillence • Sites: Parkgate & Denge Wood  
+          <span class="status full">Fully booked</span>
+        </div>
+        <p>
+          A classic Kent orchid day: Monkey, Lady, Fly and Greater Butterfly orchids, with up to
+          twelve species possible. Easy walking; car sharing required due to limited parking.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 2 -->
+    <details>
+      <summary>Thursday 28 May — Warburg Reserve</summary>
+      <div class="content">
+        <div class="meta">
+          Leader: Keith Boseley  
+          <span class="status full">Fully booked</span>
+        </div>
+        <p>
+          A rich Chilterns reserve with Fly, Bird’s‑nest, Early Purple and Greater Butterfly orchids.
+          Some steep inclines. Guided by a long‑term volunteer.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 3 -->
+    <details>
+      <summary>Saturday 30 May — Box Hill, Surrey</summary>
+      <div class="content">
+        <div class="meta">Leader: Richard Kulczycki</div>
+        <p>
+          A strenuous 10‑mile downland walk with around ten orchid species. Loop route starting
+          near Box Hill & West Humble station. Option to join later for Brockham Quarry only.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 4 -->
+    <details>
+      <summary>Thursday 4 June — Folkestone & East Kent</summary>
+      <div class="content">
+        <div class="meta">
+          Leader: Ian Hadingham  
+          <span class="status full">Fully booked</span>
+        </div>
+        <p>
+          Multi‑site day covering <em>Ophrys fuciflora</em>, <em>Orchis purpurea</em>,
+          <em>Ophrys apifera</em>, <em>Himantoglossum hircinum</em> and more. Significant driving required.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 5 -->
+    <details>
+      <summary>Saturday 13 June — Braunton Burrows</summary>
+      <div class="content">
+        <div class="meta">Leader: Roger Harding</div>
+        <p>
+          A three‑hour walk through one of Britain’s finest dune systems. Early summer orchids
+          include Early Marsh, Southern Marsh, Bee, Pyramidal and Twayblade.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 6 -->
+    <details>
+      <summary>Sunday 14 June — Waitby Greenriggs</summary>
+      <div class="content">
+        <div class="meta">Leader: Charlie Philpotts</div>
+        <p>
+          One of Britain’s best orchid reserves. Fly Orchids should be at their peak. Date may
+          shift depending on flowering.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 7 -->
+    <details>
+      <summary>Saturday 20 June — Three Sites near Leeds</summary>
+      <div class="content">
+        <div class="meta">Leader: Charlie Philpotts</div>
+        <p>
+          Three contrasting sites with Northern Marsh‑orchid, Southern Marsh‑orchid, Bee Orchid,
+          Twayblade and hybrids.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 8 -->
+    <details>
+      <summary>Saturday 20 June — Windsor Hill</summary>
+      <div class="content">
+        <div class="meta">
+          Registration: <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
+        </div>
+        <p>
+          To see Red Helleborine. Viewing from an enclosure; flowering varies year to year.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 9 -->
+    <details>
+      <summary>Sunday 21 June — Kenfig Dunes</summary>
+      <div class="content">
+        <div class="meta">
+          Leader: Steve Parsons  
+          <span class="status full">Fully booked</span>
+        </div>
+        <p>
+          Focus on Fen Orchid, plus high‑summer species. Guided by the site warden.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 10 -->
+    <details>
+      <summary>Saturday 27 June — Ladle Hill</summary>
+      <div class="content">
+        <div class="meta">
+          Leader: Simon Melville  
+          <span class="status full">Fully booked</span>
+        </div>
+        <p>
+          Burnt Orchids, Frog Orchids, Fragrant‑orchids and chalk grassland flora. Easy 25‑minute walk.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 11 -->
+    <details>
+      <summary>Saturday 4 July — Noar Hill</summary>
+      <div class="content">
+        <div class="meta">
+          Leaders: Ken & Gillian Elsom  
+          <span class="status waiting">Waiting list only</span>
+        </div>
+        <p>
+          A diverse medieval chalk site with Musk Orchid, Fragrant‑orchid, Fly Orchid and more.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 12 -->
+    <details>
+      <summary>Sunday 12 July — Waitby Greenriggs & Augill Pasture</summary>
+      <div class="content">
+        <div class="meta">Leader: Charlie Philpotts</div>
+        <p>
+          Northern Marsh‑orchid, Greater & Lesser Butterfly‑orchid, Marsh Helleborine and three
+          Fragrant‑orchid varieties.
+        </p>
+      </div>
+    </details>
+
+    <!-- Trip 13 -->
+    <details>
+      <summary>Saturday 18 July — Braunton Burrows (Second Visit)</summary>
+      <div class="content">
+        <div class="meta">Leader: Roger Harding</div>
+        <p>
+          Later‑season orchids including Marsh Helleborine (thousands), Marsh Fragrant‑orchid,
+          Pyramidal Orchid and Twayblade.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+</main>
+
+<footer>
+  For all enquiries:  
+  <a href="mailto:fieldtrips@hardyorchidsociety.org">fieldtrips@hardyorchidsociety.org</a>
+</footer>
+
+</body>
+</html>
