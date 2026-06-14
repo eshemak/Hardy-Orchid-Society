@@ -1,182 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant & Seed Access - Hardy Orchid Society</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Aptos', 'Calibri', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background-color: #fff;
-        }
-        
-        header {
-            background-color: #fff;
-            color: #000;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid #000;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        nav {
-            background-color: #fff;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #000;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-        
-        nav a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 500;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        nav a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        section {
-            margin-bottom: 50px;
-        }
-        
-        section h2 {
-            color: #000;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        section p {
-            margin-bottom: 15px;
-            font-size: 1.05em;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        .intro-text {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-        
-        ul li {
-            margin-bottom: 10px;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #fff;
-            color: #000;
-            padding: 15px 40px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-weight: 600;
-            border: 1px solid #000;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        .cta-button:hover {
-            background-color: #f5f5f5;
-        }
-        
-        footer {
-            background-color: #fff;
-            color: #000;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 1px solid #000;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        footer p {
-            margin-bottom: 10px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>HOS Cultivation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --green: #2f5a28;
+      --green-light: #e9f4e6;
+      --text: #222;
+      --muted: #666;
+      --bg: #fafafa;
+      --radius: 12px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      color: var(--green);
+      font-size: 1.8rem;
+    }
+
+    .notice {
+      background: var(--green-light);
+      border-left: 4px solid var(--green);
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius);
+      margin: 2rem 0;
+    }
+
+    /* Collapsible sections */
+    details {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid #eee;
+      margin: 1rem 0;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 1.2rem 1.5rem;
+      list-style: none;
+      font-size: 1.2rem;
+      color: var(--green);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* SVG chevron */
+    .chevron {
+      width: 1.2rem;
+      height: 1.2rem;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      color: var(--green);
+    }
+
+    details[open] .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Slide animation */
+    details .content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.5rem;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    details[open] .content {
+      max-height: 2000px;
+      padding: 1rem 1.5rem 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Plant & Seed Access</h1>
-    </header>
-    
-    <nav>
+
+<header>
+  <h1>Cultivation</h1>
+  <p>Guidance, resources and practical methods for growing hardy orchids.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Resources for Members</h2>
+
+    <p><a href="#">Seed Bank List (members only)</a></p>
+    <p><a href="#">Consumable Items (members only)</a></p>
+    <p>Use contact details in JHOS to contact the Seed Bank Manager.</p>
+  </section>
+
+  <section>
+    <h2>Workshops & Events</h2>
+
+    <details>
+      <summary>
+        <span>Seed Sowing Workshops</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          One‑day workshops covering all aspects of seed sowing and aftercare of both summer and
+          winter‑green orchids. Tutor: John Haggar.
+        </p>
+
+        <h3>Seed Sowing Workshop 2026</h3>
+        <p>
+          <strong>Sunday 23rd August 2026</strong><br>
+          9.30am – 4.00pm<br>
+          Hagbourne Village Hall, East Hagbourne, Didcot, OX11 9LR
+        </p>
+
+        <p><a href="#">Booking Form & Details</a></p>
+
+        <div class="notice">
+          Only current members may take part.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Symbiotic Seed Germination Fungi</h2>
+
+    <details>
+      <summary>
+        <span>Overview</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Symbiotic fungi are grown in Petri dishes containing agar, vitamin B extract and rolled
+          sieved oats. These fungi infect orchid seeds and enable germination.
+        </p>
+        <p>
+          The Society maintains three isolates proven to germinate a range of terrestrial orchids.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Fungal Isolates (B1, A36, Q414)</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <h3>B1</h3>
+        <p>A vigorous all‑rounder suitable for beginners. Proven with many Anacamptis, Dactylorhiza, Goodyera, Gymnadenia, Habanaria, Orchis, Platanthera, Ponerorchis, Pterostylis, Serapias and Spiranthes species.</p>
+
+        <h3>A36</h3>
+        <p>Fast‑growing all‑rounder. Proven with Gymnadenia, Anacamptis papilionacea, A. elegans, Dactylorhiza and Spiranthes.</p>
+
+        <h3>Q414</h3>
+        <p>Slower‑growing isolate. Proven with Serapias, Dactylorhiza, Spiranthes and some Anacamptis.</p>
+
+        <p>Members are encouraged to report additional successes to the Seed Bank Manager.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Donating Orchid Seed</h2>
+
+    <details>
+      <summary>
+        <span>Requirements & Permissions</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Donations must be legally obtained. Seed from wild plants requires written landowner
+          permission. Schedule 8 species require Natural England (or equivalent) approval.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Harvesting, Cleaning & Drying</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Harvest on a dry day just before capsule splitting. Clean seed using a tea strainer and
+          store in paper envelopes.
+        </p>
+        <p>
+          Dry seed immediately using dried rice in an airtight jar for 2–3 days before posting.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Posting & Identification</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Seeds must be sent in crush‑proof containers. Include photographs of the parent plant
+          for identification.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Propagation from Seed</h2>
+
+    <details>
+      <summary>
+        <span>Why Orchid Seed Needs Help</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Orchid seeds are extremely small and lack stored nutrients. In nature they rely on
+          infection by beneficial fungi to germinate.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Seed Sowing at Home</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Many members sow seed at home using improvised sterile environments. Key requirements:
+        </p>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#activities">Activities</a></li>
+          <li>Sterile workspace (glove box or similar)</li>
+          <li>Pressure cooker for sterilisation</li>
+          <li>Agar‑based media (with or without fungi)</li>
+          <li>Jars, Petri dishes, tools and chemicals</li>
         </ul>
-    </nav>
-    
-    <div class="container">
-        <section id="intro">
-            <div class="intro-text">
-                <p>The Hardy Orchid Society provides members with exclusive access to cultivated orchid plants and seeds through member sales and our comprehensive seed bank. This initiative helps members expand their collections while supporting conservation and propagation efforts.</p>
-            </div>
-        </section>
-        
-        <section id="about">
-            <h2>Plant and Seed Access Programs</h2>
-            <p>We offer several ways to obtain hardy orchids:</p>
-            <ul>
-                <li>Members' plant sales and exchanges</li>
-                <li>Seed bank access with rare and heritage varieties</li>
-                <li>Propagation exchanges from cultivation projects</li>
-                <li>Specialist plant lists from member growers</li>
-                <li>Guidance on sourcing and caring for new acquisitions</li>
-            </ul>
-        </section>
-        
-        <section id="seedbank">
-            <h2>Our Seed Bank</h2>
-            <p>The HOS seed bank is a valuable resource for members interested in growing orchids from seed. We maintain a collection of seeds from wild-collected and cultivated sources, carefully documented and stored. Members can request seeds to grow plants for personal collection or propagation projects.</p>
-        </section>
-        
-        <section id="getinvolved">
-            <h2>Join and Access Our Resources</h2>
-            <p>Membership opens doors to our plant and seed collections. Start building your hardy orchid collection today with support and guidance from experienced members.</p>
-            <a href="index.html#getinvolved" class="cta-button">Learn How to Join</a>
-        </section>
-    </div>
-    
-    <footer>
-        <p>&copy; 2026 Hardy Orchid Society. All rights reserved.</p>
-        <p>Dedicated to the conservation and appreciation of hardy orchids worldwide.</p>
-    </footer>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Basic Method</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <ol>
+          <li>Soak seed in sugar solution for 4 days.</li>
+          <li>Wash three times in sterile water.</li>
+          <li>Sterilise in diluted bleach for 10–30 minutes.</li>
+          <li>Wash again and sow onto medium.</li>
+          <li>Add fungus (if used) and keep in the dark.</li>
+          <li>Replate protocorms when large enough.</li>
+        </ol>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Cultivation Guidance</h2>
+
+    <details>
+      <summary>
+        <span>General Principles</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          The Society brings together experts on propagation and cultivation. Mimicking natural
+          habitats is key to success.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Orchids for the Garden</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Suitable genera include Dactylorhiza, Epipactis and Orchis. Grow in open compost, avoid
+          summer drought, and provide shade on hot days.
+        </p>
+        <p><a href="#">Useful article by Malcolm Brownsword</a></p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Cold Frame / Cold Greenhouse</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Mediterranean winter‑green orchids benefit from frost‑free conditions using a simple
+          thermostatically controlled heater.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        <span>Further Information</span>
+        <svg class="chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="content">
+        <p>
+          Join the Society, attend meetings, and explore the extensive cultivation articles in
+          the HOS Journal/Newsletter.
+        </p>
+      </div>
+    </details>
+
+  </section>
+
+</main>
+
+<footer>
+  For enquiries, please refer to contact details in JHOS.
+</footer>
+
 </body>
 </html>
