@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -118,18 +118,12 @@
 <div class="wrap">
   <div class="grid">
 
-    <!-- LEFT: content -->
+    <!-- LEFT: content (fees + form) -->
     <div>
       <div class="card">
-        <h2>Why join</h2>
-        <div class="benefit"><strong>Quarterly Journal</strong> Articles on conservation, cultivation, research and beautiful photography.</div>
-        <div class="benefit"><strong>Annual Meetings</strong> Talks, demonstrations and plant sales with experts and fellow members.</div>
-        <div class="benefit"><strong>Field Trips & Workshops</strong> Guided visits and seed-sowing workshops led by experienced members.</div>
-        <div class="benefit"><strong>Plant Show & Competitions</strong> Enter plants and photographs; winners published in the Journal.</div>
-
         <h2>Membership Fees</h2>
 
-        <p>The table below reproduces the membership subscription, enrolment fee and total due on enrolment as shown on the Hardy Orchid Society website. </p>
+        <p>The table below reproduces the membership subscription, enrolment fee and total due on enrolment as shown on the Hardy Orchid Society website.</p>
 
         <table aria-label="Membership fees">
           <thead>
@@ -183,7 +177,7 @@
 
         <h2 style="margin-top:1rem">How to pay</h2>
         <p>We accept PayPal, cheque (UK), cash (non‑UK) and Standing Order. The £5 enrolment fee is waived if you pay by Standing Order. The PayPal checkout button will be enabled once a permanent PayPal link is configured by the site admin.</p>
-        <p class="note">Please send the completed application form to the Membership Secretary — if you only make a PayPal payment without sending the form, the Membership Secretary will not have your details. </p>
+        <p class="note">Please send the completed application form to the Membership Secretary — if you only make a PayPal payment without sending the form, the Membership Secretary will not have your details.</p>
       </div>
 
       <!-- FORM CARD -->
@@ -239,11 +233,11 @@
             <option value="family">Family</option>
           </select>
 
-          <!-- Payment option dropdown includes joining fee choice -->
+          <!-- Payment option dropdown includes enrolment fee choice -->
           <label for="paymentOption">Payment option</label>
           <select id="paymentOption" name="paymentOption" onchange="calculateFee()">
             <option value="subscription_only">Subscription only (no enrolment fee)</option>
-            <option value="subscription_plus_enrolment">Subscription + Enrolment fee (pay joining fee now)</option>
+            <option value="subscription_plus_enrolment">Subscription + Enrolment fee (pay enrolment now)</option>
           </select>
 
           <h3 style="margin-top:1rem">Payment method</h3>
@@ -390,7 +384,6 @@ function calculateFee(){
 
   // For EU and ROW show approximate local currency notes (from official table)
   if(region === 'EU'){
-    // EU column shows £ / € equivalents in the table; show both
     if(membership === 'single'){
       breakdownText += ` (table shows £20 / ${formatEUR(25)})`;
     } else {
