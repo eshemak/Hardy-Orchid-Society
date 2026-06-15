@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOS Membership Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        background: #fafafa;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.3rem;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.7rem;
+        margin-top: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+    }
+
+    .checkbox-group,
+    .interest-group {
+        margin-top: 1rem;
+    }
+
+    .checkbox-group label,
+    .interest-group label {
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.4rem;
+    }
+
+    .submit-btn {
+        display: block;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 1rem;
+        background: #2f5a28;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background: #24481f;
+    }
+
+    .note {
+        background: #f3f3f3;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        border-left: 4px solid #2f5a28;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>HOS Membership Application Form</h1>
+
+<p style="text-align:center;">
+Please complete this form to apply for membership of the Hardy Orchid Society.
+</p>
+
+<form>
+
+<h2>Your Details</h2>
+
+<label>Name (Title, First Name & Surname)</label>
+<input type="text" name="fullname" required>
+
+<label>Partner Name (Family Membership only)</label>
+<input type="text" name="partner">
+
+<label>Postal Address</label>
+<textarea name="address" rows="3" required></textarea>
+
+<label>Postcode</label>
+<input type="text" name="postcode" required>
+
+<label>Country</label>
+<input type="text" name="country" required>
+
+<label>Email</label>
+<input type="email" name="email" required>
+
+<label>Telephone</label>
+<input type="tel" name="telephone">
+
+<label>Mobile Phone</label>
+<input type="tel" name="mobile">
+
+<h2>Membership Type</h2>
+
+<select name="membership_type" required>
+    <option value="">Select membership type…</option>
+    <option value="single">Single Membership (£17 UK)</option>
+    <option value="family">Family Membership (£20 UK)</option>
+</select>
+
+<h2>Payment Method</h2>
+
+<div class="checkbox-group">
+    <label><input type="checkbox" name="paypal"> Paid online via PayPal</label>
+    <label><input type="checkbox" name="cheque"> Cheque (UK bank only)</label>
+    <label><input type="checkbox" name="cash_gbp"> Cash £ Sterling</label>
+    <label><input type="checkbox" name="cash_eur"> Cash Euros (outside UK only)</label>
+    <label><input type="checkbox" name="cash_usd"> Cash US Dollars (outside UK only)</label>
+    <label><input type="checkbox" name="standing_order"> Standing Order</label>
+</div>
+
+<div class="note">
+Joining fee: £5.00 (waived if paying by Standing Order)
+</div>
+
+<h2>Contact Permissions</h2>
+
+<p>Please tick if you are happy for HOS to share your details with other members when relevant.</p>
+
+<div class="checkbox-group">
+    <label><input type="checkbox" name="share_phone"> Telephone number</label>
+    <label><input type="checkbox" name="share_email"> Email address</label>
+    <label><input type="checkbox" name="share_address"> Postal address</label>
+</div>
+
+<h2>Your Interests</h2>
+
+<div class="interest-group">
+    <label><input type="checkbox" name="interest_growing"> Growing & propagation</label>
+    <label><input type="checkbox" name="interest_conservation"> Conservation</label>
+    <label><input type="checkbox" name="interest_fieldtrips"> Field trips (UK)</label>
+    <label><input type="checkbox" name="interest_taxonomy"> Taxonomy</label>
+    <label><input type="checkbox" name="interest_photography"> Photography</label>
+    <label><input type="checkbox" name="interest_travel"> Foreign travel for orchids</label>
+    <label><input type="checkbox" name="interest_science"> Science</label>
+    <label><input type="checkbox" name="interest_art"> Orchids in Art</label>
+    <label><input type="checkbox" name="interest_meetings"> Meetings</label>
+</div>
+
+<label>Other Interests</label>
+<input type="text" name="other_interests">
+
+<label>Where did you hear about HOS?</label>
+<input type="text" name="referral">
+
+<button type="submit" class="submit-btn">Submit Membership Application</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
 
