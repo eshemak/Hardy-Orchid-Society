@@ -1,203 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HOS Membership Application</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Join the Hardy Orchid Society</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        font-family: "Aptos", sans-serif;
-        background: #fafafa;
-        color: #000;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-    }
+  :root{
+    --green:#2f5a28;
+    --orange:#C2410C;
+    --bg:#fafafa;
+    --text:#000;
+    --card:#ffffff;
+    --radius:12px;
+  }
 
-    .container {
-        max-width: 900px;
-        margin: 2rem auto;
-        background: #fff;
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+  html,body{height:100%;margin:0;font-family:"Aptos",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
 
-    h1 {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
+  /* NAV */
+  .nav {
+    position:sticky;top:0;background:var(--card);border-bottom:1px solid #e6e6e6;z-index:999;padding:0.8rem 1rem;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-weight:700;font-size:1.15rem}
+  .nav-toggle{display:none}
+  .nav-links{display:flex;gap:1rem;align-items:center}
+  .nav-links a{color:var(--text);text-decoration:none;font-weight:600}
+  .nav-burger{display:none;cursor:pointer}
 
-    h2 {
-        margin-top: 2rem;
-        font-size: 1.4rem;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 0.3rem;
-    }
+  @media (max-width:760px){
+    .nav-links{display:none;flex-direction:column;margin-top:0.6rem}
+    .nav-burger{display:block}
+    #nav-toggle:checked + .nav-links{display:flex;background:var(--card);position:absolute;left:0;right:0;top:56px;padding:0.8rem 1rem;border-bottom:1px solid #eee}
+  }
 
-    label {
-        font-weight: 600;
-        display: block;
-        margin-top: 1rem;
-    }
+  /* HERO */
+  .hero{background:var(--card);padding:2.4rem 1.2rem;text-align:center;border-bottom:1px solid #eee}
+  .hero h1{margin:0;font-size:2rem;font-weight:700}
+  .hero p{margin:0.6rem auto 0;max-width:820px;color:#111;font-size:1.05rem}
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
-        width: 100%;
-        padding: 0.7rem;
-        margin-top: 0.3rem;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 1rem;
-    }
+  /* PAGE LAYOUT */
+  .wrap{max-width:980px;margin:2rem auto;padding:0 1rem}
+  .grid{display:grid;grid-template-columns:1fr 360px;gap:1.2rem}
+  @media (max-width:980px){.grid{grid-template-columns:1fr}}
 
-    .checkbox-group,
-    .interest-group {
-        margin-top: 1rem;
-    }
+  .card{background:var(--card);padding:1.2rem;border-radius:var(--radius);border:1px solid #eee;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
+  h2{margin:0 0 0.6rem 0;font-size:1.25rem;border-bottom:2px solid #f3f3f3;padding-bottom:0.5rem}
 
-    .checkbox-group label,
-    .interest-group label {
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 0.4rem;
-    }
+  .benefit{margin:0.6rem 0;padding:0.8rem;border-radius:10px;background:#fbfbfb;border:1px solid #f0f0f0}
+  .benefit strong{display:block;margin-bottom:0.25rem}
 
-    .submit-btn {
-        display: block;
-        width: 100%;
-        margin-top: 2rem;
-        padding: 1rem;
-        background: #2f5a28;
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        cursor: pointer;
-    }
+  /* fees table */
+  table{width:100%;border-collapse:collapse;margin-top:0.6rem}
+  th,td{padding:0.6rem;border:1px solid #eee;text-align:center}
+  th{background:#fafafa;font-weight:700}
 
-    .submit-btn:hover {
-        background: #24481f;
-    }
+  /* form */
+  label{display:block;font-weight:600;margin-top:1rem}
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%;padding:0.6rem;border:1px solid #ccc;border-radius:8px;margin-top:0.35rem;font-size:1rem;
+  }
+  textarea{resize:vertical}
+  .row{display:flex;gap:0.8rem}
+  .row .col{flex:1}
+  .small{max-width:220px}
+  .checkboxes{display:flex;flex-direction:column;margin-top:0.4rem}
+  .checkboxes label{font-weight:400;display:flex;align-items:center;gap:0.6rem;margin-top:0.35rem}
 
-    .note {
-        background: #f3f3f3;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        border-left: 4px solid #2f5a28;
-    }
+  .calc-box{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.8rem;border-radius:10px;background:#fff;border:1px solid #eee;margin-top:0.8rem}
+  .amount{font-weight:800;font-size:1.25rem;color:var(--green)}
+
+  .actions{display:flex;gap:0.8rem;margin-top:1rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:0.9rem 1rem;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-secondary{background:#2f5a28;color:#fff}
+  .btn-ghost{background:#fff;border:1px solid #ddd;color:#111}
+
+  .note{font-size:0.95rem;color:#333;margin-top:0.6rem;background:#fbfbfb;padding:0.7rem;border-radius:8px;border-left:4px solid var(--green)}
+  footer{padding:2rem 1rem;text-align:center;color:#666;font-size:0.9rem;margin-top:2rem}
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="brand">Hardy Orchid Society</div>
 
-<h1>HOS Membership Application Form</h1>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </label>
+    <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+  </div>
 
-<p style="text-align:center;">
-Please complete this form to apply for membership of the Hardy Orchid Society.
-</p>
+  <div class="nav-links" aria-hidden="false">
+    <a href="https://eshemak.github.io/Hardy-Orchid-Society/">Home</a>
+    <a href="https://eshemak.github.io/Hardy-Orchid-Society/fieldtrips/fieldtrips.html">Field Trips</a>
+    <a href="https://eshemak.github.io/Hardy-Orchid-Society/cultivation/cultivation.html">Cultivation</a>
+    <a href="https://eshemak.github.io/Hardy-Orchid-Society/seedbank/seedbank.html">Seed Bank</a>
+    <a href="https://eshemak.github.io/Hardy-Orchid-Society/membership/membership.html">Join</a>
+  </div>
+</nav>
 
-<form>
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <h1 id="hero-title">Join the Hardy Orchid Society</h1>
+  <p>Support conservation, learn specialist cultivation, attend field trips and meetings, and receive our quarterly Journal.</p>
+</section>
 
-<h2>Your Details</h2>
+<!-- MAIN -->
+<div class="wrap">
+  <div class="grid">
 
-<label>Name (Title, First Name & Surname)</label>
-<input type="text" name="fullname" required>
+    <!-- LEFT: content -->
+    <div>
+      <div class="card">
+        <h2>Why join</h2>
+        <div class="benefit"><strong>Quarterly Journal</strong> Articles on conservation, cultivation, research and beautiful photography.</div>
+        <div class="benefit"><strong>Annual Meetings</strong> Talks, demonstrations and plant sales with experts and fellow members.</div>
+        <div class="benefit"><strong>Field Trips & Workshops</strong> Guided visits and seed-sowing workshops led by experienced members.</div>
+        <div class="benefit"><strong>Plant Show & Competitions</strong> Enter plants and photographs; winners published in the Journal.</div>
 
-<label>Partner Name (Family Membership only)</label>
-<input type="text" name="partner">
+        <h2>Membership Fees</h2>
 
-<label>Postal Address</label>
-<textarea name="address" rows="3" required></textarea>
+        <p>The table below reproduces the membership subscription, enrolment fee and total due on enrolment as shown on the Hardy Orchid Society website. </p>
 
-<label>Postcode</label>
-<input type="text" name="postcode" required>
+        <table aria-label="Membership fees">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>UK (£)</th>
+              <th>Rest of Europe (£ / €)</th>
+              <th>All Other (£ / $)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single annual subscription</td>
+              <td>£17.00</td>
+              <td>£20.00 / €25.00</td>
+              <td>£25.00 / $40.00</td>
+            </tr>
+            <tr>
+              <td>Enrolment fee</td>
+              <td>£5.00</td>
+              <td>£5.00 / €5.00</td>
+              <td>£5.00 / $10.00</td>
+            </tr>
+            <tr>
+              <td><strong>Total due on enrolment (Single)</strong></td>
+              <td>£22.00</td>
+              <td>£25.00 / €30.00</td>
+              <td>£30.00 / $50.00</td>
+            </tr>
 
-<label>Country</label>
-<input type="text" name="country" required>
+            <tr>
+              <td>Family annual subscription</td>
+              <td>£20.00</td>
+              <td>£23.00 / €30.00</td>
+              <td>£28.00 / $45.00</td>
+            </tr>
+            <tr>
+              <td>Enrolment fee</td>
+              <td>£5.00</td>
+              <td>£5.00 / €5.00</td>
+              <td>£5.00 / $10.00</td>
+            </tr>
+            <tr>
+              <td><strong>Total due on enrolment (Family)</strong></td>
+              <td>£25.00</td>
+              <td>£28.00 / €35.00</td>
+              <td>£33.00 / $55.00</td>
+            </tr>
+          </tbody>
+        </table>
 
-<label>Email</label>
-<input type="email" name="email" required>
+        <h2 style="margin-top:1rem">How to pay</h2>
+        <p>We accept PayPal, cheque (UK), cash (non‑UK) and Standing Order. The £5 enrolment fee is waived if you pay by Standing Order. The PayPal checkout button will be enabled once a permanent PayPal link is configured by the site admin.</p>
+        <p class="note">Please send the completed application form to the Membership Secretary — if you only make a PayPal payment without sending the form, the Membership Secretary will not have your details. </p>
+      </div>
 
-<label>Telephone</label>
-<input type="tel" name="telephone">
+      <!-- FORM CARD -->
+      <div class="card" style="margin-top:1rem">
+        <h2 id="form-title">Membership Application</h2>
 
-<label>Mobile Phone</label>
-<input type="tel" name="mobile">
+        <form id="membershipForm" onsubmit="return handleSubmit(event)" autocomplete="on" novalidate>
+          <!-- Personal -->
+          <label for="fullname">Name (Title, First name &amp; Surname)</label>
+          <input id="fullname" name="fullname" type="text" required placeholder="e.g. Dr Jane Smith">
 
-<h2>Membership Type</h2>
+          <label for="partner">Partner name (Family membership only)</label>
+          <input id="partner" name="partner" type="text" placeholder="Partner full name">
 
-<select name="membership_type" required>
-    <option value="">Select membership type…</option>
-    <option value="single">Single Membership (£17 UK)</option>
-    <option value="family">Family Membership (£20 UK)</option>
-</select>
+          <label for="address">Postal address</label>
+          <textarea id="address" name="address" rows="3" required placeholder="Street, Town, County"></textarea>
 
-<h2>Payment Method</h2>
+          <div class="row">
+            <div class="col">
+              <label for="postcode">Postcode</label>
+              <input id="postcode" name="postcode" type="text" required>
+            </div>
+            <div class="col small">
+              <label for="country">Country / Region</label>
+              <select id="country" name="country" required onchange="calculateFee()">
+                <option value="">Select region…</option>
+                <option value="UK">United Kingdom</option>
+                <option value="EU">Other European</option>
+                <option value="ROW">All Other Countries</option>
+              </select>
+            </div>
+          </div>
 
-<div class="checkbox-group">
-    <label><input type="checkbox" name="paypal"> Paid online via PayPal</label>
-    <label><input type="checkbox" name="cheque"> Cheque (UK bank only)</label>
-    <label><input type="checkbox" name="cash_gbp"> Cash £ Sterling</label>
-    <label><input type="checkbox" name="cash_eur"> Cash Euros (outside UK only)</label>
-    <label><input type="checkbox" name="cash_usd"> Cash US Dollars (outside UK only)</label>
-    <label><input type="checkbox" name="standing_order"> Standing Order</label>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com">
+
+          <div class="row">
+            <div class="col">
+              <label for="telephone">Telephone</label>
+              <input id="telephone" name="telephone" type="tel" placeholder="+44 1234 567890">
+            </div>
+            <div class="col">
+              <label for="mobile">Mobile</label>
+              <input id="mobile" name="mobile" type="tel" placeholder="+44 7xxx xxxxxx">
+            </div>
+          </div>
+
+          <!-- Membership selection -->
+          <label for="membershipType">Membership type</label>
+          <select id="membershipType" name="membershipType" required onchange="calculateFee()">
+            <option value="">Select membership type…</option>
+            <option value="single">Single</option>
+            <option value="family">Family</option>
+          </select>
+
+          <!-- Payment option dropdown includes joining fee choice -->
+          <label for="paymentOption">Payment option</label>
+          <select id="paymentOption" name="paymentOption" onchange="calculateFee()">
+            <option value="subscription_only">Subscription only (no enrolment fee)</option>
+            <option value="subscription_plus_enrolment">Subscription + Enrolment fee (pay joining fee now)</option>
+          </select>
+
+          <h3 style="margin-top:1rem">Payment method</h3>
+          <label for="paymentMethod">Choose payment method</label>
+          <select id="paymentMethod" name="paymentMethod" onchange="onPaymentMethodChange()">
+            <option value="">Select payment method…</option>
+            <option value="paypal">PayPal (online)</option>
+            <option value="cheque">Cheque (UK bank)</option>
+            <option value="cash_gbp">Cash £ Sterling</option>
+            <option value="cash_eur">Cash Euros (outside UK) — cash only</option>
+            <option value="cash_usd">Cash US$ (outside UK) — cash only</option>
+            <option value="standing">Standing Order (waives enrolment fee)</option>
+          </select>
+
+          <div class="note" id="joiningNote">Enrolment fee: £5 (waived if paying by Standing Order)</div>
+
+          <h3 style="margin-top:1rem">Contact permissions</h3>
+          <div class="checkboxes">
+            <label><input id="share_phone" name="share_phone" type="checkbox"> Share telephone number with members</label>
+            <label><input id="share_email" name="share_email" type="checkbox"> Share email address with members</label>
+            <label><input id="share_address" name="share_address" type="checkbox"> Share postal address with members</label>
+          </div>
+
+          <h3 style="margin-top:1rem">Interests</h3>
+          <div class="checkboxes">
+            <label><input name="interest_growing" type="checkbox"> Growing &amp; propagation</label>
+            <label><input name="interest_conservation" type="checkbox"> Conservation</label>
+            <label><input name="interest_fieldtrips" type="checkbox"> Field trips (UK)</label>
+            <label><input name="interest_taxonomy" type="checkbox"> Taxonomy</label>
+            <label><input name="interest_photography" type="checkbox"> Photography</label>
+            <label><input name="interest_travel" type="checkbox"> Foreign travel for orchids</label>
+            <label><input name="interest_science" type="checkbox"> Science</label>
+            <label><input name="interest_art" type="checkbox"> Orchids in Art</label>
+            <label><input name="interest_meetings" type="checkbox"> Meetings</label>
+          </div>
+
+          <label for="otherInterests">Other interests</label>
+          <input id="otherInterests" name="otherInterests" type="text">
+
+          <label for="referral">Where did you hear about HOS?</label>
+          <input id="referral" name="referral" type="text">
+
+          <!-- Fee calculator -->
+          <div class="calc-box" aria-live="polite">
+            <div>
+              <div style="font-size:0.95rem;color:#444">Calculated total (based on selections)</div>
+              <div id="feeBreakdown" style="font-size:0.9rem;color:#555;margin-top:0.25rem">Select membership type and region</div>
+            </div>
+            <div class="amount" id="calculatedAmount">—</div>
+          </div>
+
+          <!-- Actions -->
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="paypalBtn" onclick="goToPayPal()" title="Pay with PayPal">Pay with PayPal</button>
+
+            <button type="button" class="btn btn-secondary" onclick="printForm()">Print / Save</button>
+
+            <button type="submit" class="btn btn-ghost" title="Send application details to Membership Secretary">Send application to Membership Secretary</button>
+          </div>
+
+          <div style="margin-top:0.8rem;font-size:0.9rem;color:#444">
+            On submission the form will open an email to the Membership Secretary (Moira Tarrant) with your details. The PayPal button will start an online checkout when a valid PayPal button link is configured by the site admin.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT: sidebar -->
+    <aside>
+      <div class="card">
+        <h2>Quick summary</h2>
+        <p><strong>Single (UK)</strong> £17 · <strong>Family (UK)</strong> £20</p>
+        <p>Enrolment fee: £5 (waived for Standing Order)</p>
+
+        <h2 style="margin-top:1rem">Contact</h2>
+        <p>Membership Secretary<br><strong>Mrs Moira Tarrant</strong><br>Bumby's, Fox Road, Mashbury, Chelmsford CM1 4TJ</p>
+        <p>Email: <a href="mailto:moira.tarrant@outlook.com">moira.tarrant@outlook.com</a></p>
+
+        <h2 style="margin-top:1rem">Notes</h2>
+        <p class="note">Members' details are stored in a database for HOS use only and are not released outside the Society.</p>
+      </div>
+    </aside>
+
+  </div>
 </div>
 
-<div class="note">
-Joining fee: £5.00 (waived if paying by Standing Order)
-</div>
+<footer>© Hardy Orchid Society — GitHub Pages Edition</footer>
 
-<h2>Contact Permissions</h2>
+<script>
+/*
+  Fee calculator updated to use the official HOS table values (UK / EU / ROW).
+  Admin: set paypalButtonLink to your permanent PayPal button/checkout URL.
+*/
+const fees = {
+  single: { UK: 17.00, EU: 20.00, ROW: 25.00 },
+  family: { UK: 20.00, EU: 23.00, ROW: 28.00 },
+  // enrolment fee in GBP; EU/ROW equivalents shown in table for display only
+  enrolment: { GBP: 5.00, EU_eur: 5.00, ROW_usd: 10.00 }
+};
 
-<p>Please tick if you are happy for HOS to share your details with other members when relevant.</p>
+// Admin: insert permanent PayPal link here when available
+let paypalButtonLink = ""; // <-- set by site admin
 
-<div class="checkbox-group">
-    <label><input type="checkbox" name="share_phone"> Telephone number</label>
-    <label><input type="checkbox" name="share_email"> Email address</label>
-    <label><input type="checkbox" name="share_address"> Postal address</label>
-</div>
+function formatGBP(n){ return "£" + n.toFixed(2); }
+function formatUSD(n){ return "$" + n.toFixed(2); }
+function formatEUR(n){ return "€" + n.toFixed(2); }
 
-<h2>Your Interests</h2>
+function calculateFee(){
+  const membership = document.getElementById('membershipType').value;
+  const region = document.getElementById('country').value;
+  const paymentOption = document.getElementById('paymentOption').value;
+  const paymentMethod = document.getElementById('paymentMethod').value;
 
-<div class="interest-group">
-    <label><input type="checkbox" name="interest_growing"> Growing & propagation</label>
-    <label><input type="checkbox" name="interest_conservation"> Conservation</label>
-    <label><input type="checkbox" name="interest_fieldtrips"> Field trips (UK)</label>
-    <label><input type="checkbox" name="interest_taxonomy"> Taxonomy</label>
-    <label><input type="checkbox" name="interest_photography"> Photography</label>
-    <label><input type="checkbox" name="interest_travel"> Foreign travel for orchids</label>
-    <label><input type="checkbox" name="interest_science"> Science</label>
-    <label><input type="checkbox" name="interest_art"> Orchids in Art</label>
-    <label><input type="checkbox" name="interest_meetings"> Meetings</label>
-</div>
+  const amountEl = document.getElementById('calculatedAmount');
+  const breakdownEl = document.getElementById('feeBreakdown');
 
-<label>Other Interests</label>
-<input type="text" name="other_interests">
+  if(!membership || !region){
+    amountEl.textContent = "—";
+    breakdownEl.textContent = "Select membership type and region";
+    return;
+  }
 
-<label>Where did you hear about HOS?</label>
-<input type="text" name="referral">
+  // base membership fee (GBP)
+  let baseGBP = 0;
+  if(membership === 'single') baseGBP = fees.single[region] ?? 0;
+  if(membership === 'family') baseGBP = fees.family[region] ?? 0;
 
-<button type="submit" class="submit-btn">Submit Membership Application</button>
+  // determine whether enrolment fee is included
+  let includeEnrolment = (paymentOption === 'subscription_plus_enrolment');
 
-</form>
+  // If paying by Standing Order, enrolment is waived regardless of dropdown
+  if(paymentMethod === 'standing') includeEnrolment = false;
 
-</div>
+  let enrolmentGBP = includeEnrolment ? fees.enrolment.GBP : 0;
+  let totalGBP = baseGBP + enrolmentGBP;
+
+  // For EU and ROW we also show the local currency equivalents where appropriate
+  let breakdownText = `${membership.charAt(0).toUpperCase() + membership.slice(1)} membership (${region}) — ${formatGBP(baseGBP)}`;
+  if(includeEnrolment){
+    breakdownText += ` + ${formatGBP(enrolmentGBP)} enrolment fee = ${formatGBP(totalGBP)}`;
+  } else {
+    breakdownText += `; enrolment fee not included = ${formatGBP(totalGBP)}`;
+  }
+
+  // For EU and ROW show approximate local currency notes (from official table)
+  if(region === 'EU'){
+    // EU column shows £ / € equivalents in the table; show both
+    if(membership === 'single'){
+      breakdownText += ` (table shows £20 / ${formatEUR(25)})`;
+    } else {
+      breakdownText += ` (table shows £23 / ${formatEUR(30)})`;
+    }
+    if(includeEnrolment) breakdownText += `; enrolment €${fees.enrolment.EU_eur}`;
+  } else if(region === 'ROW'){
+    if(membership === 'single'){
+      breakdownText += ` (table shows £25 / ${formatUSD(40)})`;
+    } else {
+      breakdownText += ` (table shows £28 / ${formatUSD(45)})`;
+    }
+    if(includeEnrolment) breakdownText += `; enrolment ${formatUSD(fees.enrolment.ROW_usd)}`;
+  }
+
+  amountEl.textContent = formatGBP(totalGBP);
+  breakdownEl.textContent = breakdownText;
+  updatePayPalButton();
+}
+
+function onPaymentMethodChange(){
+  calculateFee();
+}
+
+function updatePayPalButton(){
+  const btn = document.getElementById('paypalBtn');
+  if(!paypalButtonLink || paypalButtonLink.trim() === ""){
+    btn.disabled = true;
+    btn.style.opacity = 0.6;
+    btn.title = "PayPal link not configured by site admin";
+  } else {
+    btn.disabled = false;
+    btn.style.opacity = 1;
+    btn.title = "Proceed to PayPal checkout";
+  }
+}
+
+function goToPayPal(){
+  if(!paypalButtonLink || paypalButtonLink.trim() === ""){
+    alert("PayPal checkout is not configured. Please contact the site administrator.");
+    return;
+  }
+
+  // Ensure membership & country selected
+  const membership = document.getElementById('membershipType').value;
+  const region = document.getElementById('country').value;
+  const paymentOption = document.getElementById('paymentOption').value;
+  const paymentMethod = document.getElementById('paymentMethod').value;
+
+  if(!membership || !region){
+    alert("Please select membership type and region to calculate the correct amount before proceeding to PayPal.");
+    return;
+  }
+
+  // Calculate amount in GBP
+  let base = (membership === 'single') ? fees.single[region] : fees.family[region];
+  let includeEnrolment = (paymentOption === 'subscription_plus_enrolment');
+  if(paymentMethod === 'standing') includeEnrolment = false;
+  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
+  let totalGBP = base + enrolment;
+
+  // If paypalButtonLink is a paypal.me link, append amount
+  try {
+    const url = new URL(paypalButtonLink);
+    if(url.hostname === 'paypal.me'){
+      if(!/\/\d+(\.\d+)?$/.test(url.pathname)){
+        let redirect = paypalButtonLink.replace(/\/+$/,'') + '/' + totalGBP;
+        window.open(redirect, '_blank');
+        return;
+      }
+    }
+  } catch(e){
+    // not a valid URL object; continue
+  }
+
+  // Otherwise open the provided link (admin should configure amounts server-side)
+  window.open(paypalButtonLink, '_blank');
+}
+
+function printForm(){ window.print(); }
+
+function handleSubmit(e){
+  e.preventDefault();
+  const form = document.getElementById('membershipForm');
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return false;
+  }
+
+  // Gather fields
+  const data = {
+    fullname: document.getElementById('fullname').value.trim(),
+    partner: document.getElementById('partner').value.trim(),
+    address: document.getElementById('address').value.trim(),
+    postcode: document.getElementById('postcode').value.trim(),
+    country: document.getElementById('country').value,
+    email: document.getElementById('email').value.trim(),
+    telephone: document.getElementById('telephone').value.trim(),
+    mobile: document.getElementById('mobile').value.trim(),
+    membershipType: document.getElementById('membershipType').value,
+    paymentOption: document.getElementById('paymentOption').value,
+    paymentMethod: document.getElementById('paymentMethod').value,
+    share_phone: document.getElementById('share_phone').checked ? 'Yes' : 'No',
+    share_email: document.getElementById('share_email').checked ? 'Yes' : 'No',
+    share_address: document.getElementById('share_address').checked ? 'Yes' : 'No',
+    otherInterests: document.getElementById('otherInterests').value.trim(),
+    referral: document.getElementById('referral').value.trim()
+  };
+
+  // Recalculate amount for inclusion
+  const region = data.country;
+  const membership = data.membershipType;
+  const includeEnrolment = (data.paymentOption === 'subscription_plus_enrolment') && (data.paymentMethod !== 'standing');
+  let base = (membership === 'single') ? fees.single[region] : fees.family[region];
+  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
+  let total = (typeof base === 'number') ? (base + enrolment) : 'N/A';
+
+  // Compose email to Membership Secretary
+  const to = "moira.tarrant@outlook.com";
+  const subject = encodeURIComponent(`HOS Membership Application - ${data.fullname}`);
+  let bodyLines = [
+    `Name: ${data.fullname}`,
+    `Partner (if family): ${data.partner}`,
+    `Address: ${data.address}`,
+    `Postcode: ${data.postcode}`,
+    `Country/Region: ${data.country}`,
+    `Email: ${data.email}`,
+    `Telephone: ${data.telephone}`,
+    `Mobile: ${data.mobile}`,
+    ``,
+    `Membership type: ${data.membershipType}`,
+    `Payment option selected: ${data.paymentOption}`,
+    `Payment method: ${data.paymentMethod}`,
+    `Enrolment fee included: ${includeEnrolment ? 'Yes' : 'No'}`,
+    `Calculated total (GBP): ${typeof total === 'number' ? '£' + total.toFixed(2) : total}`,
+    ``,
+    `Contact permissions:`,
+    ` - Share telephone: ${data.share_phone}`,
+    ` - Share email: ${data.share_email}`,
+    ` - Share postal address: ${data.share_address}`,
+    ``,
+    `Interests / Other: ${data.otherInterests}`,
+    `Where heard about HOS: ${data.referral}`,
+    ``,
+    `Please process this application and advise next steps for payment/shipping of Journal/membership card.`
+  ];
+
+  const body = encodeURIComponent(bodyLines.join('\n'));
+  const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+  window.location.href = mailto;
+
+  return false;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  calculateFee();
+  updatePayPalButton();
+});
+</script>
 
 </body>
 </html>
-
