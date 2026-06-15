@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Join the Hardy Orchid Society</title>
+<title> Become a member of teh HArdy Orchid Society </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -49,9 +49,6 @@
   .card{background:var(--card);padding:1.2rem;border-radius:var(--radius);border:1px solid #eee;box-shadow:0 2px 6px rgba(0,0,0,0.03)}
   h2{margin:0 0 0.6rem 0;font-size:1.25rem;border-bottom:2px solid #f3f3f3;padding-bottom:0.5rem}
 
-  .benefit{margin:0.6rem 0;padding:0.8rem;border-radius:10px;background:#fbfbfb;border:1px solid #f0f0f0}
-  .benefit strong{display:block;margin-bottom:0.25rem}
-
   /* fees table */
   table{width:100%;border-collapse:collapse;margin-top:0.6rem}
   th,td{padding:0.6rem;border:1px solid #eee;text-align:center}
@@ -59,6 +56,7 @@
 
   /* form */
   label{display:block;font-weight:600;margin-top:1rem}
+  .required { color: var(--orange); margin-left:6px; font-weight:700; }
   input[type="text"],input[type="email"],input[type="tel"],select,textarea{
     width:100%;padding:0.6rem;border:1px solid #ccc;border-radius:8px;margin-top:0.35rem;font-size:1rem;
   }
@@ -75,7 +73,6 @@
   .actions{display:flex;gap:0.8rem;margin-top:1rem;flex-wrap:wrap}
   .btn{display:inline-block;padding:0.9rem 1rem;border-radius:10px;border:0;cursor:pointer;font-weight:700}
   .btn-primary{background:var(--orange);color:#fff}
-  .btn-secondary{background:#2f5a28;color:#fff}
   .btn-ghost{background:#fff;border:1px solid #ddd;color:#111}
 
   .note{font-size:0.95rem;color:#333;margin-top:0.6rem;background:#fbfbfb;padding:0.7rem;border-radius:8px;border-left:4px solid var(--green)}
@@ -110,7 +107,7 @@
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
-  <h1 id="hero-title">Join the Hardy Orchid Society</h1>
+  <h1 id="hero-title"> Become a member of teh HArdy Orchid Society </h1>
   <p>Support conservation, learn specialist cultivation, attend field trips and meetings, and receive our quarterly Journal.</p>
 </section>
 
@@ -176,7 +173,7 @@
         </table>
 
         <h2 style="margin-top:1rem">How to pay</h2>
-        <p>We accept PayPal, cheque (UK), cash (non‑UK) and Standing Order. The £5 enrolment fee is waived if you pay by Standing Order. The PayPal checkout button will be enabled once a permanent PayPal link is configured by the site admin.</p>
+        <p>We accept PayPal and Standing Order online. The £5 enrolment fee is waived if you pay by Standing Order. The PayPal checkout button will be enabled once a permanent PayPal link is configured by the site admin.</p>
         <p class="note">Please send the completed application form to the Membership Secretary — if you only make a PayPal payment without sending the form, the Membership Secretary will not have your details.</p>
       </div>
 
@@ -185,23 +182,37 @@
         <h2 id="form-title">Membership Application</h2>
 
         <form id="membershipForm" onsubmit="return handleSubmit(event)" autocomplete="on" novalidate>
-          <!-- Personal -->
-          <label for="fullname">Name (Title, First name &amp; Surname)</label>
-          <input id="fullname" name="fullname" type="text" required placeholder="e.g. Dr Jane Smith">
+          <!-- Name split into First and Surname -->
+          <div class="row">
+            <div class="col">
+              <label for="firstname">First name <span class="required">*</span></label>
+              <input id="firstname" name="firstname" type="text" required placeholder="First name">
+            </div>
+            <div class="col">
+              <label for="surname">Surname <span class="required">*</span></label>
+              <input id="surname" name="surname" type="text" required placeholder="Surname">
+            </div>
+          </div>
 
           <label for="partner">Partner name (Family membership only)</label>
           <input id="partner" name="partner" type="text" placeholder="Partner full name">
 
-          <label for="address">Postal address</label>
-          <textarea id="address" name="address" rows="3" required placeholder="Street, Town, County"></textarea>
+          <label for="address1">Address line 1 <span class="required">*</span></label>
+          <input id="address1" name="address1" type="text" required placeholder="House number and street">
+
+          <label for="address2">Address line 2</label>
+          <input id="address2" name="address2" type="text" placeholder="Town / Village">
+
+          <label for="address3">Address line 3</label>
+          <input id="address3" name="address3" type="text" placeholder="County / Region">
 
           <div class="row">
-            <div class="col">
-              <label for="postcode">Postcode</label>
-              <input id="postcode" name="postcode" type="text" required>
+            <div class="col small">
+              <label for="postcode">Postcode <span class="required">*</span></label>
+              <input id="postcode" name="postcode" type="text" required placeholder="Postcode">
             </div>
             <div class="col small">
-              <label for="country">Country / Region</label>
+              <label for="country">Country / Region <span class="required">*</span></label>
               <select id="country" name="country" required onchange="calculateFee()">
                 <option value="">Select region…</option>
                 <option value="UK">United Kingdom</option>
@@ -211,7 +222,7 @@
             </div>
           </div>
 
-          <label for="email">Email</label>
+          <label for="email">Email <span class="required">*</span></label>
           <input id="email" name="email" type="email" required placeholder="name@example.com">
 
           <div class="row">
@@ -225,12 +236,16 @@
             </div>
           </div>
 
-          <!-- Membership selection -->
-          <label for="membershipType">Membership type</label>
+          <!-- Membership selection expanded to include region-specific options -->
+          <label for="membershipType">Membership type <span class="required">*</span></label>
           <select id="membershipType" name="membershipType" required onchange="calculateFee()">
             <option value="">Select membership type…</option>
-            <option value="single">Single</option>
-            <option value="family">Family</option>
+            <option value="single_UK">Single — United Kingdom</option>
+            <option value="single_EU">Single — Other European</option>
+            <option value="single_ROW">Single — All Other Countries</option>
+            <option value="family_UK">Family — United Kingdom</option>
+            <option value="family_EU">Family — Other European</option>
+            <option value="family_ROW">Family — All Other Countries</option>
           </select>
 
           <!-- Payment option dropdown includes enrolment fee choice -->
@@ -245,10 +260,6 @@
           <select id="paymentMethod" name="paymentMethod" onchange="onPaymentMethodChange()">
             <option value="">Select payment method…</option>
             <option value="paypal">PayPal (online)</option>
-            <option value="cheque">Cheque (UK bank)</option>
-            <option value="cash_gbp">Cash £ Sterling</option>
-            <option value="cash_eur">Cash Euros (outside UK) — cash only</option>
-            <option value="cash_usd">Cash US$ (outside UK) — cash only</option>
             <option value="standing">Standing Order (waives enrolment fee)</option>
           </select>
 
@@ -284,7 +295,7 @@
           <div class="calc-box" aria-live="polite">
             <div>
               <div style="font-size:0.95rem;color:#444">Calculated total (based on selections)</div>
-              <div id="feeBreakdown" style="font-size:0.9rem;color:#555;margin-top:0.25rem">Select membership type and region</div>
+              <div id="feeBreakdown" style="font-size:0.9rem;color:#555;margin-top:0.25rem">Select membership type</div>
             </div>
             <div class="amount" id="calculatedAmount">—</div>
           </div>
@@ -293,13 +304,11 @@
           <div class="actions">
             <button type="button" class="btn btn-primary" id="paypalBtn" onclick="goToPayPal()" title="Pay with PayPal">Pay with PayPal</button>
 
-            <button type="button" class="btn btn-secondary" onclick="printForm()">Print / Save</button>
-
             <button type="submit" class="btn btn-ghost" title="Send application details to Membership Secretary">Send application to Membership Secretary</button>
           </div>
 
           <div style="margin-top:0.8rem;font-size:0.9rem;color:#444">
-            On submission the form will open an email to the Membership Secretary (Moira Tarrant) with your details. The PayPal button will start an online checkout when a valid PayPal button link is configured by the site admin.
+            On submission the form will open an email to the Membership Secretary (Moira Tarrant) with your details. When you press PayPal the application details will also be emailed to Moira before redirecting to PayPal (admin must configure PayPal link).
           </div>
         </form>
       </div>
@@ -313,7 +322,7 @@
         <p>Enrolment fee: £5 (waived for Standing Order)</p>
 
         <h2 style="margin-top:1rem">Contact</h2>
-        <p>Membership Secretary<br><strong>Mrs Moira Tarrant</strong><br>Bumby's, Fox Road, Mashbury, Chelmsford CM1 4TJ</p>
+        <p>Membership Secretary<br><strong>Moira Tarrant</strong><br>Bumby's, Fox Road, Mashbury, Chelmsford CM1 4TJ</p>
         <p>Email: <a href="mailto:moira.tarrant@outlook.com">moira.tarrant@outlook.com</a></p>
 
         <h2 style="margin-top:1rem">Notes</h2>
@@ -328,13 +337,16 @@
 
 <script>
 /*
-  Fee calculator updated to use the official HOS table values (UK / EU / ROW).
-  Admin: set paypalButtonLink to your permanent PayPal button/checkout URL.
+  Fee calculator and PayPal flow.
+  - Admin: set paypalButtonLink to your permanent PayPal button/checkout URL.
+  - When PayPal is used, the form will first open an email to Moira with the application details,
+    then open the PayPal checkout in a new tab.
 */
+
+// Official fees (GBP primary)
 const fees = {
   single: { UK: 17.00, EU: 20.00, ROW: 25.00 },
   family: { UK: 20.00, EU: 23.00, ROW: 28.00 },
-  // enrolment fee in GBP; EU/ROW equivalents shown in table for display only
   enrolment: { GBP: 5.00, EU_eur: 5.00, ROW_usd: 10.00 }
 };
 
@@ -346,24 +358,23 @@ function formatUSD(n){ return "$" + n.toFixed(2); }
 function formatEUR(n){ return "€" + n.toFixed(2); }
 
 function calculateFee(){
-  const membership = document.getElementById('membershipType').value;
-  const region = document.getElementById('country').value;
+  const membershipVal = document.getElementById('membershipType').value;
   const paymentOption = document.getElementById('paymentOption').value;
   const paymentMethod = document.getElementById('paymentMethod').value;
 
   const amountEl = document.getElementById('calculatedAmount');
   const breakdownEl = document.getElementById('feeBreakdown');
 
-  if(!membership || !region){
+  if(!membershipVal){
     amountEl.textContent = "—";
-    breakdownEl.textContent = "Select membership type and region";
+    breakdownEl.textContent = "Select membership type";
     return;
   }
 
-  // base membership fee (GBP)
-  let baseGBP = 0;
-  if(membership === 'single') baseGBP = fees.single[region] ?? 0;
-  if(membership === 'family') baseGBP = fees.family[region] ?? 0;
+  // membershipVal format: "<type>_<region>" e.g. single_UK
+  const [type, region] = membershipVal.split('_');
+
+  let baseGBP = (type === 'single') ? fees.single[region] : fees.family[region];
 
   // determine whether enrolment fee is included
   let includeEnrolment = (paymentOption === 'subscription_plus_enrolment');
@@ -374,28 +385,21 @@ function calculateFee(){
   let enrolmentGBP = includeEnrolment ? fees.enrolment.GBP : 0;
   let totalGBP = baseGBP + enrolmentGBP;
 
-  // For EU and ROW we also show the local currency equivalents where appropriate
-  let breakdownText = `${membership.charAt(0).toUpperCase() + membership.slice(1)} membership (${region}) — ${formatGBP(baseGBP)}`;
+  let breakdownText = `${type.charAt(0).toUpperCase() + type.slice(1)} membership (${region}) — ${formatGBP(baseGBP)}`;
   if(includeEnrolment){
     breakdownText += ` + ${formatGBP(enrolmentGBP)} enrolment fee = ${formatGBP(totalGBP)}`;
   } else {
     breakdownText += `; enrolment fee not included = ${formatGBP(totalGBP)}`;
   }
 
-  // For EU and ROW show approximate local currency notes (from official table)
+  // Add table currency notes
   if(region === 'EU'){
-    if(membership === 'single'){
-      breakdownText += ` (table shows £20 / ${formatEUR(25)})`;
-    } else {
-      breakdownText += ` (table shows £23 / ${formatEUR(30)})`;
-    }
+    if(type === 'single') breakdownText += ` (table shows £20 / ${formatEUR(25)})`;
+    else breakdownText += ` (table shows £23 / ${formatEUR(30)})`;
     if(includeEnrolment) breakdownText += `; enrolment €${fees.enrolment.EU_eur}`;
   } else if(region === 'ROW'){
-    if(membership === 'single'){
-      breakdownText += ` (table shows £25 / ${formatUSD(40)})`;
-    } else {
-      breakdownText += ` (table shows £28 / ${formatUSD(45)})`;
-    }
+    if(type === 'single') breakdownText += ` (table shows £25 / ${formatUSD(40)})`;
+    else breakdownText += ` (table shows £28 / ${formatUSD(45)})`;
     if(includeEnrolment) breakdownText += `; enrolment ${formatUSD(fees.enrolment.ROW_usd)}`;
   }
 
@@ -417,67 +421,18 @@ function updatePayPalButton(){
   } else {
     btn.disabled = false;
     btn.style.opacity = 1;
-    btn.title = "Proceed to PayPal checkout";
+    btn.title = "Proceed to PayPal checkout (application will be emailed to Moira first)";
   }
 }
 
-function goToPayPal(){
-  if(!paypalButtonLink || paypalButtonLink.trim() === ""){
-    alert("PayPal checkout is not configured. Please contact the site administrator.");
-    return;
-  }
-
-  // Ensure membership & country selected
-  const membership = document.getElementById('membershipType').value;
-  const region = document.getElementById('country').value;
-  const paymentOption = document.getElementById('paymentOption').value;
-  const paymentMethod = document.getElementById('paymentMethod').value;
-
-  if(!membership || !region){
-    alert("Please select membership type and region to calculate the correct amount before proceeding to PayPal.");
-    return;
-  }
-
-  // Calculate amount in GBP
-  let base = (membership === 'single') ? fees.single[region] : fees.family[region];
-  let includeEnrolment = (paymentOption === 'subscription_plus_enrolment');
-  if(paymentMethod === 'standing') includeEnrolment = false;
-  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
-  let totalGBP = base + enrolment;
-
-  // If paypalButtonLink is a paypal.me link, append amount
-  try {
-    const url = new URL(paypalButtonLink);
-    if(url.hostname === 'paypal.me'){
-      if(!/\/\d+(\.\d+)?$/.test(url.pathname)){
-        let redirect = paypalButtonLink.replace(/\/+$/,'') + '/' + totalGBP;
-        window.open(redirect, '_blank');
-        return;
-      }
-    }
-  } catch(e){
-    // not a valid URL object; continue
-  }
-
-  // Otherwise open the provided link (admin should configure amounts server-side)
-  window.open(paypalButtonLink, '_blank');
-}
-
-function printForm(){ window.print(); }
-
-function handleSubmit(e){
-  e.preventDefault();
-  const form = document.getElementById('membershipForm');
-  if(!form.checkValidity()){
-    form.reportValidity();
-    return false;
-  }
-
-  // Gather fields
-  const data = {
-    fullname: document.getElementById('fullname').value.trim(),
+function gatherFormData(){
+  return {
+    firstname: document.getElementById('firstname').value.trim(),
+    surname: document.getElementById('surname').value.trim(),
     partner: document.getElementById('partner').value.trim(),
-    address: document.getElementById('address').value.trim(),
+    address1: document.getElementById('address1').value.trim(),
+    address2: document.getElementById('address2').value.trim(),
+    address3: document.getElementById('address3').value.trim(),
     postcode: document.getElementById('postcode').value.trim(),
     country: document.getElementById('country').value,
     email: document.getElementById('email').value.trim(),
@@ -492,22 +447,18 @@ function handleSubmit(e){
     otherInterests: document.getElementById('otherInterests').value.trim(),
     referral: document.getElementById('referral').value.trim()
   };
+}
 
-  // Recalculate amount for inclusion
-  const region = data.country;
-  const membership = data.membershipType;
-  const includeEnrolment = (data.paymentOption === 'subscription_plus_enrolment') && (data.paymentMethod !== 'standing');
-  let base = (membership === 'single') ? fees.single[region] : fees.family[region];
-  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
-  let total = (typeof base === 'number') ? (base + enrolment) : 'N/A';
-
-  // Compose email to Membership Secretary
+// Open mailto to Moira with application details
+function emailApplication(data, totalGBP, includeEnrolment){
   const to = "moira.tarrant@outlook.com";
-  const subject = encodeURIComponent(`HOS Membership Application - ${data.fullname}`);
+  const subject = encodeURIComponent(`HOS Membership Application - ${data.firstname} ${data.surname}`);
   let bodyLines = [
-    `Name: ${data.fullname}`,
+    `Name: ${data.firstname} ${data.surname}`,
     `Partner (if family): ${data.partner}`,
-    `Address: ${data.address}`,
+    `Address line 1: ${data.address1}`,
+    `Address line 2: ${data.address2}`,
+    `Address line 3: ${data.address3}`,
     `Postcode: ${data.postcode}`,
     `Country/Region: ${data.country}`,
     `Email: ${data.email}`,
@@ -518,7 +469,7 @@ function handleSubmit(e){
     `Payment option selected: ${data.paymentOption}`,
     `Payment method: ${data.paymentMethod}`,
     `Enrolment fee included: ${includeEnrolment ? 'Yes' : 'No'}`,
-    `Calculated total (GBP): ${typeof total === 'number' ? '£' + total.toFixed(2) : total}`,
+    `Calculated total (GBP): ${typeof totalGBP === 'number' ? '£' + totalGBP.toFixed(2) : totalGBP}`,
     ``,
     `Contact permissions:`,
     ` - Share telephone: ${data.share_phone}`,
@@ -533,7 +484,77 @@ function handleSubmit(e){
 
   const body = encodeURIComponent(bodyLines.join('\n'));
   const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+  // Use location.href to open user's email client
   window.location.href = mailto;
+}
+
+// PayPal flow: validate, email application to Moira, then open PayPal
+function goToPayPal(){
+  if(!paypalButtonLink || paypalButtonLink.trim() === ""){
+    alert("PayPal checkout is not configured. Please contact the site administrator.");
+    return;
+  }
+
+  // Validate required fields
+  const form = document.getElementById('membershipForm');
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return;
+  }
+
+  // Gather data and calculate amount
+  const data = gatherFormData();
+  const membershipVal = data.membershipType;
+  if(!membershipVal){
+    alert("Please select a membership type.");
+    return;
+  }
+  const [type, region] = membershipVal.split('_');
+  let base = (type === 'single') ? fees.single[region] : fees.family[region];
+  let includeEnrolment = (data.paymentOption === 'subscription_plus_enrolment');
+  if(data.paymentMethod === 'standing') includeEnrolment = false;
+  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
+  let totalGBP = base + enrolment;
+
+  // First: open mailto to Moira with application details
+  emailApplication(data, totalGBP, includeEnrolment);
+
+  // Then: open PayPal in a new tab (admin must configure link)
+  try {
+    const url = new URL(paypalButtonLink);
+    if(url.hostname === 'paypal.me'){
+      if(!/\/\d+(\.\d+)?$/.test(url.pathname)){
+        let redirect = paypalButtonLink.replace(/\/+$/,'') + '/' + totalGBP;
+        window.open(redirect, '_blank');
+        return;
+      }
+    }
+  } catch(e){
+    // not a valid URL object; continue
+  }
+
+  window.open(paypalButtonLink, '_blank');
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+  const form = document.getElementById('membershipForm');
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return false;
+  }
+
+  const data = gatherFormData();
+  // Calculate total for email
+  const membershipVal = data.membershipType;
+  const [type, region] = membershipVal.split('_');
+  let base = (type === 'single') ? fees.single[region] : fees.family[region];
+  let includeEnrolment = (data.paymentOption === 'subscription_plus_enrolment') && (data.paymentMethod !== 'standing');
+  let enrolment = includeEnrolment ? fees.enrolment.GBP : 0;
+  let total = (typeof base === 'number') ? (base + enrolment) : 'N/A';
+
+  // Send application via mailto
+  emailApplication(data, total, includeEnrolment);
 
   return false;
 }
