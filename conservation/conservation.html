@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOS Conservation</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .chevron {
+        width: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .section-content {
+        display: none;
+        padding: 10px 0 20px 0;
+        line-height: 1.6;
+    }
+
+    .open .section-content {
+        display: block;
+    }
+
+    .open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-nav {
+            display: block;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".section-header").forEach(header => {
+            header.addEventListener("click", () => {
+                header.parentElement.classList.toggle("open");
+            });
+        });
+    });
+</script>
+
+</head>
+<body>
+
+<div class="mobile-nav">
+    <strong>Hardy Orchid Society</strong>
+</div>
+
+<div class="container">
+
+<h1>Conservation</h1>
+<p>The Hardy Orchid Society is committed to protecting Britain’s wild orchids and promoting responsible cultivation. Our conservation work follows a clear code of practice and a policy designed to safeguard native species while supporting ethical growing.</p>
+
+<!-- SECTION 1 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Conservation Code</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p><strong>1. Wild-collected plants:</strong> Members must not buy, sell, or exhibit orchids taken from the wild.</p>
+        <p><strong>2. Journal submissions:</strong> The HOS Journal will not publish articles or advertisements from individuals or organisations known to have illegally dug orchids.</p>
+        <p><strong>3. Society events:</strong> Plants removed from the wild must not be shown or sold at any HOS event.</p>
+        <p><strong>4. Membership restrictions:</strong> Anyone convicted of illegally digging orchids cannot join or renew membership.</p>
+        <p><strong>5. Rescuing or relocating orchids:</strong> Wild orchids must not be moved without proper permission. For non–Schedule 8 species, landowner permission is usually sufficient. Members should consult the Conservation Officer if unsure.</p>
+        <p><strong>6. Collecting seed:</strong> Seed must not be collected without permission. For non–Schedule 8 species, landowner permission is normally required.</p>
+    </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Conservation Policy</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p><strong>Conservation Officer:</strong> Advises members, liaises with external bodies, and coordinates practical conservation work.</p>
+        <p><strong>Reducing pressure on wild populations:</strong> The HOS encourages propagation from legally obtained material and exchange of surplus propagated plants.</p>
+        <p><strong>Legal framework:</strong> Collecting wild orchid seed without permission is an offence under the Wildlife and Countryside Act 1981 (or Nature Conservation Act 2004 in Scotland). Schedule 8 species require permits from Natural England.</p>
+        <p><strong>Relocation of threatened orchids:</strong> The Society supports relocation when sites are under threat. Members should notify the Conservation Officer and must not relocate plants without permission.</p>
+        <p><strong>Re-introduction projects:</strong> The HOS supports re-introducing native orchids to suitable sites. Members should consult the Conservation Officer before starting any project.</p>
+        <p><strong>Compliance:</strong> The Society opposes any activity that breaches plant legislation. Wild-collected orchids must not be traded or exhibited.</p>
+        <p><strong>Seed bank donations:</strong> Donations must include permission documents or a statement confirming the seed was collected from the sender’s own property.</p>
+    </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Examples of Conservation Work</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p><strong>Introduction of common native orchids:</strong> Early projects included raising orchids for protected sites such as Dudley Zoo.</p>
+        <p><strong>Cypripedium calceolus:</strong> Members raised seedlings with the Sainsbury Orchid Project at Kew for re-introduction to northern habitats.</p>
+        <p><strong>Relocation of threatened plants:</strong> Thousands of orchids have been relocated from threatened sites.</p>
+
+        <h3>Seed-raising projects</h3>
+        <p><strong>Metlesic’s barlia:</strong> Partner: GOC (Canary Islands). Permit: Government of the Canary Islands.</p>
+        <p><strong>Military orchid:</strong> Partner: BBOWT. Permit: Natural England. Planted out in 2020.</p>
+        <p><strong>Man orchid:</strong> Partner: Warwickshire Wildlife Trust. Permit: Natural England. Planted out in 2020.</p>
+        <p><strong>Green-winged orchid:</strong> Partner: Northumberland Wildlife Trust. Planting expected July 2022.</p>
+    </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Roadside Verges</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>Roadside verges now represent nearly half of Britain’s remaining unimproved grassland and support important orchid populations, including:</p>
+        <ul>
+            <li>Pyramidal Orchid</li>
+            <li>Bee Orchid</li>
+            <li>Northern Marsh-orchid</li>
+            <li>Southern Marsh-orchid</li>
+        </ul>
+        <p>Guidance on verge management is available in <em>Verge Maintenance and Orchids</em>.</p>
+    </div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Schedule 8 Orchids</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>Collection of seed or samples from these species requires permits from Natural England:</p>
+        <ul>
+            <li>Cephalanthera rubra — Red Helleborine</li>
+            <li>Cypripedium calceolus — Lady’s Slipper Orchid</li>
+            <li>Dactylorhiza lapponica — Lapland Marsh Orchid</li>
+            <li>Epipactis youngiana — Young’s Helleborine</li>
+            <li>Epipogium aphyllum — Ghost Orchid</li>
+            <li>Himantoglossum hircinum — Lizard Orchid</li>
+            <li>Liparis loeselii — Fen Orchid</li>
+            <li>Ophrys fuciflora — Late Spider Orchid</li>
+            <li>Ophrys sphegodes — Early Spider Orchid</li>
+            <li>Orchis militaris — Military Orchid</li>
+            <li>Orchis simia — Monkey Orchid</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+    <div class="section-header">
+        <h2>Red List of Threatened Orchids</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <h3>Extinct</h3>
+        <ul>
+            <li>Spiranthes aestivalis — Summer Lady’s Tresses</li>
+        </ul>
+
+        <h3>Critically Endangered</h3>
+        <ul>
+            <li>Cephalanthera rubra — Red Helleborine</li>
+            <li>Cypripedium calceolus — Lady’s Slipper Orchid</li>
+            <li>Epipogium aphyllum — Ghost Orchid</li>
+        </ul>
+
+        <h3>Endangered</h3>
+        <ul>
+            <li>Epipactis sancta — Lindisfarne Helleborine</li>
+            <li>Liparis loeselii — Fen Orchid</li>
+            <li>Neotinea ustulata — Burnt Orchid</li>
+            <li>Orchis anthropophora — Man Orchid</li>
+            <li>Orchis purpurea — Lady Orchid</li>
+        </ul>
+
+        <h3>Vulnerable</h3>
+        <ul>
+            <li>Cephalanthera damasonium — White Helleborine</li>
+            <li>Cephalanthera longifolia — Sword-leaved Helleborine</li>
+            <li>Corallorhiza trifida — Coralroot Orchid</li>
+            <li>Dactylorhiza ebudensis — Hebridean Marsh Orchid</li>
+            <li>Dactylorhiza viridis — Frog Orchid</li>
+            <li>Herminium monorchis — Musk Orchid</li>
+            <li>Ophrys fuciflora — Late Spider Orchid</li>
+            <li>Ophrys insectifera — Fly Orchid</li>
+            <li>Orchis militaris — Military Orchid</li>
+            <li>Orchis simia — Monkey Orchid</li>
+            <li>Platanthera bifolia — Lesser Butterfly Orchid</li>
+            <li>Pseudorchis albida — Small White Orchid</li>
+        </ul>
+
+        <h3>Near Threatened</h3>
+        <ul>
+            <li>Anacamptis morio — Green-winged Orchid</li>
+            <li>Himantoglossum hircinum — Lizard Orchid</li>
+            <li>Platanthera chlorantha — Greater Butterfly Orchid</li>
+            <li>Spiranthes spiralis — Autumn Lady’s Tresses</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
