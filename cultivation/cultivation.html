@@ -1,116 +1,291 @@
- :root {
-  --green: #000;
-  --green-light: #f2f2f2;
-  --text: #000;
-  --muted: #444;
-  --bg: #fafafa;
-  --radius: 12px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOS Cultivation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-logo">Hardy Orchid Society</div>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../cultivation/cultivation.html" class="active">Cultivation</a>
+      <a href="../events/events.html">Events</a>
+      <a href="../membership/membership.html">Membership</a>
+    </nav>
+  </div>
+</header>
 
-header {
-  padding: 3rem 1.5rem;
-  text-align: center;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
+<main class="page page--fieldtrips">
+  <section class="page-hero">
+    <h1 class="page-title">Cultivation</h1>
+    <p class="page-intro">
+      Practical guidance, seed resources, and propagation methods for hardy orchids, presented in an accessible, step‑by‑step format.
+    </p>
+  </section>
 
-header h1 {
-  margin: 0;
-  font-size: 2.4rem;
-  color: var(--text);
-  font-weight: 700;
-}
+  <section class="accordion">
 
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
+    <!-- Seed Bank & Member Resources -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Seed Bank & Member Resources</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          The Hardy Orchid Society maintains a Seed Bank and a range of consumables available exclusively to members.
+        </p>
+        <ul>
+          <li><strong>Seed Bank List:</strong> available to members only.</li>
+          <li><strong>Consumable items:</strong> supplies for orchid propagation.</li>
+          <li>Contact details for the Seed Bank Manager are published in <em>JHOS</em>.</li>
+        </ul>
+      </div>
+    </article>
 
-h2 {
-  margin-top: 3rem;
-  color: var(--text);
-  font-size: 1.8rem;
-}
+    <!-- Seed Sowing Workshops -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Seed Sowing Workshops</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          One‑day workshops covering seed sowing and aftercare for both summer‑green and winter‑green orchids.
+        </p>
+        <p><strong>Tutor:</strong> John Haggar, renowned for his skill in hardy orchid seed propagation.</p>
+        <p>
+          <strong>2026 Workshop</strong><br>
+          Sunday 23 August 2026, 9:30am–4:00pm<br>
+          Hagbourne Village Hall, East Hagbourne, Didcot, Oxfordshire OX11 9LR<br>
+          <strong>Status:</strong> Fully booked
+        </p>
+        <p><strong>Note:</strong> Only current members can take part.</p>
+      </div>
+    </article>
 
-.notice {
-  background: var(--green-light);
-  border-left: 4px solid var(--text);
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius);
-  margin: 2rem 0;
-}
+    <!-- Symbiotic Seed Germination Fungi -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Symbiotic Seed Germination Fungi</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          Hardy orchids depend on symbiotic fungi to germinate. The Society maintains three fungal isolates that have
+          proven effective for a wide range of terrestrial orchids.
+        </p>
+        <p>
+          Fungi are grown on agar enriched with Vitamin B extract and rolled oats. Once inoculated, the mycelium spreads
+          and is added to sterilised seed to initiate germination.
+        </p>
 
-details {
-  background: white;
-  border-radius: var(--radius);
-  border: 1px solid #eee;
-  margin: 1rem 0;
-  overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
+        <h3>B1 – Vigorous all‑rounder</h3>
+        <p>
+          Ideal for beginners and often outcompetes contaminants. Effective for many
+          <em>Anacamptis</em>, <em>Dactylorhiza</em>, <em>Goodyera</em>, <em>Gymnadenia</em>,
+          <em>Habenaria</em>, <em>Orchis</em>, <em>Platanthera</em>, <em>Pterostylis</em>,
+          <em>Serapias</em> and <em>Spiranthes</em> species.
+        </p>
 
-summary {
-  cursor: pointer;
-  padding: 1.2rem 1.5rem;
-  list-style: none;
-  font-size: 1.2rem;
-  color: var(--text);
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
+        <h3>A36 – Fast‑growing fungus</h3>
+        <p>
+          Another strong all‑rounder, effective for <em>Gymnadenia</em>, <em>Anacamptis</em>,
+          <em>Dactylorhiza</em> and <em>Spiranthes</em>.
+        </p>
 
-summary::-webkit-details-marker {
-  display: none;
-}
+        <h3>Q414 – Slow‑growing fungus</h3>
+        <p>
+          Less vigorous but successful with <em>Serapias</em>, <em>Dactylorhiza</em>,
+          <em>Spiranthes</em> and most <em>Anacamptis</em> (excluding <em>A. pyramidalis</em>).
+        </p>
 
-.chevron {
-  width: 1.2rem;
-  height: 1.2rem;
-  flex-shrink: 0;
-  transition: transform 0.25s ease;
-  color: var(--text);
-}
+        <p>
+          Members who achieve germination with additional species are encouraged to inform the Seed Bank Manager so
+          records can be updated.
+        </p>
+      </div>
+    </article>
 
-details[open] .chevron {
-  transform: rotate(180deg);
-}
+    <!-- Donating Orchid Seed -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Donating Orchid Seed</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          The Seed Bank Manager is always pleased to receive donations of good‑quality dry seed, provided it is obtained
+          legally.
+        </p>
 
-details .content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1.5rem;
-  transition: max-height 0.35s ease, padding 0.35s ease;
-}
+        <h3>Legal considerations</h3>
+        <ul>
+          <li>Seed from plants grown in members’ collections is preferred.</li>
+          <li>Wild‑collected seed must have written permission from the landowner.</li>
+          <li>Schedule 8 species require permission from the relevant statutory agency.</li>
+        </ul>
 
-details[open] .content {
-  max-height: 2000px;
-  padding: 1rem 1.5rem 1.5rem;
-}
+        <h3>Harvesting</h3>
+        <p>
+          Harvest on a dry day when capsules are at, or just before, splitting. Place capsules in paper bags. Immature
+          capsules cannot be stored in the Seed Bank.
+        </p>
 
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
+        <h3>Cleaning</h3>
+        <p>
+          Separate seed from capsule debris using a tea strainer and place the cleaned seed in a paper envelope.
+        </p>
 
-a {
-  color: var(--text);
-  text-decoration: none;
-}
+        <h3>Drying</h3>
+        <p>
+          Drying is essential for long‑term storage. Use oven‑dried rice in an airtight jar (e.g. Kilner jar) and leave
+          seed in the jar for 2–3 days at room temperature before placing it in a sealed glass container for postage.
+        </p>
 
-a:hover {
-  text-decoration: underline;
-}
+        <h3>Sending seed</h3>
+        <p>
+          Avoid franking machines, which crush seed. Use a crush‑proof container (such as a CD box) inside a padded
+          envelope.
+        </p>
+
+        <h3>Identification</h3>
+        <p>
+          Include good‑quality photographs of the flower and whole plant in bloom. Digital images can be emailed; prints
+          and transparencies can be scanned.
+        </p>
+      </div>
+    </article>
+
+    <!-- Propagation from Seed -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Propagation from Seed</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          Orchid seeds are extremely small and contain little stored energy. In nature, they rely on infection by a
+          beneficial fungus that supplies carbohydrate and other nutrients.
+        </p>
+        <p>
+          To encourage more people to propagate hardy orchids, the Society maintains both a Seed Bank and a Fungus Bank
+          for members, offering surplus seed and proven symbiotic fungi.
+        </p>
+
+        <h3>Home seed sowing</h3>
+        <p>
+          Many members sow seed in “home laboratories” such as kitchens or spare rooms, using improvised sterile
+          workspaces.
+        </p>
+
+        <h3>Key requirements</h3>
+        <ul>
+          <li>Sterile working area (glove box or modified fish tank; laminar flow cabinet if available).</li>
+          <li>Pressure cooker to sterilise media and equipment.</li>
+          <li>Agar‑based media, with or without fungi.</li>
+          <li>Jars, Petri dishes, tools, chemicals and agar.</li>
+        </ul>
+
+        <h3>Basic method</h3>
+        <ol>
+          <li>Soak seed in sugar solution for 4 days.</li>
+          <li>Wash three times in sterile water.</li>
+          <li>Sterilise in thin bleach (1 part bleach to 9 parts water) for 10–30 minutes.</li>
+          <li>Wash three times in sterile water.</li>
+          <li>Sow onto the germination medium.</li>
+          <li>Add fungus if using symbiotic growth.</li>
+          <li>Seal the vessel and leave to germinate at room temperature in the dark.</li>
+          <li>Replate protocorms onto fresh sterile medium when large enough to handle.</li>
+        </ol>
+      </div>
+    </article>
+
+    <!-- Growing Hardy Orchids -->
+    <article class="accordion-item">
+      <button class="accordion-header">
+        <span class="accordion-title">Growing Hardy Orchids</span>
+        <span class="accordion-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/>
+          </svg>
+        </span>
+      </button>
+      <div class="accordion-panel">
+        <p>
+          The Society brings together experts on propagation and cultivation of hardy and near‑hardy orchids. By sharing
+          this knowledge, pressures on wild populations can be reduced and more people can enjoy growing these plants.
+        </p>
+
+        <h3>Orchids for the garden</h3>
+        <p>
+          Several species are suitable for rockeries and borders in British gardens, particularly
+          <em>Dactylorhiza</em> (Marsh Orchids), <em>Epipactis</em> (Helleborines) and <em>Orchis</em>.
+          They prefer soil that is not too heavy and does not dry out in summer.
+        </p>
+        <p>
+          Raised beds, large pots or patio tubs allow closer attention: use open compost, keep them moist, feed with
+          weak fertiliser and provide shade on hot days. Their flower spikes in June and July are spectacular.
+        </p>
+
+        <h3>Cold frame / cold greenhouse</h3>
+        <p>
+          With a little protection, many more species can be grown. Winter‑green orchids from Mediterranean regions
+          benefit from a greenhouse or conservatory with a thermostatically controlled fan heater to keep compost just
+          above freezing.
+        </p>
+
+        <h3>Further information</h3>
+        <p>
+          Joining the Society, attending meetings and reading the Journal/Newsletter are the best ways to deepen your
+          cultivation knowledge. The indices show the breadth of information available, which grows with every issue.
+        </p>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<script>
+  // Simple accordion behaviour to match Field Trips interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.accordion-item');
+
+    items.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      header.addEventListener('click', () => {
+        const open = item.classList.contains('accordion-item--open');
+        items.forEach(i => i.classList.remove('accordion-item--open'));
+        if (!open) item.classList.add('accordion-item--open');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
