@@ -2,139 +2,243 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cultivation – Hardy Orchid Society</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultivation – Hardy Orchid Society</title>
 <link rel="stylesheet" href="../style.css">
-</head>
 
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Sticky top nav */
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: #333;
+        padding: 12px 0;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    p, li {
+        line-height: 1.65;
+        font-size: 1.05rem;
+    }
+
+    /* Accordion */
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .chevron {
+        width: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .section-content {
+        display: none;
+        padding: 10px 0 20px 0;
+        line-height: 1.6;
+    }
+
+    .open .section-content {
+        display: block;
+    }
+
+    .open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Buttons (homepage style) */
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 25px 0;
+    }
+
+    .page-button {
+        display: inline-block;
+        background: #2F855A;
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.05rem;
+        transition: background 0.3s ease;
+        min-width: 220px;
+        text-align: center;
+    }
+
+    .page-button:hover {
+        background: #276749;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".section-header").forEach(header => {
+            header.addEventListener("click", () => {
+                header.parentElement.classList.toggle("open");
+            });
+        });
+    });
+</script>
+
+</head>
 <body>
 
-<!-- HEADER (IDENTICAL TO INDEX PAGE) -->
-<header class="site-header">
-  <div class="site-header-inner">
-    <div class="site-logo">Hardy Orchid Society</div>
-
-    <nav class="site-nav">
-      <a href="../index.html">Home</a>
-      <a href="../cultivation/cultivation.html" class="active">Cultivation</a>
-      <a href="../events/events.html">Events</a>
-      <a href="../membership/membership.html">Membership</a>
-    </nav>
-
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span class="nav-toggle-icon"></span>
-    </button>
-  </div>
-</header>
-
-<!-- MOBILE NAV (INDEX PAGE STYLE) -->
-<nav class="mobile-nav">
-  <a href="../index.html">Home</a>
-  <a href="../cultivation/cultivation.html" class="active">Cultivation</a>
-  <a href="../events/events.html">Events</a>
-  <a href="../membership/membership.html">Membership</a>
+<nav>
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../cultivation/cultivation.html" class="active">Cultivation</a></li>
+        <li><a href="../fieldtrips/fieldtrips.html">Field Trips</a></li>
+        <li><a href="../membership/membership.html">Membership</a></li>
+        <li><a href="../conservation/conservation.html">Conservation</a></li>
+        <li><a href="../discussionforum/discussionforum.html">Discussion Forum</a></li>
+    </ul>
 </nav>
 
-<main class="page page--fieldtrips">
+<div class="container">
 
-  <!-- HERO -->
-  <section class="page-hero">
-    <h1 class="page-title">Cultivation</h1>
-    <p class="page-intro">
-      Practical guidance, seed resources, and propagation methods for hardy orchids — rewritten and expanded in the modern Field Trips style.
-    </p>
-  </section>
+<h1>Cultivation</h1>
+<p>The Hardy Orchid Society provides practical guidance on growing hardy orchids, including seed sowing, symbiotic fungi, propagation techniques, and cultivation methods suitable for both beginners and experienced growers. This page also includes information about the Society’s Seed Bank and member resources.</p>
 
-  <!-- BUTTONS (INDEX STYLE) -->
-  <div class="button-row">
+<!-- BUTTONS -->
+<div class="button-row">
     <a class="page-button" href="seedbanklist.html">Seed Bank List</a>
     <a class="page-button" href="consumables.html">Consumable Items</a>
     <a class="page-button" href="mailto:seedbank@hardyorchidsociety.org">Contact Seed Bank Manager</a>
-  </div>
+</div>
 
-  <!-- ACCORDION -->
-  <section class="accordion">
+<!-- ACCORDION SECTIONS -->
 
-    <!-- 1. Seed Bank -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Seed Bank & Member Resources</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
-        <p>The Hardy Orchid Society maintains a Seed Bank and consumables exclusively for members.</p>
+<!-- 1. Seed Bank -->
+<div class="section">
+    <div class="section-header">
+        <h2>Seed Bank & Member Resources</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>The Hardy Orchid Society maintains a Seed Bank and a small range of consumable items to support members who propagate hardy orchids.</p>
         <ul>
-          <li>Seed Bank List — members only</li>
-          <li>Consumable items for propagation</li>
-          <li>Seed Bank Manager contact details in JHOS</li>
+            <li>Curated list of available seed (members only)</li>
+            <li>Consumable items used in propagation</li>
+            <li>Seed Bank Manager contact details published in JHOS</li>
         </ul>
-      </div>
-    </article>
+        <p>The Seed Bank accepts legally obtained, high‑quality dry seed from members. Guidance on donating seed is provided below.</p>
+    </div>
+</div>
 
-    <!-- 2. Workshops -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Seed Sowing Workshops</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
-        <p>One‑day workshops covering seed sowing and aftercare for summer‑green and winter‑green orchids.</p>
+<!-- 2. Workshops -->
+<div class="section">
+    <div class="section-header">
+        <h2>Seed Sowing Workshops</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>The Society runs practical workshops covering seed sowing and aftercare for both summer‑green and winter‑green orchids.</p>
         <p><strong>Tutor:</strong> John Haggar</p>
-        <p>
-          <strong>2026 Workshop</strong><br>
-          Sunday 23 August 2026<br>
-          9:30am–4:00pm<br>
-          Hagbourne Village Hall, East Hagbourne, Didcot<br>
-          <strong>Status:</strong> Fully booked
-        </p>
-        <p>Open to current members only.</p>
-      </div>
-    </article>
+        <p><strong>2026 Workshop:</strong><br>
+        Sunday 23 August 2026<br>
+        9:30am–4:00pm<br>
+        Hagbourne Village Hall, East Hagbourne, Didcot<br>
+        <strong>Status:</strong> Fully booked</p>
+        <p>Workshops are open to current members only.</p>
+    </div>
+</div>
 
-    <!-- 3. Fungi -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Symbiotic Seed Germination Fungi</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
-        <p>Hardy orchids rely on symbiotic fungi to germinate. The Society maintains three proven isolates.</p>
+<!-- 3. Fungi -->
+<div class="section">
+    <div class="section-header">
+        <h2>Symbiotic Seed Germination Fungi</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>Hardy orchids rely on specific fungi to germinate. The Society maintains three proven isolates that members can use for symbiotic seed germination.</p>
 
         <h3>B1 – Vigorous all‑rounder</h3>
-        <p>Ideal for beginners; effective for many <em>Anacamptis</em>, <em>Dactylorhiza</em>, <em>Goodyera</em>, <em>Gymnadenia</em>, <em>Orchis</em>, <em>Platanthera</em>, <em>Pterostylis</em>, <em>Serapias</em>, <em>Spiranthes</em>.</p>
+        <p>Effective for many <em>Anacamptis</em>, <em>Dactylorhiza</em>, <em>Goodyera</em>, <em>Gymnadenia</em>, <em>Orchis</em>, <em>Platanthera</em>, <em>Pterostylis</em>, <em>Serapias</em>, <em>Spiranthes</em>. Ideal for beginners.</p>
 
         <h3>A36 – Fast‑growing</h3>
-        <p>Effective for <em>Gymnadenia</em>, <em>Anacamptis</em>, <em>Dactylorhiza</em>, <em>Spiranthes</em>.</p>
+        <p>Suitable for <em>Gymnadenia</em>, <em>Anacamptis</em>, <em>Dactylorhiza</em>, <em>Spiranthes</em>.</p>
 
         <h3>Q414 – Slow‑growing</h3>
-        <p>Effective for <em>Serapias</em>, <em>Dactylorhiza</em>, <em>Spiranthes</em>, most <em>Anacamptis</em> except <em>A. pyramidalis</em>.</p>
+        <p>Effective for <em>Serapias</em>, <em>Dactylorhiza</em>, <em>Spiranthes</em>, and most <em>Anacamptis</em> except <em>A. pyramidalis</em>.</p>
 
         <p>Members are encouraged to report additional successes.</p>
-      </div>
-    </article>
+    </div>
+</div>
 
-    <!-- 4. Donating Seed -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Donating Orchid Seed</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
-        <p>The Seed Bank welcomes legally obtained, high‑quality dry seed.</p>
+<!-- 4. Donating Seed -->
+<div class="section">
+    <div class="section-header">
+        <h2>Donating Orchid Seed</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <p>The Seed Bank welcomes legally obtained, high‑quality dry seed from members.</p>
 
         <h3>Legal requirements</h3>
         <ul>
-          <li>Seed from cultivated plants preferred</li>
-          <li>Wild seed requires landowner permission</li>
-          <li>Schedule 8 species require statutory permission</li>
+            <li>Seed from cultivated plants preferred</li>
+            <li>Wild seed requires landowner permission</li>
+            <li>Schedule 8 species require statutory permission</li>
         </ul>
 
         <h3>Harvesting</h3>
@@ -151,18 +255,18 @@
 
         <h3>Identification</h3>
         <p>Include photos of flower and whole plant.</p>
-      </div>
-    </article>
+    </div>
+</div>
 
-    <!-- 5. Propagation -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Propagation from Seed</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
+<!-- 5. Propagation -->
+<div class="section">
+    <div class="section-header">
+        <h2>Propagation from Seed</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
         <p>Orchid seeds are tiny and rely on fungal infection for nutrients. Controlled sowing increases success.</p>
 
         <h3>Home seed sowing</h3>
@@ -170,35 +274,35 @@
 
         <h3>Requirements</h3>
         <ul>
-          <li>Sterile workspace</li>
-          <li>Pressure cooker</li>
-          <li>Agar‑based media</li>
-          <li>Jars, Petri dishes, tools</li>
+            <li>Sterile workspace</li>
+            <li>Pressure cooker</li>
+            <li>Agar‑based media</li>
+            <li>Jars, Petri dishes, tools</li>
         </ul>
 
         <h3>Basic method</h3>
         <ol>
-          <li>Soak seed in sugar solution 4 days</li>
-          <li>Wash 3× in sterile water</li>
-          <li>Sterilise in dilute bleach 10–30 mins</li>
-          <li>Wash 3× again</li>
-          <li>Sow onto medium</li>
-          <li>Add fungus if using symbiotic method</li>
-          <li>Germinate in dark at room temperature</li>
-          <li>Replate protocorms when large enough</li>
+            <li>Soak seed in sugar solution 4 days</li>
+            <li>Wash 3× in sterile water</li>
+            <li>Sterilise in dilute bleach 10–30 mins</li>
+            <li>Wash 3× again</li>
+            <li>Sow onto medium</li>
+            <li>Add fungus if using symbiotic method</li>
+            <li>Germinate in dark at room temperature</li>
+            <li>Replate protocorms when large enough</li>
         </ol>
-      </div>
-    </article>
+    </div>
+</div>
 
-    <!-- 6. Growing Hardy Orchids -->
-    <article class="accordion-item">
-      <button class="accordion-header">
-        <span class="accordion-title">Growing Hardy Orchids</span>
-        <span class="accordion-icon">
-          <svg viewBox="0 0 24 24"><path d="M8 5l8 7-8 7" stroke="black" fill="none" stroke-width="2"/></svg>
-        </span>
-      </button>
-      <div class="accordion-panel">
+<!-- 6. Growing Hardy Orchids -->
+<div class="section">
+    <div class="section-header">
+        <h2>Growing Hardy Orchids</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
         <p>The Society shares expert knowledge to reduce pressure on wild populations.</p>
 
         <h3>Orchids for the garden</h3>
@@ -209,29 +313,10 @@
 
         <h3>Further information</h3>
         <p>Meetings and the Journal/Newsletter provide extensive cultivation guidance.</p>
-      </div>
-    </article>
+    </div>
+</div>
 
-  </section>
-</main>
-
-<!-- JS (same as index page) -->
-<script>
-document.querySelector('.nav-toggle').addEventListener('click', () => {
-  document.querySelector('.mobile-nav').classList.toggle('open');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.accordion-item');
-  items.forEach(item => {
-    item.querySelector('.accordion-header').addEventListener('click', () => {
-      const open = item.classList.contains('accordion-item--open');
-      items.forEach(i => i.classList.remove('accordion-item--open'));
-      if (!open) item.classList.add('accordion-item--open');
-    });
-  });
-});
-</script>
-
+</div>
 </body>
 </html>
+
