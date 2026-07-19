@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discussion Forum - Hardy Orchid Society</title>
+    <link rel="stylesheet" href="../style.css">
     <style>
         * {
             margin: 0;
@@ -30,34 +31,6 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        nav {
-            background-color: #fff;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #000;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-        
-        nav a {
-            color: #000;
-            text-decoration: none;
-            font-weight: 500;
-            font-family: 'Aptos', 'Calibri', sans-serif;
-        }
-        
-        nav a:hover {
-            text-decoration: underline;
         }
         
         .container {
@@ -132,16 +105,11 @@
     </style>
 </head>
 <body>
+    <div id="site-header"></div>
+
     <header>
         <h1>Discussion Forum</h1>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#activities">Activities</a></li>
-        </ul>
-    </nav>
     
     <div class="container">
         <section id="intro">
@@ -172,7 +140,7 @@
         <section id="getinvolved">
             <h2>Participate in Our Community</h2>
             <p>Forum access is available to all members. Post your questions, share your experiences, and connect with fellow orchid enthusiasts from around the world. Join the discussion today!</p>
-            <a href="index.html#getinvolved" class="cta-button">Learn How to Join</a>
+            <a href="/Hardy-Orchid-Society/index.html#getinvolved" class="cta-button">Learn How to Join</a>
         </section>
     </div>
     
@@ -180,5 +148,7 @@
         <p>&copy; 2026 Hardy Orchid Society. All rights reserved.</p>
         <p>Dedicated to the conservation and appreciation of hardy orchids worldwide.</p>
     </footer>
+
+    <script src="/Hardy-Orchid-Society/shared/header.js"></script>
 </body>
 </html>
