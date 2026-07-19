@@ -14,31 +14,6 @@
         padding: 0;
     }
 
-    /* Sticky top nav */
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        background: #333;
-        padding: 12px 0;
-    }
-
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 28px;
-    }
-
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
     .container {
         max-width: 900px;
         margin: 0 auto;
@@ -135,16 +110,7 @@
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../cultivation/cultivation.html" class="active">Cultivation</a></li>
-        <li><a href="../fieldtrips/fieldtrips.html">Field Trips</a></li>
-        <li><a href="../membership/membership.html">Membership</a></li>
-        <li><a href="../conservation/conservation.html">Conservation</a></li>
-        <li><a href="../discussionforum/discussionforum.html">Discussion Forum</a></li>
-    </ul>
-</nav>
+<div id="site-header"></div>
 
 <div class="container">
 
@@ -153,8 +119,8 @@
 
 <!-- BUTTONS -->
 <div class="button-row">
-    <a class="page-button" href="seedbanklist.html">Seed Bank List</a>
-    <a class="page-button" href="consumables.html">Consumable Items</a>
+    <a class="page-button" href="/Hardy-Orchid-Society/cultivation/seedbanklist.html">Seed Bank List</a>
+    <a class="page-button" href="/Hardy-Orchid-Society/cultivation/consumables.html">Consumable Items</a>
     <a class="page-button" href="mailto:seedbank@hardyorchidsociety.org">Contact Seed Bank Manager</a>
 </div>
 
@@ -317,6 +283,9 @@
 </div>
 
 </div>
+
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
 </body>
 </html>
+    
 
