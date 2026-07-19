@@ -55,20 +55,6 @@
     .open .chevron {
         transform: rotate(180deg);
     }
-
-    /* Mobile nav */
-    .mobile-nav {
-        display: none;
-    }
-
-    @media (max-width: 768px) {
-        .mobile-nav {
-            display: block;
-            background: #333;
-            color: #fff;
-            padding: 10px;
-        }
-    }
 </style>
 
 <script>
@@ -84,9 +70,7 @@
 </head>
 <body>
 
-<div class="mobile-nav">
-    <strong>Hardy Orchid Society</strong>
-</div>
+<div id="site-header"></div>
 
 <div class="container">
 
@@ -254,5 +238,7 @@
 </div>
 
 </div>
+
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
 </body>
 </html>
