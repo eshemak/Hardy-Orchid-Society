@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title> Benefits of being a member of the Hardy Orchid Society</title>
+  <title>Benefits of being a member of the Hardy Orchid Society</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../style.css">
 
   <!-- Aptos font -->
   <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,80 +27,7 @@
       line-height: 1.6;
     }
 
-    /* NAVIGATION */
-    .nav-container {
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 0.8rem 1.2rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #000;
-    }
-
-    .nav-toggle-label {
-      display: none;
-      cursor: pointer;
-    }
-
-    .burger {
-      width: 28px;
-      height: 28px;
-      stroke: #000;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-    }
-
-    #nav-toggle {
-      display: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 0.8rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #000;
-      font-size: 1rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    @media (max-width: 760px) {
-      .nav-toggle-label {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        padding-top: 1rem;
-      }
-
-      #nav-toggle:checked + .nav-links {
-        display: flex;
-      }
-    }
-
-    /* HEADER */
+    /* PAGE HERO HEADER (kept) */
     header {
       padding: 3rem 1.5rem;
       text-align: center;
@@ -147,7 +76,6 @@
       font-size: 1.3rem;
     }
 
-    /* BUTTONS */
     .join-btn-orange {
       display: inline-block;
       margin-top: 2rem;
@@ -176,30 +104,7 @@
 
 <body>
 
-<!-- NAVIGATION -->
-<nav class="nav-container">
-  <div class="nav-header">
-    <span class="nav-title">Hardy Orchid Society</span>
-
-    <label for="nav-toggle" class="nav-toggle-label">
-      <svg viewBox="0 0 24 24" class="burger">
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
-      </svg>
-    </label>
-  </div>
-
-  <input type="checkbox" id="nav-toggle">
-
-  <div class="nav-links">
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/">Home</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/fieldtrips/fieldtrips.html">Field Trips</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/cultivation/cultivation.html">Cultivation</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/seedbank/seedbank.html">Seed Bank</a>
-    <a href="https://eshemak.github.io/Hardy-Orchid-Society/membership/membership.html">Join</a>
-  </div>
-</nav>
+<div id="site-header"></div>
 
 <header>
   <h1>Join the Hardy Orchid Society</h1>
@@ -261,9 +166,8 @@
     </p>
   </div>
 
-  <!-- BOTTOM ORANGE BUTTON -->
   <div style="text-align:center; margin-top:3rem;">
-    <a class="join-btn-orange" href="membership/join.html">
+    <a class="join-btn-orange" href="/Hardy-Orchid-Society/membership/join.html">
       Join the Hardy Orchid Society
     </a>
   </div>
@@ -274,6 +178,6 @@
   © Hardy Orchid Society — GitHub Pages Edition
 </footer>
 
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
 </body>
 </html>
-
