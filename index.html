@@ -15,31 +15,6 @@
         background: #fff;
     }
 
-    /* Sticky top navigation */
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        background: #333;
-        padding: 12px 0;
-    }
-
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 28px;
-    }
-
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
     .container {
         max-width: 900px;
         margin: 0 auto;
@@ -73,7 +48,6 @@
         margin-top: 10px;
     }
 
-    /* Green centred join button */
     .join-button-wrapper {
         text-align: center;
         margin: 25px 0;
@@ -81,7 +55,7 @@
 
     .join-button {
         display: inline-block;
-        background: #C2410C;   /* orange */
+        background: #C2410C;
         color: #fff;
         padding: 14px 26px;
         border-radius: 6px;
@@ -95,7 +69,6 @@
         background: #276749;
     }
 
-    /* Explore More buttons */
     .explore-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -137,16 +110,7 @@
 
 <body>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cultivation/cultivation.html">Cultivation</a></li>
-        <li><a href="fieldtrips/fieldtrips.html">Field Trips</a></li>
-        <li><a href="membership/membership.html">Membership</a></li>
-        <li><a href="conservation/conservation.html">Conservation</a></li>
-        <li><a href="discussionforum/discussionforum.html">Discussion Forum</a></li>
-    </ul>
-</nav>
+<div id="site-header"></div>
 
 <div class="container">
 
@@ -175,7 +139,7 @@ We support members through practical guidance, field activities, conservation pr
     </p>
 
     <div class="join-button-wrapper">
-        <a class="join-button" href="membership/join.html">Join the Hardy Orchid Society</a>
+        <a class="join-button" href="/Hardy-Orchid-Society/membership/join.html">Join the Hardy Orchid Society</a>
     </div>
 </div>
 
@@ -185,22 +149,22 @@ We support members through practical guidance, field activities, conservation pr
     <div class="explore-buttons">
 
         <div class="explore-item">
-            <a class="explore-button" href="cultivation/cultivation.html">Cultivation Guides</a>
+            <a class="explore-button" href="/Hardy-Orchid-Society/cultivation/cultivation.html">Cultivation Guides</a>
             <p class="explore-text">Practical advice for growing hardy orchids successfully.</p>
         </div>
 
         <div class="explore-item">
-            <a class="explore-button" href="fieldtrips/fieldtrips.html">Field Trips</a>
+            <a class="explore-button" href="/Hardy-Orchid-Society/fieldtrips/fieldtrips.html">Field Trips</a>
             <p class="explore-text">Join us in the wild to see orchids in their natural habitats.</p>
         </div>
 
         <div class="explore-item">
-            <a class="explore-button" href="conservation/conservation.html">Conservation Work</a>
+            <a class="explore-button" href="/Hardy-Orchid-Society/conservation/conservation.html">Conservation Work</a>
             <p class="explore-text">Learn how we protect native orchid species across the UK.</p>
         </div>
 
         <div class="explore-item">
-            <a class="explore-button" href="discussionforum/discussionforum.html">Discussion Forum</a>
+            <a class="explore-button" href="/Hardy-Orchid-Society/discussionforum/discussionforum.html">Discussion Forum</a>
             <p class="explore-text">Share knowledge, ask questions, and connect with members.</p>
         </div>
 
@@ -208,5 +172,7 @@ We support members through practical guidance, field activities, conservation pr
 </div>
 
 </div>
+
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
 </body>
 </html>
