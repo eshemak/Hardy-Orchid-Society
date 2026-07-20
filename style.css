@@ -1,8 +1,25 @@
 /* ===========================
-   FIXED HEADER (always visible)
+   GLOBAL
 =========================== */
+
+body {
+    margin: 0;
+    font-family: "Aptos", sans-serif;
+    padding-top: 110px;   /* Prevents content hiding under fixed header */
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===========================
+   FIXED HEADER
+=========================== */
+
 .site-header {
-    position: fixed;      /* Always stays at top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -11,16 +28,10 @@
     border-bottom: 1px solid #ddd;
 }
 
-/* Prevent content hiding under header */
-body {
-    padding-top: 80px;    /* Adjust if header height changes */
-    margin: 0;
-    font-family: "Aptos", sans-serif;
-}
-
 /* ===========================
    NAVBAR
 =========================== */
+
 .navbar {
     max-width: 1100px;
     margin: 0 auto;
@@ -35,13 +46,11 @@ body {
     display: flex;
     align-items: center;
     gap: .5rem;
-    text-decoration: none;
 }
 
 .site-logo {
     height: 52px;
     width: auto;
-    display: block;
     object-fit: contain;
 }
 
@@ -53,8 +62,32 @@ body {
 }
 
 /* ===========================
-   MOBILE MENU TOGGLE
+   NAV LINKS
 =========================== */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: #111;
+}
+
+.nav-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
 .nav-toggle {
     display: none;
     background: transparent;
@@ -71,32 +104,6 @@ body {
     margin: 5px 0;
 }
 
-/* ===========================
-   NAV LINKS
-=========================== */
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #111;
-    font-weight: 600;
-}
-
-.nav-links a.active {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-/* ===========================
-   MOBILE RESPONSIVE
-=========================== */
 @media (max-width: 760px) {
 
     .site-logo {
@@ -131,6 +138,27 @@ body {
     .navbar {
         position: relative;
     }
+}
+
+/* ===========================
+   BUTTONS (GLOBAL)
+=========================== */
+
+.page-button {
+    display: inline-block;
+    background: #2F855A;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+.page-button:hover {
+    background: #276749;
 }
 
 /* ===========================
@@ -172,7 +200,6 @@ body {
 }
 
 .footer-section a {
-    text-decoration: none;
     color: #2F855A;
     font-weight: 600;
 }
@@ -181,14 +208,14 @@ body {
     text-decoration: underline;
 }
 
-/* Orange Join Button */
+/* Footer Join Button — orange background, white text */
 .join-button {
     display: inline-block;
-    background: #DD6B20;
-    color: #fff;
+    background: #DD6B20;   /* orange */
+    color: #fff;           /* white text */
     padding: 12px 22px;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     font-size: 1.05rem;
     transition: background 0.3s ease;
@@ -201,20 +228,5 @@ body {
     background: #C05621;
 }
 
-/* Footer bottom */
 .footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* Mobile footer */
-@media (max-width: 760px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
+    text
