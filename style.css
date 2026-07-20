@@ -95,6 +95,93 @@ body {
 /* ===========================
    MOBILE RESPONSIVE
 =========================== */
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.site-footer {
+    background: #f7f7f7;
+    border-top: 1px solid #ddd;
+    padding: 40px 0 20px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #2F855A;
+    font-weight: 600;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Orange Join Button */
+.join-button {
+    display: inline-block;
+    background: #DD6B20;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: background 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.join-button:hover {
+    background: #C05621;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
 @media (max-width: 760px) {
 
     .site-logo {
