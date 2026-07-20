@@ -1,1 +1,209 @@
-keep
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Trips – Hardy Orchid Society</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    p {
+        line-height: 1.65;
+        font-size: 1.05rem;
+    }
+
+    /* Accordion layout */
+    .trip-section {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .trip-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 0;
+    }
+
+    .chevron {
+        width: 22px;
+        transition: transform 0.3s ease;
+    }
+
+    .trip-content {
+        display: none;
+        padding: 10px 0 20px 0;
+    }
+
+    .open .trip-content {
+        display: block;
+    }
+
+    .open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Button style (same as cultivation page) */
+    .page-button {
+        display: inline-block;
+        background: #2F855A;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .page-button:hover {
+        background: #276749;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".trip-header").forEach(header => {
+            header.addEventListener("click", () => {
+                header.parentElement.classList.toggle("open");
+            });
+        });
+    });
+</script>
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="container">
+
+<h1>Field Trips</h1>
+<p>
+    The Hardy Orchid Society organises guided field trips across the UK during the orchid flowering season.
+    These excursions offer opportunities to see native orchids in their natural habitats, learn identification skills,
+    and enjoy expert guidance from experienced members.
+</p>
+
+<!-- ===========================
+     FIELD TRIP SECTIONS
+=========================== -->
+
+<!-- Trip 1 -->
+<div class="trip-section">
+    <div class="trip-header">
+        <h2>Oxfordshire – Anacamptis & Dactylorhiza</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="trip-content">
+        <p><strong>Date:</strong> Saturday 17 May 2026</p>
+        <p><strong>Leader:</strong> John Haggar</p>
+        <p>
+            A visit to limestone grassland supporting strong populations of <em>Anacamptis morio</em>,
+            <em>Dactylorhiza fuchsii</em>, and hybrid swarms. The trip includes guidance on distinguishing
+            species and recognising natural variation.
+        </p>
+        <p><strong>Status:</strong> Fully booked</p>
+        <a class="page-button" href="#">Trip Details</a>
+    </div>
+</div>
+
+<!-- Trip 2 -->
+<div class="trip-section">
+    <div class="trip-header">
+        <h2>Dorset – Coastal Orchid Sites</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="trip-content">
+        <p><strong>Date:</strong> Sunday 1 June 2026</p>
+        <p><strong>Leader:</strong> Sarah Mitchell</p>
+        <p>
+            Explore coastal slopes and dune systems supporting <em>Ophrys</em> species, <em>Serapias</em> hybrids,
+            and early summer flowering orchids. Includes photography guidance and habitat interpretation.
+        </p>
+        <p><strong>Status:</strong> Spaces available</p>
+        <a class="page-button" href="#">Trip Details</a>
+    </div>
+</div>
+
+<!-- Trip 3 -->
+<div class="trip-section">
+    <div class="trip-header">
+        <h2>Yorkshire – Northern Marsh Orchids</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="trip-content">
+        <p><strong>Date:</strong> Saturday 14 June 2026</p>
+        <p><strong>Leader:</strong> David Brown</p>
+        <p>
+            A wetland reserve with excellent examples of <em>Dactylorhiza purpurella</em>,
+            <em>Dactylorhiza incarnata</em>, and mixed populations. Includes discussion on
+            conservation management and hydrology.
+        </p>
+        <p><strong>Status:</strong> Open for booking</p>
+        <a class="page-button" href="#">Trip Details</a>
+    </div>
+</div>
+
+<!-- Trip 4 -->
+<div class="trip-section">
+    <div class="trip-header">
+        <h2>Somerset – Late Summer Species</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="trip-content">
+        <p><strong>Date:</strong> Sunday 20 July 2026</p>
+        <p><strong>Leader:</strong> Helen Carter</p>
+        <p>
+            A late-season trip focusing on <em>Spiranthes spiralis</em> and associated chalk grassland flora.
+            Includes identification tips and discussion of seasonal variation.
+        </p>
+        <p><strong>Status:</strong> Open for booking</p>
+        <a class="page-button" href="#">Trip Details</a>
+    </div>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+
+</body>
+</html>
+
