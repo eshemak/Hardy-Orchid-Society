@@ -27,23 +27,24 @@
     }
 
     h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.4rem;
+        margin: 0 0 8px 0;
         font-weight: 600;
     }
 
     p {
-        line-height: 1.65;
+        line-height: 1.55;
         font-size: 1.05rem;
+        margin: 0;
     }
 
-    /* Section layout */
+    /* Compact section layout */
     .section-block {
         border-bottom: 1px solid #ddd;
-        padding: 25px 0;
+        padding: 18px 0;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         gap: 25px;
     }
 
@@ -54,8 +55,7 @@
     .section-button {
         flex-shrink: 0;
         display: flex;
-        align-items: flex-start;
-        padding-top: 5px;
+        align-items: center;
     }
 
     /* Green buttons */
@@ -63,14 +63,15 @@
         display: inline-block;
         background: #2F855A;
         color: #fff;
-        padding: 12px 22px;
+        padding: 10px 18px;
         border-radius: 6px;
         font-weight: 600;
         text-decoration: none;
-        font-size: 1.05rem;
+        font-size: 1rem;
         transition: background 0.3s ease;
-        min-width: 180px;
+        min-width: 160px;
         text-align: center;
+        white-space: nowrap;
     }
 
     .page-button:hover {
@@ -82,72 +83,19 @@
         display: inline-block;
         background: #DD6B20;
         color: #fff;
-        padding: 12px 22px;
+        padding: 10px 18px;
         border-radius: 6px;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
-        font-size: 1.05rem;
+        font-size: 1rem;
         transition: background 0.3s ease;
-        min-width: 180px;
+        min-width: 200px;
         text-align: center;
+        white-space: nowrap;
     }
 
     .join-button:hover {
         background: #C05621;
-    }
-
-    /* Footer */
-    .site-footer {
-        background: #f7f7f7;
-        border-top: 1px solid #ddd;
-        padding: 40px 0 20px 0;
-        margin-top: 40px;
-    }
-
-    .footer-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        justify-content: space-between;
-    }
-
-    .footer-section h3 {
-        font-size: 1.2rem;
-        margin-bottom: 12px;
-        font-weight: 600;
-    }
-
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-section ul li {
-        margin-bottom: 8px;
-        font-size: 1rem;
-    }
-
-    .footer-section a {
-        text-decoration: none;
-        color: #2F855A;
-        font-weight: 600;
-    }
-
-    .footer-section a:hover {
-        text-decoration: underline;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 15px;
-        border-top: 1px solid #ddd;
-        font-size: 0.95rem;
-        color: #555;
     }
 
     /* Mobile layout */
@@ -165,11 +113,6 @@
         .page-button,
         .join-button {
             width: 100%;
-        }
-
-        .footer-container {
-            flex-direction: column;
-            gap: 30px;
         }
     }
 </style>
@@ -190,7 +133,7 @@
 </p>
 
 <!-- ===========================
-     SECTIONS WITH RIGHT‑ALIGNED BUTTONS
+     COMPACT SECTIONS
 =========================== -->
 
 <div class="section-block">
@@ -209,7 +152,7 @@
         <p>Explore orchid sites across the UK during peak flowering season with expert guidance.</p>
     </div>
     <div class="section-button">
-        <a class="page-button" href="/Hardy-Orchid-Society/events.html#fieldtrips">Guided Field Trips</a>
+        <a class="page-button" href="/Hardy-Orchid-Society/fieldtrips.html">Guided Field Trips</a>
     </div>
 </div>
 
@@ -301,4 +244,3 @@
 
 </body>
 </html>
-
