@@ -1,29 +1,136 @@
-.site-header { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid #ddd; }
-.navbar { max-width: 1100px; margin: 0 auto; padding: .75rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.site-brand { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
-.site-logo { height: 52px; width: auto; display: block; object-fit: contain; }
-.site-title { color: #111; font-weight: 700; font-size: 1.1rem; line-height: 1.1; }
-
-.nav-toggle { display: none; background: transparent; border: 0; padding: .25rem; cursor: pointer; }
-.nav-toggle span { display: block; width: 24px; height: 2px; background: #222; margin: 5px 0; }
-
-.nav-links { list-style: none; display: flex; align-items: center; gap: 1rem; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; color: #111; font-weight: 600; }
-.nav-links a.active { text-decoration: underline; text-underline-offset: 3px; }
-
-@media (max-width: 760px) {
-  .site-logo { height: 42px; }
-  .site-title { font-size: 1rem; }
-  .nav-toggle { display: inline-block; }
-  .nav-links {
-    display: none;
-    position: absolute;
-    left: 0; right: 0; top: 100%;
+./* ===========================
+   FIXED HEADER (always visible)
+=========================== */
+.site-header {
+    position: fixed;        /* Always visible */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     background: #fff;
     border-bottom: 1px solid #ddd;
+}
+
+/* Add padding so content does not hide under header */
+body {
+    padding-top: 80px;      /* Adjust if header height changes */
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
     padding: .75rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.site-brand {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 52px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.site-title {
+    color: #111;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.1;
+}
+
+/* ===========================
+   MOBILE MENU TOGGLE
+=========================== */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: .25rem;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #222;
+    margin: 5px 0;
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+}
+
+.nav-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media (max-width: 760px) {
+
+    .site-logo {
+        height: 42px;
+    }
+
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: .75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .navbar {
+        position: relative;
+    }
+}
+
   }
   .nav-links.open { display: flex; }
   .navbar { position: relative; }
