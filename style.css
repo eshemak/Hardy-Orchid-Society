@@ -1,8 +1,8 @@
-./* ===========================
+/* ===========================
    FIXED HEADER (always visible)
 =========================== */
 .site-header {
-    position: fixed;        /* Always visible */
+    position: fixed;      /* Always stays at top */
     top: 0;
     left: 0;
     right: 0;
@@ -11,9 +11,11 @@
     border-bottom: 1px solid #ddd;
 }
 
-/* Add padding so content does not hide under header */
+/* Prevent content hiding under header */
 body {
-    padding-top: 80px;      /* Adjust if header height changes */
+    padding-top: 80px;    /* Adjust if header height changes */
+    margin: 0;
+    font-family: "Aptos", sans-serif;
 }
 
 /* ===========================
@@ -95,6 +97,41 @@ body {
 /* ===========================
    MOBILE RESPONSIVE
 =========================== */
+@media (max-width: 760px) {
+
+    .site-logo {
+        height: 42px;
+    }
+
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        display: inline-block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: .75rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .navbar {
+        position: relative;
+    }
+}
 
 /* ===========================
    FOOTER
@@ -174,51 +211,10 @@ body {
     color: #555;
 }
 
-/* Mobile */
+/* Mobile footer */
 @media (max-width: 760px) {
     .footer-container {
         flex-direction: column;
         gap: 30px;
     }
-}
-
-@media (max-width: 760px) {
-
-    .site-logo {
-        height: 42px;
-    }
-
-    .site-title {
-        font-size: 1rem;
-    }
-
-    .nav-toggle {
-        display: inline-block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: #fff;
-        border-bottom: 1px solid #ddd;
-        padding: .75rem 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .navbar {
-        position: relative;
-    }
-}
-
-  }
-  .nav-links.open { display: flex; }
-  .navbar { position: relative; }
 }
