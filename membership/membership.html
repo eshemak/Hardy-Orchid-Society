@@ -1,64 +1,199 @@
-<section id="hos-benefits">
-  <h2>Benefits of Joining the Hardy Orchid Society</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership – Hardy Orchid Society</title>
+<link rel="stylesheet" href="../style.css">
 
-  <p>
-    The Hardy Orchid Society supports everyone with an interest in hardy and wild orchids,
-    offering members high-quality learning opportunities, practical experience, and a welcoming community.
-  </p>
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
 
-  <h3>Membership Benefits</h3>
-  <ul>
-    <li>
-      <strong>Expert meetings:</strong>
-      Three indoor events each year featuring specialist talks, plant sales, competitions,
-      and time to meet and learn from other orchid enthusiasts.
-    </li>
-    <li>
-      <strong>Guided field trips:</strong>
-      Visits to orchid sites across the UK during the flowering season, led by knowledgeable members
-      who help you explore species in their natural habitats.
-    </li>
-    <li>
-      <strong>Quarterly journal:</strong>
-      A full-colour publication with articles on cultivation, taxonomy, field studies,
-      research updates, and photography.
-    </li>
-    <li>
-      <strong>Seed bank access:</strong>
-      Members can obtain seed from cultivated hardy orchids and learn propagation techniques
-      through practical sessions.
-    </li>
-    <li>
-      <strong>Hands-on workshops:</strong>
-      Practical workshops such as seed-sowing sessions that teach essential skills
-      for growing hardy orchids successfully.
-    </li>
-    <li>
-      <strong>Photography and plant shows:</strong>
-      Annual competitions and displays, including the RHS Banksian Medal awarded at the Spring Meeting.
-    </li>
-    <li>
-      <strong>Members’ discussion forum:</strong>
-      A friendly, moderated online space for advice, identification help, cultivation tips,
-      and sharing observations.
-    </li>
-    <li>
-      <strong>Conservation support:</strong>
-      Guidance from the HOS Conservation Officer, involvement in rescue operations,
-      and grants supporting orchid conservation projects.
-    </li>
-    <li>
-      <strong>Research opportunities:</strong>
-      Opportunities to contribute to scientific studies on taxonomy, pollination biology,
-      and long-term monitoring of orchid populations.
-    </li>
-  </ul>
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 25px;
+    }
 
-  <h3>Why Join?</h3>
-  <p>
-    Membership in the Hardy Orchid Society connects you with a knowledgeable, supportive community
-    while helping protect the UK’s native orchids. Whether you are new to orchids or an experienced grower,
-    the HOS provides the expertise, resources, and opportunities to deepen your understanding
-    and enjoy orchids in both cultivation and the wild.
-  </p>
-</section>
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    p, li {
+        line-height: 1.65;
+        font-size: 1.05rem;
+    }
+
+    /* Accordion */
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .chevron {
+        width: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .section-content {
+        display: none;
+        padding: 10px 0 20px 0;
+        line-height: 1.6;
+    }
+
+    .open .section-content {
+        display: block;
+    }
+
+    .open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Buttons (homepage style) */
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin: 25px 0;
+    }
+
+    .page-button {
+        display: inline-block;
+        background: #2F855A;
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.05rem;
+        transition: background 0.3s ease;
+        min-width: 220px;
+        text-align: center;
+    }
+
+    .page-button:hover {
+        background: #276749;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".section-header").forEach(header => {
+            header.addEventListener("click", () => {
+                header.parentElement.classList.toggle("open");
+            });
+        });
+    });
+</script>
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="container">
+
+<h1>Membership</h1>
+<p>The Hardy Orchid Society supports everyone with an interest in hardy and wild orchids,
+offering members high-quality learning opportunities, practical experience, and a welcoming community.</p>
+
+<!-- BUTTON -->
+<div class="button-row">
+    <a class="page-button" href="/Hardy-Orchid-Society/membership/join.html">Join the Society</a>
+</div>
+
+<!-- ACCORDION SECTIONS -->
+
+<!-- 1. Membership Benefits -->
+<div class="section">
+    <div class="section-header">
+        <h2>Benefits of Joining the Hardy Orchid Society</h2>
+        <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M12 15.5l-7-7 1.4-1.4L12 12.7l5.6-5.6L19 8.5z"/>
+        </svg>
+    </div>
+    <div class="section-content">
+        <h3>Membership Benefits</h3>
+        <ul>
+            <li>
+                <strong>Expert meetings:</strong>
+                Three indoor events each year featuring specialist talks, plant sales, competitions,
+                and time to meet and learn from other orchid enthusiasts.
+            </li>
+            <li>
+                <strong>Guided field trips:</strong>
+                Visits to orchid sites across the UK during the flowering season, led by knowledgeable members
+                who help you explore species in their natural habitats.
+            </li>
+            <li>
+                <strong>Quarterly journal:</strong>
+                A full-colour publication with articles on cultivation, taxonomy, field studies,
+                research updates, and photography.
+            </li>
+            <li>
+                <strong>Seed bank access:</strong>
+                Members can obtain seed from cultivated hardy orchids and learn propagation techniques
+                through practical sessions.
+            </li>
+            <li>
+                <strong>Hands-on workshops:</strong>
+                Practical workshops such as seed-sowing sessions that teach essential skills
+                for growing hardy orchids successfully.
+            </li>
+            <li>
+                <strong>Photography and plant shows:</strong>
+                Annual competitions and displays, including the RHS Banksian Medal awarded at the Spring Meeting.
+            </li>
+            <li>
+                <strong>Members' discussion forum:</strong>
+                A friendly, moderated online space for advice, identification help, cultivation tips,
+                and sharing observations.
+            </li>
+            <li>
+                <strong>Conservation support:</strong>
+                Guidance from the HOS Conservation Officer, involvement in rescue operations,
+                and grants supporting orchid conservation projects.
+            </li>
+            <li>
+                <strong>Research opportunities:</strong>
+                Opportunities to contribute to scientific studies on taxonomy, pollination biology,
+                and long-term monitoring of orchid populations.
+            </li>
+        </ul>
+
+        <h3>Why Join?</h3>
+        <p>
+            Membership in the Hardy Orchid Society connects you with a knowledgeable, supportive community
+            while helping protect the UK's native orchids. Whether you are new to orchids or an experienced grower,
+            the HOS provides the expertise, resources, and opportunities to deepen your understanding
+            and enjoy orchids in both cultivation and the wild.
+        </p>
+    </div>
+</div>
+
+</div>
+
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
+</body>
+</html>
