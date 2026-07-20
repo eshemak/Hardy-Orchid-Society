@@ -79,6 +79,13 @@
         white-space: pre-wrap;
         margin-top: 10px;
     }
+
+    .warning {
+        color: #C05621;
+        font-weight: 900;
+        font-size: 1.1rem;
+        margin-top: 25px;
+    }
 </style>
 
 <script>
@@ -86,7 +93,7 @@
         const brokenURL = window.location.href;
 
         const emailText =
-`To: webmaster@hardyorchidsociety.org
+`To: neilfevans@btinternet.com
 Subject: Broken Link Report – HOS Website
 
 Hello,
@@ -123,7 +130,7 @@ HOS Website Error Monitor`;
     <p>
         The page you were trying to reach isn’t available.  
         It may have been moved, renamed, or removed.  
-        We’ve logged the broken link below so it can be fixed.
+        The broken link has been recorded below so it can be corrected.
     </p>
 
     <a class="home-button" href="/Hardy-Orchid-Society/index.html">Return to Homepage</a>
@@ -135,6 +142,11 @@ HOS Website Error Monitor`;
 
         <h3>Email Report (auto‑generated)</h3>
         <div id="email-preview" class="email-preview"></div>
+
+        <p class="warning">
+            BEFORE THE WEBSITE GOES LIVE, UPDATE THE EMAIL ADDRESS ABOVE TO:<br>
+            WEBMASTER@HARDYORCHIDSOCIETY.ORG
+        </p>
     </div>
 
 </div>
