@@ -28,7 +28,6 @@
 
     h2 {
         font-size: 1.5rem;
-        margin-top: 35px;
         margin-bottom: 10px;
         font-weight: 600;
     }
@@ -38,7 +37,27 @@
         font-size: 1.05rem;
     }
 
-    /* Green buttons (same as cultivation page) */
+    /* Section layout with right‑aligned buttons */
+    .section-block {
+        border-bottom: 1px solid #ddd;
+        padding: 25px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .section-text {
+        flex: 1;
+    }
+
+    .section-button {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Green buttons */
     .page-button {
         display: inline-block;
         background: #2F855A;
@@ -49,9 +68,8 @@
         text-decoration: none;
         font-size: 1.05rem;
         transition: background 0.3s ease;
-        min-width: 220px;
+        min-width: 180px;
         text-align: center;
-        margin-top: 12px;
     }
 
     .page-button:hover {
@@ -69,19 +87,30 @@
         text-decoration: none;
         font-size: 1.05rem;
         transition: background 0.3s ease;
-        min-width: 220px;
+        min-width: 180px;
         text-align: center;
-        margin-top: 12px;
     }
 
     .join-button:hover {
         background: #C05621;
     }
 
-    /* Section spacing */
-    .section-block {
-        border-bottom: 1px solid #ddd;
-        padding: 20px 0;
+    /* Mobile layout */
+    @media (max-width: 760px) {
+        .section-block {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .section-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .page-button,
+        .join-button {
+            width: 100%;
+        }
     }
 </style>
 
@@ -99,104 +128,139 @@
 </p>
 
 <!-- ===========================
-     SECTIONS WITH BUTTONS
+     SECTIONS WITH RIGHT‑ALIGNED BUTTONS
 =========================== -->
 
 <div class="section-block">
-    <h2>Meetings</h2>
-    <p>
-        Three indoor meetings each year featuring specialist talks, plant sales, competitions, and opportunities to meet fellow
-        enthusiasts. These gatherings offer direct access to leading growers, researchers, and conservationists.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html">View Meetings</a>
+    <div class="section-text">
+        <h2>Meetings</h2>
+        <p>
+            Three indoor meetings each year featuring specialist talks, plant sales, competitions,
+            and opportunities to meet fellow enthusiasts.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/events.html">View Meetings</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Guided Field Trips</h2>
-    <p>
-        Explore orchid sites across the UK during peak flowering season. Experienced members help you identify species,
-        understand habitats, and appreciate orchids in their natural environments.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#fieldtrips">Field Trip Details</a>
+    <div class="section-text">
+        <h2>Guided Field Trips</h2>
+        <p>
+            Explore orchid sites across the UK during peak flowering season. Experienced members help you identify species,
+            understand habitats, and appreciate orchids in their natural environments.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/events.html#fieldtrips">Field Trip Details</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Quarterly Journal</h2>
-    <p>
-        A high-quality, full-colour publication featuring cultivation advice, taxonomy updates, field reports, research findings,
-        and outstanding photography.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/journal.html">Read the Journal</a>
+    <div class="section-text">
+        <h2>Quarterly Journal</h2>
+        <p>
+            A high-quality, full-colour publication featuring cultivation advice, taxonomy updates, field reports,
+            research findings, and outstanding photography.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/journal.html">Read the Journal</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Seed Bank Access</h2>
-    <p>
-        Members can obtain seed from cultivated hardy orchids and learn propagation techniques through practical demonstrations
-        and seed-sowing sessions.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/seedbank.html">Seed Bank Info</a>
+    <div class="section-text">
+        <h2>Seed Bank Access</h2>
+        <p>
+            Members can obtain seed from cultivated hardy orchids and learn propagation techniques through practical
+            demonstrations and seed-sowing sessions.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/seedbank.html">Seed Bank Info</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Hands-On Workshops</h2>
-    <p>
-        Practical training events that build essential skills for successful cultivation, including sowing, potting, and
-        maintaining specialist growing conditions.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#workshops">Workshop Details</a>
+    <div class="section-text">
+        <h2>Hands-On Workshops</h2>
+        <p>
+            Practical training events that build essential skills for successful cultivation, including sowing, potting,
+            and maintaining specialist growing conditions.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/events.html#workshops">Workshop Details</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Photography & Plant Shows</h2>
-    <p>
-        Annual competitions and displays, including the prestigious RHS Banksian Medal awarded at the Spring Meeting.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#shows">Show Information</a>
+    <div class="section-text">
+        <h2>Photography & Plant Shows</h2>
+        <p>
+            Annual competitions and displays, including the prestigious RHS Banksian Medal awarded at the Spring Meeting.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/events.html#shows">Show Information</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Members’ Discussion Forum</h2>
-    <p>
-        A friendly, moderated online space for advice, identification help, cultivation tips, and sharing observations throughout
-        the year.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/forum.html">Visit Forum</a>
+    <div class="section-text">
+        <h2>Members’ Discussion Forum</h2>
+        <p>
+            A friendly, moderated online space for advice, identification help, cultivation tips,
+            and sharing observations throughout the year.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/forum.html">Visit Forum</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Conservation Support</h2>
-    <p>
-        Guidance from the HOS Conservation Officer, opportunities to assist with rescue operations, and grants supporting orchid
-        conservation projects.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/conservation.html">Conservation Info</a>
+    <div class="section-text">
+        <h2>Conservation Support</h2>
+        <p>
+            Guidance from the HOS Conservation Officer, opportunities to assist with rescue operations,
+            and grants supporting orchid conservation projects.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/conservation.html">Conservation Info</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Research Opportunities</h2>
-    <p>
-        Members can contribute to scientific studies in taxonomy, pollination biology, and long-term monitoring of orchid
-        populations.
-    </p>
-    <a class="page-button" href="/Hardy-Orchid-Society/research.html">Research Opportunities</a>
+    <div class="section-text">
+        <h2>Research Opportunities</h2>
+        <p>
+            Members can contribute to scientific studies in taxonomy, pollination biology,
+            and long-term monitoring of orchid populations.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="page-button" href="/Hardy-Orchid-Society/research.html">Research Opportunities</a>
+    </div>
 </div>
 
 <div class="section-block">
-    <h2>Join the Hardy Orchid Society</h2>
-    <p>
-        Membership is open to anyone with an interest in hardy and wild orchids. Whether you enjoy growing orchids at home or
-        exploring them in the wild, the Society offers the expertise and community to support your passion.
-    </p>
-    <a class="join-button" href="/Hardy-Orchid-Society/join.html">Join Now</a>
+    <div class="section-text">
+        <h2>Join the Hardy Orchid Society</h2>
+        <p>
+            Membership is open to anyone with an interest in hardy and wild orchids.
+        </p>
+    </div>
+    <div class="section-button">
+        <a class="join-button" href="/Hardy-Orchid-Society/join.html">Join Now</a>
+    </div>
 </div>
 
 </div>
 
 <script src="/Hardy-Orchid-Society/shared/header.js"></script>
-
-    <div id="site-footer"></div>
-<script src="/Hardy-Orchid-Society/shared/footer.js"></script>
-
 </body>
 </html>
