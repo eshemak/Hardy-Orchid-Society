@@ -38,15 +38,7 @@
         font-size: 1.05rem;
     }
 
-    /* Buttons (same as cultivation page) */
-    .button-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-        margin: 25px 0;
-    }
-
+    /* Green buttons (same as cultivation page) */
     .page-button {
         display: inline-block;
         background: #2F855A;
@@ -59,13 +51,34 @@
         transition: background 0.3s ease;
         min-width: 220px;
         text-align: center;
+        margin-top: 12px;
     }
 
     .page-button:hover {
         background: #276749;
     }
 
-    /* Section spacing to match cultivation page */
+    /* Orange Join button */
+    .join-button {
+        display: inline-block;
+        background: #DD6B20;
+        color: #fff;
+        padding: 12px 22px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.05rem;
+        transition: background 0.3s ease;
+        min-width: 220px;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .join-button:hover {
+        background: #C05621;
+    }
+
+    /* Section spacing */
     .section-block {
         border-bottom: 1px solid #ddd;
         padding: 20px 0;
@@ -85,37 +98,17 @@
     Members gain access to expert learning, practical experience, and opportunities to contribute to orchid conservation and research.
 </p>
 
-<!-- BUTTONS (matching cultivation page style) -->
-<div class="button-row">
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html">Expert Meetings</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#fieldtrips">Guided Field Trips</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/journal.html">Quarterly Journal</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/seedbank.html">Seed Bank Access</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#workshops">Hands-On Workshops</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/events.html#shows">Photography & Plant Shows</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/forum.html">Members’ Forum</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/conservation.html">Conservation Support</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/research.html">Research Opportunities</a>
-    <a class="page-button" href="/Hardy-Orchid-Society/join.html">Join the Society</a>
-</div>
-
-<!-- MATCHED LAYOUT SECTIONS -->
+<!-- ===========================
+     SECTIONS WITH BUTTONS
+=========================== -->
 
 <div class="section-block">
-    <h2>Why Join?</h2>
+    <h2>Meetings</h2>
     <p>
-        Membership provides access to expert knowledge, hands-on experience, and a welcoming network of orchid enthusiasts.
-        Whether you are new to orchids or an experienced grower, the Society helps you deepen your understanding and enjoy orchids
-        in both cultivation and the wild.
-    </p>
-</div>
-
-<div class="section-block">
-    <h2>Expert Meetings</h2>
-    <p>
-        Three indoor events each year featuring specialist talks, plant sales, competitions, and opportunities to meet fellow
+        Three indoor meetings each year featuring specialist talks, plant sales, competitions, and opportunities to meet fellow
         enthusiasts. These gatherings offer direct access to leading growers, researchers, and conservationists.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/events.html">View Meetings</a>
 </div>
 
 <div class="section-block">
@@ -124,6 +117,7 @@
         Explore orchid sites across the UK during peak flowering season. Experienced members help you identify species,
         understand habitats, and appreciate orchids in their natural environments.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/events.html#fieldtrips">Field Trip Details</a>
 </div>
 
 <div class="section-block">
@@ -132,6 +126,7 @@
         A high-quality, full-colour publication featuring cultivation advice, taxonomy updates, field reports, research findings,
         and outstanding photography.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/journal.html">Read the Journal</a>
 </div>
 
 <div class="section-block">
@@ -140,6 +135,7 @@
         Members can obtain seed from cultivated hardy orchids and learn propagation techniques through practical demonstrations
         and seed-sowing sessions.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/seedbank.html">Seed Bank Info</a>
 </div>
 
 <div class="section-block">
@@ -148,6 +144,7 @@
         Practical training events that build essential skills for successful cultivation, including sowing, potting, and
         maintaining specialist growing conditions.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/events.html#workshops">Workshop Details</a>
 </div>
 
 <div class="section-block">
@@ -155,6 +152,7 @@
     <p>
         Annual competitions and displays, including the prestigious RHS Banksian Medal awarded at the Spring Meeting.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/events.html#shows">Show Information</a>
 </div>
 
 <div class="section-block">
@@ -163,6 +161,7 @@
         A friendly, moderated online space for advice, identification help, cultivation tips, and sharing observations throughout
         the year.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/forum.html">Visit Forum</a>
 </div>
 
 <div class="section-block">
@@ -171,6 +170,7 @@
         Guidance from the HOS Conservation Officer, opportunities to assist with rescue operations, and grants supporting orchid
         conservation projects.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/conservation.html">Conservation Info</a>
 </div>
 
 <div class="section-block">
@@ -179,6 +179,7 @@
         Members can contribute to scientific studies in taxonomy, pollination biology, and long-term monitoring of orchid
         populations.
     </p>
+    <a class="page-button" href="/Hardy-Orchid-Society/research.html">Research Opportunities</a>
 </div>
 
 <div class="section-block">
@@ -187,6 +188,7 @@
         Membership is open to anyone with an interest in hardy and wild orchids. Whether you enjoy growing orchids at home or
         exploring them in the wild, the Society offers the expertise and community to support your passion.
     </p>
+    <a class="join-button" href="/Hardy-Orchid-Society/join.html">Join Now</a>
 </div>
 
 </div>
