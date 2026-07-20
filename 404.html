@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Page Not Found</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+    body {
+        font-family: "Aptos", sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .error-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    .error-logo {
+        width: 140px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .home-button {
+        display: inline-block;
+        background: #2F855A;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        margin-bottom: 30px;
+    }
+
+    .home-button:hover {
+        background: #276749;
+    }
+
+    .report-box {
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    .report-box h3 {
+        margin-top: 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    .email-preview {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        margin-top: 10px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const brokenURL = window.location.href;
+
+        const emailText =
+`To: webmaster@hardyorchidsociety.org
+Subject: Broken Link Report – HOS Website
+
+Hello,
+
+A visitor attempted to access a page that could not be found.
+
+Broken link URL:
+${brokenURL}
+
+This page may need updating or removing.
+
+Regards,
+HOS Website Error Monitor`;
+
+        document.getElementById("broken-url").textContent = brokenURL;
+        document.getElementById("email-preview").textContent = emailText;
+    });
+</script>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
+
+<div class="error-container">
+
+    <!-- HOS Logo -->
+    <img src="/Hardy-Orchid-Society/images/logo.png" alt="Hardy Orchid Society Logo" class="error-logo">
+
+    <h1>404 – Page Not Found</h1>
+
+    <p>
+        The page you were trying to reach isn’t available.  
+        It may have been moved, renamed, or removed.  
+        We’ve logged the broken link below so it can be fixed.
+    </p>
+
+    <a class="home-button" href="/Hardy-Orchid-Society/index.html">Return to Homepage</a>
+
+    <div class="report-box">
+        <h3>Broken Link Information</h3>
+        <p><strong>URL that caused this error:</strong></p>
+        <p id="broken-url" style="font-weight:600;"></p>
+
+        <h3>Email Report (auto‑generated)</h3>
+        <div id="email-preview" class="email-preview"></div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+
+</body>
+</html>
