@@ -172,6 +172,7 @@
     }
 
     startRotation();
+    window.addEventListener('pagehide', () => clearInterval(rotationTimer));
   </script>
 </body>
 </html>

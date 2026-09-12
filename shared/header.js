@@ -8,7 +8,18 @@
       .replaceAll(">", "&gt;")
       .replaceAll("\"", "&quot;")
       .replaceAll("'", "&#39;");
-  const isSafeInternalPath = (value) => /^[A-Za-z0-9-]+(?:\/[A-Za-z0-9-]+)*\.html$/.test(value);
+  const getSafeInternalHref = (value) => {
+    if (!value) return "";
+    try {
+      const url = new URL(value, window.location.origin + root);
+      if (url.origin !== window.location.origin || !url.pathname.startsWith(root)) {
+        return "";
+      }
+      return escapeHtml(`${url.pathname}${url.search}${url.hash}`);
+    } catch {
+      return "";
+    }
+  };
 
   const navItems = [
     { label: "About", href: "about/index.html", matches: ["about/"] },
@@ -51,11 +62,11 @@
     const pageTitle = breadcrumbMount.dataset.pageTitle ? escapeHtml(breadcrumbMount.dataset.pageTitle) : "";
     const parentTitle = breadcrumbMount.dataset.parentTitle ? escapeHtml(breadcrumbMount.dataset.parentTitle) : "";
     const parentPath = breadcrumbMount.dataset.parentPath;
-    const safeParentPath = parentPath && isSafeInternalPath(parentPath) ? parentPath : "";
+    const safeParentHref = getSafeInternalHref(parentPath);
     const parts = [`<li><a href="${root}index.html">Home</a></li>`];
 
-    if (parentTitle && safeParentPath) {
-      parts.push(`<li><a href="${root + safeParentPath}">${parentTitle}</a></li>`);
+    if (parentTitle && safeParentHref) {
+      parts.push(`<li><a href="${safeParentHref}">${parentTitle}</a></li>`);
     }
 
     if (pageTitle) {
