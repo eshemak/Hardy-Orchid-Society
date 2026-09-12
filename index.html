@@ -12,21 +12,21 @@
     <section class="hero-carousel" aria-label="Featured orchid photography">
       <div class="carousel-container">
         <div class="carousel-wrapper">
-          <div class="carousel-slide active">
+          <div class="carousel-slide active" aria-hidden="false">
             <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Hardy orchids growing on a clifftop meadow">
             <div class="carousel-caption">
               <h2>Discover hardy orchids in gardens and wild places</h2>
               <p>The Society brings together growers, field botanists, and conservation volunteers.</p>
             </div>
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="A bee orchid flowering in grassland">
             <div class="carousel-caption">
               <h2>Learn from practical experience</h2>
               <p>Explore cultivation, meetings, journals, and hands-on support for members.</p>
             </div>
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="/Hardy-Orchid-Society/assets/photos/homepage-wildflower-orchids.jpg" alt="Wild orchids among summer flowers">
             <div class="carousel-caption">
               <h2>Support conservation and research</h2>
@@ -34,9 +34,9 @@
             </div>
           </div>
           <div class="carousel-dots" aria-label="Carousel navigation">
-            <button class="dot active" type="button" aria-label="Show slide 1"></button>
-            <button class="dot" type="button" aria-label="Show slide 2"></button>
-            <button class="dot" type="button" aria-label="Show slide 3"></button>
+            <button class="dot active" type="button" aria-label="Show slide 1" aria-pressed="true"></button>
+            <button class="dot" type="button" aria-label="Show slide 2" aria-pressed="false"></button>
+            <button class="dot" type="button" aria-label="Show slide 3" aria-pressed="false"></button>
           </div>
         </div>
       </div>
@@ -112,8 +112,16 @@
     let currentSlideIndex = 0;
 
     function showSlide(index) {
-      slides.forEach((slide, slideIndex) => slide.classList.toggle('active', slideIndex === index));
-      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === index;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === index;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-pressed', String(isActive));
+      });
       currentSlideIndex = index;
     }
 

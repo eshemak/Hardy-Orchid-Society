@@ -8,6 +8,7 @@
       .replaceAll(">", "&gt;")
       .replaceAll("\"", "&quot;")
       .replaceAll("'", "&#39;");
+  const isSafeInternalPath = (value) => /^[A-Za-z0-9-]+(?:\/[A-Za-z0-9-]+)*\.html$/.test(value);
 
   const navItems = [
     { label: "About", href: "about/index.html", matches: ["about/"] },
@@ -50,17 +51,18 @@
     const pageTitle = breadcrumbMount.dataset.pageTitle ? escapeHtml(breadcrumbMount.dataset.pageTitle) : "";
     const parentTitle = breadcrumbMount.dataset.parentTitle ? escapeHtml(breadcrumbMount.dataset.parentTitle) : "";
     const parentPath = breadcrumbMount.dataset.parentPath;
-    const parts = [`<a href="${root}index.html">Home</a>`];
+    const safeParentPath = parentPath && isSafeInternalPath(parentPath) ? parentPath : "";
+    const parts = [`<li><a href="${root}index.html">Home</a></li>`];
 
-    if (parentTitle && parentPath) {
-      parts.push(`<span aria-hidden="true">/</span><a href="${root + parentPath}">${parentTitle}</a>`);
+    if (parentTitle && safeParentPath) {
+      parts.push(`<li><a href="${root + safeParentPath}">${parentTitle}</a></li>`);
     }
 
     if (pageTitle) {
-      parts.push(`<span aria-hidden="true">/</span><span aria-current="page">${pageTitle}</span>`);
+      parts.push(`<li><span aria-current="page">${pageTitle}</span></li>`);
     }
 
-    breadcrumbMount.innerHTML = `<nav class="breadcrumb" aria-label="Breadcrumb">${parts.join("")}</nav>`;
+    breadcrumbMount.innerHTML = `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${parts.join("")}</ol></nav>`;
   }
 
   const toggle = document.querySelector(".nav-toggle");
