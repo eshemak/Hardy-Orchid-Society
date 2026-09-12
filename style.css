@@ -119,6 +119,14 @@ h3 {
     border-color: var(--color-primary);
 }
 
+.nav-links a:focus-visible {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary);
+    outline: 3px solid rgba(47, 133, 90, 0.25);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 .nav-toggle {
     display: none;
     background: transparent;
@@ -234,6 +242,12 @@ h3 {
 .dot:hover {
     background: rgba(255, 255, 255, 1);
     transform: scale(1.08);
+}
+
+.dot:focus-visible {
+    background: rgba(255, 255, 255, 1);
+    outline: 3px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 3px;
 }
 
 .page-hero,

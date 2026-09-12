@@ -50,7 +50,7 @@
     const pageTitle = breadcrumbMount.dataset.pageTitle ? escapeHtml(breadcrumbMount.dataset.pageTitle) : "";
     const parentTitle = breadcrumbMount.dataset.parentTitle ? escapeHtml(breadcrumbMount.dataset.parentTitle) : "";
     const parentPath = breadcrumbMount.dataset.parentPath;
-    const parts = [`<a href="${root}">Home</a>`];
+    const parts = [`<a href="${root}index.html">Home</a>`];
 
     if (parentTitle && parentPath) {
       parts.push(`<span aria-hidden="true">/</span><a href="${root + parentPath}">${parentTitle}</a>`);
