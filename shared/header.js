@@ -1,6 +1,13 @@
 (function () {
   const root = "/Hardy-Orchid-Society/";
   const current = window.location.pathname;
+  const escapeHtml = (value) =>
+    String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll("\"", "&quot;")
+      .replaceAll("'", "&#39;");
 
   const navItems = [
     { label: "About", href: "about/index.html", matches: ["about/"] },
@@ -40,8 +47,8 @@
 
   const breadcrumbMount = document.getElementById("site-breadcrumbs");
   if (breadcrumbMount) {
-    const pageTitle = breadcrumbMount.dataset.pageTitle;
-    const parentTitle = breadcrumbMount.dataset.parentTitle;
+    const pageTitle = breadcrumbMount.dataset.pageTitle ? escapeHtml(breadcrumbMount.dataset.pageTitle) : "";
+    const parentTitle = breadcrumbMount.dataset.parentTitle ? escapeHtml(breadcrumbMount.dataset.parentTitle) : "";
     const parentPath = breadcrumbMount.dataset.parentPath;
     const parts = [`<a href="${root}">Home</a>`];
 

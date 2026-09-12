@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 – Page Not Found</title>
-<link rel="stylesheet" href="/Hardy-Orchid-Society/style.css">
+<script>
+    const siteRoot = window.location.pathname.includes("/Hardy-Orchid-Society/") ? "/Hardy-Orchid-Society/" : "/";
+    document.write(`<link rel="stylesheet" href="${siteRoot}style.css">`);
+</script>
 
 <style>
     body {
