@@ -1,349 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hardy Orchid Society</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-    body {
-        font-family: "Aptos", sans-serif;
-        color: #000;
-        margin: 0;
-        padding: 0;
-        background: #fff;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 25px;
-    }
-
-    /* Photo Carousel Styles */
-    .carousel-container {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto 30px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .carousel-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 66.67%;
-        background: #f0f0f0;
-    }
-
-    .carousel-inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-    }
-
-    .carousel-slide {
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.8s ease-in-out;
-        flex-shrink: 0;
-    }
-
-    .carousel-slide.active {
-        opacity: 1;
-    }
-
-    .carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .carousel-dots {
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 8px;
-        z-index: 10;
-    }
-
-    .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        cursor: pointer;
-        transition: background 0.3s ease;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-    }
-
-    .dot.active {
-        background: rgba(255, 255, 255, 1);
-    }
-
-    h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-
-    p, li {
-        line-height: 1.65;
-        font-size: 1.05rem;
-    }
-
-    .section {
-        margin-top: 35px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    ul {
-        margin-top: 10px;
-    }
-
-    .join-button-wrapper {
-        text-align: center;
-        margin: 25px 0;
-    }
-
-    .join-button {
-        display: inline-block;
-        background: #C2410C;
-        color: #fff;
-        padding: 14px 26px;
-        border-radius: 6px;
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 1.15rem;
-        transition: background 0.3s ease;
-    }
-
-    .join-button:hover {
-        background: #276749;
-    }
-
-    .explore-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .explore-item {
-        text-align: center;
-        max-width: 260px;
-    }
-
-    .explore-button {
-        display: inline-block;
-        background: #2F855A;
-        color: #fff;
-        padding: 12px 22px;
-        border-radius: 6px;
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 1.05rem;
-        transition: background 0.3s ease;
-        text-align: center;
-        min-width: 220px;
-    }
-
-    .explore-button:hover {
-        background: #276749;
-    }
-
-    .explore-text {
-        margin-top: 10px;
-        font-size: 0.95rem;
-        line-height: 1.45;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardy Orchid Society</title>
+  <link rel="stylesheet" href="/Hardy-Orchid-Society/style.css">
 </head>
-
 <body>
-
-<div id="site-header"></div>
-
-<div class="carousel-container">
-    <div class="carousel-wrapper">
-        <div class="carousel-inner" id="carouselInner">
-            <div class="carousel-slide active">
-                <img src="assets/photos/homepage-clifftop-orchid.jpg" alt="Clifftop Orchid">
+  <div id="site-header"></div>
+  <main class="site-main">
+    <section class="hero-carousel" aria-label="Featured orchid photography">
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-slide active">
+            <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Hardy orchids growing on a clifftop meadow">
+            <div class="carousel-caption">
+              <h2>Discover hardy orchids in gardens and wild places</h2>
+              <p>The Society brings together growers, field botanists, and conservation volunteers.</p>
             </div>
-            <div class="carousel-slide">
-                <img src="assets/photos/homepage-bee-orchid.jpg" alt="Bee Orchid">
+          </div>
+          <div class="carousel-slide">
+            <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="A bee orchid flowering in grassland">
+            <div class="carousel-caption">
+              <h2>Learn from practical experience</h2>
+              <p>Explore cultivation, meetings, journals, and hands-on support for members.</p>
             </div>
-            <div class="carousel-slide">
-                <img src="assets/photos/homepage-wildflower-orchids.jpg" alt="Wildflower Orchids">
+          </div>
+          <div class="carousel-slide">
+            <img src="/Hardy-Orchid-Society/assets/photos/homepage-wildflower-orchids.jpg" alt="Wild orchids among summer flowers">
+            <div class="carousel-caption">
+              <h2>Support conservation and research</h2>
+              <p>Find projects, field surveys, and ways to contribute to orchid knowledge and protection.</p>
             </div>
+          </div>
+          <div class="carousel-dots" aria-label="Carousel navigation">
+            <button class="dot active" type="button" aria-label="Show slide 1"></button>
+            <button class="dot" type="button" aria-label="Show slide 2"></button>
+            <button class="dot" type="button" aria-label="Show slide 3"></button>
+          </div>
         </div>
-        <div class="carousel-dots" id="carouselDots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </section>
+
+    <section class="intro-panel">
+      <div class="intro-panel__content">
+        <span class="eyebrow">Welcome</span>
+        <h1 class="page-title">Hardy Orchid Society</h1>
+        <p class="page-summary">The Hardy Orchid Society promotes the study, conservation, and cultivation of hardy orchids through meetings, publications, field activity, and shared expertise.</p>
+        <div class="button-row">
+          <a class="button-link button-link--accent" href="/Hardy-Orchid-Society/membership/join.html">Join or renew membership</a>
+          <a class="button-link button-link--secondary" href="/Hardy-Orchid-Society/events/index.html">View events</a>
         </div>
-    </div>
-</div>
+      </div>
+      <div class="intro-panel__image">
+        <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="Bee orchid featured on the Hardy Orchid Society homepage">
+      </div>
+    </section>
 
-<div class="container">
-
-<h1>Hardy Orchid Society</h1>
-<p>
-The Hardy Orchid Society exists to promote the study, conservation, and cultivation of hardy orchids. 
-We support members through practical guidance, field activities, conservation projects, and a friendly community of orchid enthusiasts.
-</p>
-
-<div class="section">
-    <h2>What We Do</h2>
-    <p>The Society encourages interest in hardy orchids through:</p>
-    <ul>
-        <li>Field trips to observe orchids in their natural habitats</li>
-        <li>Guidance on cultivation and propagation</li>
-        <li>Conservation projects protecting threatened species</li>
-        <li>Sharing knowledge through meetings, publications, and online resources</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>Join the Society</h2>
-    <p>
-        Membership is open to anyone with an interest in hardy orchids.  
-        Members receive access to events, resources, and the Society's journal.
-    </p>
-
-    <div class="join-button-wrapper">
-        <a class="join-button" href="/Hardy-Orchid-Society/membership/join.html">Join the Hardy Orchid Society</a>
-    </div>
-</div>
-
-<div class="section">
-    <h2>Explore More</h2>
-
-    <div class="explore-buttons">
-
-        <div class="explore-item">
-            <a class="explore-button" href="/Hardy-Orchid-Society/cultivation/cultivation.html">Cultivation Guides</a>
-            <p class="explore-text">Practical advice for growing hardy orchids successfully.</p>
-        </div>
-
-        <div class="explore-item">
-            <a class="explore-button" href="/Hardy-Orchid-Society/fieldtrips/fieldtrips.html">Field Trips</a>
-            <p class="explore-text">Join us in the wild to see orchids in their natural habitats.</p>
-        </div>
-
-        <div class="explore-item">
-            <a class="explore-button" href="/Hardy-Orchid-Society/conservation/conservation.html">Conservation Work</a>
-            <p class="explore-text">Learn how we protect native orchid species across the UK.</p>
-        </div>
-
-        <div class="explore-item">
-            <a class="explore-button" href="/Hardy-Orchid-Society/discussionforum/discussionforum.html">Discussion Forum</a>
-            <p class="explore-text">Share knowledge, ask questions, and connect with members.</p>
-        </div>
-
-    </div>
-</div>
-
-</div>
-
-<script src="/Hardy-Orchid-Society/shared/header.js"></script>
-
-<script>
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.dot');
-const totalSlides = slides.length;
-
-function showSlide(index) {
-    // Remove active class from all slides and dots
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Add active class to current slide and dot
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-}
-
-function nextSlide() {
-    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-    showSlide(currentSlideIndex);
-}
-
-function currentSlide(index) {
-    currentSlideIndex = index;
-    showSlide(currentSlideIndex);
-}
-
-// Auto-rotate carousel every 20 seconds
-setInterval(nextSlide, 20000);
-</script>
-
-document.getElementById("site-footer").innerHTML = `
-<footer class="site-footer">
-
-  <div class="footer-container">
-
-    <div class="footer-section">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="/Hardy-Orchid-Society/index.html">Home</a></li>
-        <li><a href="/Hardy-Orchid-Society/membership.html">Membership</a></li>
-        <li><a href="/Hardy-Orchid-Society/events.html">Meetings & Events</a></li>
-        <li><a href="/Hardy-Orchid-Society/cultivation.html">Cultivation</a></li>
-        <li><a href="/Hardy-Orchid-Society/journal.html">Journal</a></li>
-        <li><a href="/Hardy-Orchid-Society/seedbank.html">Seed Bank</a></li>
-        <li><a href="/Hardy-Orchid-Society/contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>Contact</h3>
-      <ul>
-        <li>Email: info@hardyorchidsociety.org</li>
-        <li>Seed Bank: seedbank@hardyorchidsociety.org</li>
-        <li>Membership: membership@hardyorchidsociety.org</li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>Policies</h3>
-      <ul>
-        <li><a href="/Hardy-Orchid-Society/privacy.html">Privacy Policy</a></li>
-        <li><a href="/Hardy-Orchid-Society/cookies.html">Cookie Policy</a></li>
-        <li><a href="/Hardy-Orchid-Society/terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section join-footer">
-      <h3>Become a Member</h3>
-      <a class="join-button" href="/Hardy-Orchid-Society/join.html">Join Now</a>
-    </div>
-
-  </div>
-
+    <section aria-label="Main homepage sections">
+      <div class="section-divider"><h2>Explore the Society</h2></div>
+      <div class="main-section-grid">
+        <article class="section-card">
+          <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Landscape with hardy orchids">
+          <div class="section-card__body">
+            <h2>About the Society</h2>
+            <p>Learn about the Society’s mission, purpose, governance, and the way members and volunteers work together.</p>
+            <div class="section-card__actions"><a class="button-link button-link--primary" href="/Hardy-Orchid-Society/about/index.html">Learn more</a></div>
+          </div>
+        </article>
+        <article class="section-card">
+          <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="Bee orchid close-up">
+          <div class="section-card__body">
+            <h2>Membership</h2>
+            <p>Find joining information, member benefits, journal details, and opportunities including photo competitions.</p>
+            <div class="section-card__actions"><a class="button-link button-link--primary" href="/Hardy-Orchid-Society/membership/index.html">Learn more</a></div>
+          </div>
+        </article>
+        <article class="section-card">
+          <img src="/Hardy-Orchid-Society/assets/photos/homepage-wildflower-orchids.jpg" alt="Orchids in flower at a meeting venue">
+          <div class="section-card__body">
+            <h2>Events &amp; Meetings</h2>
+            <p>See national meetings, regional groups, shows, AGM information, and reports from recent Society activity.</p>
+            <div class="section-card__actions"><a class="button-link button-link--primary" href="/Hardy-Orchid-Society/events/index.html">Learn more</a></div>
+          </div>
+        </article>
+        <article class="section-card">
+          <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Protected orchid habitat">
+          <div class="section-card__body">
+            <h2>Conservation &amp; Research</h2>
+            <p>Explore active projects, field surveys, partner organisations, and research that supports orchid protection.</p>
+            <div class="section-card__actions"><a class="button-link button-link--primary" href="/Hardy-Orchid-Society/conservation/index.html">Learn more</a></div>
+          </div>
+        </article>
+        <article class="section-card">
+          <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="Hardy orchid in cultivation">
+          <div class="section-card__body">
+            <h2>Growing Hardy Orchids</h2>
+            <p>Access beginner guides, species profiles, techniques, and seasonal cultivation advice for successful growing.</p>
+            <div class="section-card__actions"><a class="button-link button-link--primary" href="/Hardy-Orchid-Society/cultivation/index.html">Learn more</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
   <div id="site-footer"></div>
-<script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+  <script src="/Hardy-Orchid-Society/shared/header.js"></script>
+  <script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+  <script>
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let currentSlideIndex = 0;
 
-`;
+    function showSlide(index) {
+      slides.forEach((slide, slideIndex) => slide.classList.toggle('active', slideIndex === index));
+      dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
+      currentSlideIndex = index;
+    }
 
+    function nextSlide() {
+      showSlide((currentSlideIndex + 1) % slides.length);
+    }
 
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+
+    setInterval(nextSlide, 20000);
+  </script>
 </body>
 </html>

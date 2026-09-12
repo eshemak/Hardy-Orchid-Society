@@ -2,36 +2,59 @@
   const root = "/Hardy-Orchid-Society/";
   const current = window.location.pathname;
 
-  const isActive = (path) =>
-    current === root + path ||
-    (path === "index.html" && (current === root || current === root + "index.html"));
+  const navItems = [
+    { label: "About", href: "about/index.html", matches: ["about/"] },
+    { label: "Membership", href: "membership/index.html", matches: ["membership/", "discussionforum/"] },
+    { label: "Events", href: "events/index.html", matches: ["events/", "fieldtrips/"] },
+    { label: "Conservation", href: "conservation/index.html", matches: ["conservation/"] },
+    { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] }
+  ];
+
+  const isActive = (item) => item.matches.some((prefix) => current.startsWith(root + prefix));
 
   const headerHtml = `
     <header class="site-header">
       <nav class="navbar" aria-label="Primary">
-        <a class="site-brand" href="${root}">
+        <a class="site-brand" href="${root}" aria-label="Hardy Orchid Society home">
           <img src="${root}assets/branding/hardy-orchid-logo.png" alt="Hardy Orchid Society logo" class="site-logo">
           <span class="site-title">Hardy Orchid Society</span>
         </a>
-
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
-
         <ul id="primary-menu" class="nav-links">
-          <li><a href="${root}index.html" class="${isActive("index.html") ? "active" : ""}">Home</a></li>
-          <li><a href="${root}cultivation/cultivation.html" class="${isActive("cultivation/cultivation.html") ? "active" : ""}">Cultivation</a></li>
-          <li><a href="${root}fieldtrips/fieldtrips.html" class="${isActive("fieldtrips/fieldtrips.html") ? "active" : ""}">Field Trips</a></li>
-          <li><a href="${root}membership/membership.html" class="${isActive("membership/membership.html") ? "active" : ""}">Membership</a></li>
-          <li><a href="${root}conservation/conservation.html" class="${isActive("conservation/conservation.html") ? "active" : ""}">Conservation</a></li>
-          <li><a href="${root}discussionforum/discussionforum.html" class="${isActive("discussionforum/discussionforum.html") ? "active" : ""}">Discussion Forum</a></li>
+          ${navItems
+            .map(
+              (item) => `<li><a href="${root + item.href}" class="${isActive(item) ? "active" : ""}">${item.label}</a></li>`
+            )
+            .join("")}
         </ul>
       </nav>
     </header>
   `;
 
   const mount = document.getElementById("site-header");
-  if (mount) mount.innerHTML = headerHtml;
+  if (mount) {
+    mount.innerHTML = headerHtml;
+  }
+
+  const breadcrumbMount = document.getElementById("site-breadcrumbs");
+  if (breadcrumbMount) {
+    const pageTitle = breadcrumbMount.dataset.pageTitle;
+    const parentTitle = breadcrumbMount.dataset.parentTitle;
+    const parentPath = breadcrumbMount.dataset.parentPath;
+    const parts = [`<a href="${root}">Home</a>`];
+
+    if (parentTitle && parentPath) {
+      parts.push(`<span aria-hidden="true">/</span><a href="${root + parentPath}">${parentTitle}</a>`);
+    }
+
+    if (pageTitle) {
+      parts.push(`<span aria-hidden="true">/</span><span aria-current="page">${pageTitle}</span>`);
+    }
+
+    breadcrumbMount.innerHTML = `<nav class="breadcrumb" aria-label="Breadcrumb">${parts.join("")}</nav>`;
+  }
 
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.getElementById("primary-menu");

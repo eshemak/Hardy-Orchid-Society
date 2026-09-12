@@ -1,49 +1,45 @@
-document.getElementById("site-footer").innerHTML = `
-<footer class="site-footer">
+(function () {
+  const mount = document.getElementById("site-footer");
+  if (!mount) return;
 
-  <div class="footer-container">
-
-    <div class="footer-section">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="/Hardy-Orchid-Society/index.html">Home</a></li>
-        <li><a href="/Hardy-Orchid-Society/membership.html">Membership</a></li>
-        <li><a href="/Hardy-Orchid-Society/events.html">Meetings & Events</a></li>
-        <li><a href="/Hardy-Orchid-Society/cultivation.html">Cultivation</a></li>
-        <li><a href="/Hardy-Orchid-Society/journal.html">Journal</a></li>
-        <li><a href="/Hardy-Orchid-Society/seedbank.html">Seed Bank</a></li>
-        <li><a href="/Hardy-Orchid-Society/contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>Contact</h3>
-      <ul>
-        <li>Email: info@hardyorchidsociety.org</li>
-        <li>Seed Bank: seedbank@hardyorchidsociety.org</li>
-        <li>Membership: membership@hardyorchidsociety.org</li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h3>Policies</h3>
-      <ul>
-        <li><a href="/Hardy-Orchid-Society/privacy.html">Privacy Policy</a></li>
-        <li><a href="/Hardy-Orchid-Society/cookies.html">Cookie Policy</a></li>
-        <li><a href="/Hardy-Orchid-Society/terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section join-footer">
-      <h3>Become a Member</h3>
-      <a class="join-button" href="/Hardy-Orchid-Society/join.html">Join Now</a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    © Hardy Orchid Society 2026. All rights reserved.
-  </div>
-
-</footer>
-`;
+  const root = "/Hardy-Orchid-Society/";
+  mount.innerHTML = `
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Main sections</h3>
+          <ul>
+            <li><a href="${root}about/index.html">About the Society</a></li>
+            <li><a href="${root}membership/index.html">Membership</a></li>
+            <li><a href="${root}events/index.html">Events &amp; Meetings</a></li>
+            <li><a href="${root}conservation/index.html">Conservation &amp; Research</a></li>
+            <li><a href="${root}cultivation/index.html">Growing Hardy Orchids</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Useful links</h3>
+          <ul>
+            <li><a href="${root}about/committee.html">Committee</a></li>
+            <li><a href="${root}about/constitution.html">Constitution</a></li>
+            <li><a href="${root}about/contact.html">Contact</a></li>
+            <li><a href="${root}sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Policies</h3>
+          <ul>
+            <li><a href="${root}privacy.html">Privacy</a></li>
+            <li><a href="${root}terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="${root}cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Get involved</h3>
+          <p>Connect with the Society through membership, meetings, conservation support, and practical growing advice.</p>
+          <a class="button-link button-link--accent" href="${root}membership/join.html">Join or Renew</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© Hardy Orchid Society 2026. Dedicated to the study, conservation, and cultivation of hardy orchids.</div>
+    </footer>
+  `;
+})();
