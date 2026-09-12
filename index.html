@@ -21,6 +21,76 @@
         padding: 25px;
     }
 
+    /* Photo Carousel Styles */
+    .carousel-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto 30px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 66.67%;
+        background: #f0f0f0;
+    }
+
+    .carousel-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .carousel-slide {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        flex-shrink: 0;
+    }
+
+    .carousel-slide.active {
+        opacity: 1;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .carousel-dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: background 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .dot.active {
+        background: rgba(255, 255, 255, 1);
+    }
+
     h1 {
         font-size: 2.2rem;
         margin-bottom: 15px;
@@ -112,6 +182,27 @@
 
 <div id="site-header"></div>
 
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-inner" id="carouselInner">
+            <div class="carousel-slide active">
+                <img src="assets/photos/homepage-clifftop-orchid.jpg" alt="Clifftop Orchid">
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/photos/homepage-bee-orchid.jpg" alt="Bee Orchid">
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/photos/homepage-wildflower-orchids.jpg" alt="Wildflower Orchids">
+            </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+</div>
+
 <div class="container">
 
 <h1>Hardy Orchid Society</h1>
@@ -135,7 +226,7 @@ We support members through practical guidance, field activities, conservation pr
     <h2>Join the Society</h2>
     <p>
         Membership is open to anyone with an interest in hardy orchids.  
-        Members receive access to events, resources, and the Society’s journal.
+        Members receive access to events, resources, and the Society's journal.
     </p>
 
     <div class="join-button-wrapper">
@@ -174,6 +265,36 @@ We support members through practical guidance, field activities, conservation pr
 </div>
 
 <script src="/Hardy-Orchid-Society/shared/header.js"></script>
+
+<script>
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current slide and dot
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index;
+    showSlide(currentSlideIndex);
+}
+
+// Auto-rotate carousel every 20 seconds
+setInterval(nextSlide, 20000);
+</script>
 
 document.getElementById("site-footer").innerHTML = `
 <footer class="site-footer">
