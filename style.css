@@ -267,6 +267,17 @@ h3 {
     outline-offset: 3px;
 }
 
+.carousel-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.85rem;
+}
+
+.carousel-toggle {
+    min-width: auto;
+    padding: 0.7rem 1rem;
+}
+
 .page-hero,
 .intro-panel {
     display: grid;

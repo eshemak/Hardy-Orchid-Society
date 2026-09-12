@@ -18,7 +18,7 @@
     { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] }
   ];
 
-  const isActive = (item) => item.matches.some((prefix) => current.startsWith(root + prefix));
+  const isActive = (item) => current === root + item.href || item.matches.some((prefix) => current.startsWith(root + prefix));
 
   const headerHtml = `
     <header class="site-header">

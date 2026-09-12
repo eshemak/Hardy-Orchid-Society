@@ -40,6 +40,11 @@
           </div>
         </div>
       </div>
+      <div class="carousel-controls">
+        <button id="carouselToggle" class="button-link button-link--secondary carousel-toggle" type="button" aria-pressed="false">
+          Pause rotation
+        </button>
+      </div>
     </section>
 
     <section class="intro-panel">
@@ -109,7 +114,10 @@
   <script>
     const slides = Array.from(document.querySelectorAll('.carousel-slide'));
     const dots = Array.from(document.querySelectorAll('.dot'));
+    const carouselToggle = document.getElementById('carouselToggle');
     let currentSlideIndex = 0;
+    let rotationTimer = null;
+    let isPaused = false;
 
     function showSlide(index) {
       slides.forEach((slide, slideIndex) => {
@@ -129,11 +137,41 @@
       showSlide((currentSlideIndex + 1) % slides.length);
     }
 
+    function updateCarouselToggle() {
+      if (!carouselToggle) return;
+      carouselToggle.textContent = isPaused ? 'Resume rotation' : 'Pause rotation';
+      carouselToggle.setAttribute('aria-pressed', String(isPaused));
+    }
+
+    function startRotation() {
+      clearInterval(rotationTimer);
+      rotationTimer = setInterval(nextSlide, 20000);
+      isPaused = false;
+      updateCarouselToggle();
+    }
+
+    function stopRotation() {
+      clearInterval(rotationTimer);
+      rotationTimer = null;
+      isPaused = true;
+      updateCarouselToggle();
+    }
+
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => showSlide(index));
     });
 
-    setInterval(nextSlide, 20000);
+    if (carouselToggle) {
+      carouselToggle.addEventListener('click', () => {
+        if (isPaused) {
+          startRotation();
+        } else {
+          stopRotation();
+        }
+      });
+    }
+
+    startRotation();
   </script>
 </body>
 </html>
