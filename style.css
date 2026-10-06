@@ -670,3 +670,10 @@ h3 {
         width: 100%;
     }
 }
+
+body.cultivation-section .page-hero,
+body.cultivation-section .intro-panel,
+body.cultivation-section .subpage-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
