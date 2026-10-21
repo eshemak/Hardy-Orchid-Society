@@ -44,7 +44,7 @@
         <ul id="primary-menu" class="nav-links">
           ${navItems
             .map(
-              (item) => `<li><a href="${root + item.href}" class="${isActive(item) ? "active" : ""}">${item.label}</a></li>`
+              (item) => `<li><a href="${root + item.href}" class="${isActive(item) ? "active" : ""}"${isActive(item) ? ' aria-current="page"' : ""}>${item.label}</a></li>`
             )
             .join("")}
         </ul>
