@@ -27,7 +27,7 @@ body {
     font-family: "Aptos", "Calibri", sans-serif;
     color: var(--color-text);
     background: var(--color-bg);
-    padding-top: 96px;
+    padding-top: 100px;
 }
 
 img {
@@ -76,7 +76,7 @@ h3 {
 .navbar {
     max-width: var(--site-width);
     margin: 0 auto;
-    padding: 0.85rem 1rem;
+    padding: 0.95rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -91,11 +91,10 @@ h3 {
 }
 
 .site-logo {
-    width: 56px;
-    height: 56px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
-    transform: scale(1.7);
-    transform-origin: right center;
+    transform: none;
 }
 
 .site-title {
@@ -619,10 +618,6 @@ h3 {
 }
 
 @media (max-width: 900px) {
-    body {
-        padding-top: 88px;
-    }
-
     .page-hero,
     .intro-panel,
     .split-layout,
@@ -647,6 +642,10 @@ h3 {
 }
 
 @media (max-width: 760px) {
+    body {
+        padding-top: 88px;
+    }
+
     .site-logo {
         width: 46px;
         height: 46px;
