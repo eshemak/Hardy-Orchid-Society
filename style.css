@@ -93,8 +93,10 @@ h3 {
 .site-logo {
     width: 68px;
     height: 68px;
+    margin-right: 34px;
     object-fit: contain;
-    transform: none;
+    transform: translateY(2px) scale(1.5);
+    transform-origin: left center;
 }
 
 .site-title {
@@ -649,6 +651,7 @@ h3 {
     .site-logo {
         width: 46px;
         height: 46px;
+        margin-right: 23px;
     }
 
     .site-title {
