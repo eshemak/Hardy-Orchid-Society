@@ -357,7 +357,8 @@ h3 {
     margin-bottom: 2rem;
 }
 
-.page-hero--text-only {
+.page-hero--text-only,
+.intro-panel--text-only {
     grid-template-columns: minmax(0, 1fr);
 }
 
