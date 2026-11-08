@@ -93,9 +93,9 @@ h3 {
 .site-logo {
     width: 68px;
     height: 68px;
-    margin-right: 34px;
+    margin-right: 23.8px;
     object-fit: contain;
-    transform: translateY(2px) scale(1.5);
+    transform: translateY(2px) scale(1.35);
     transform-origin: left center;
 }
 
@@ -652,6 +652,7 @@ h3 {
         width: 46px;
         height: 46px;
         margin-right: 23px;
+        transform: translateY(2px) scale(1.5);
     }
 
     .site-title {
