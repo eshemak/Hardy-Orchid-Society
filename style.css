@@ -245,7 +245,7 @@ h3 {
 
 .carousel-wrapper {
     position: relative;
-    padding-bottom: 52%;
+    padding-bottom: 26%;
 }
 
 .carousel-slide {
@@ -289,9 +289,8 @@ h3 {
 
 .carousel-dots {
     position: absolute;
-    left: 50%;
-    bottom: 1rem;
-    transform: translateX(-50%);
+    right: 1rem;
+    top: 1rem;
     display: flex;
     gap: 0.6rem;
 }
@@ -696,14 +695,24 @@ h3 {
     }
 
     .carousel-wrapper {
-        padding-bottom: 66%;
+        display: grid;
+        padding-bottom: 0;
+    }
+
+    .carousel-slide {
+        position: static;
+        grid-area: 1 / 1;
+    }
+
+    .carousel-slide img {
+        height: auto;
+        aspect-ratio: 100 / 33;
     }
 
     .carousel-caption {
-        right: 1rem;
-        left: 1rem;
-        bottom: 1rem;
+        position: static;
         max-width: none;
+        border-radius: 0;
     }
 
     .page-hero__content,
