@@ -120,13 +120,16 @@ h3 {
 }
 
 @media (min-width: 1201px) {
+    .nav-links li {
+        text-align: center;
+    }
+
     .nav-links a {
         font-size: 1.125rem;
     }
 }
 
 .nav-links li {
-    text-align: right;
     text-wrap: balance;
 }
 
@@ -682,13 +685,16 @@ h3 {
 
     .nav-links li {
         width: 100%;
+        text-align: right;
     }
 
     .nav-links a {
-        display: block;
-        width: 100%;
+        display: inline-block;
+        max-width: 100%;
         padding: 0.7rem 0;
         font-size: 1.2875rem;
+        text-align: center;
+        text-wrap: balance;
     }
 
     .nav-links.open {
