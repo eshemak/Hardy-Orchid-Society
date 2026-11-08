@@ -27,6 +27,7 @@
     { label: "Events", href: "events/index.html", matches: ["events/", "fieldtrips/"] },
     { label: "Conservation", href: "conservation/index.html", matches: ["conservation/"] },
     { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] },
+    { label: "Identification of British and Irish orchids", href: "Identification-guide.html", matches: [] },
     { label: "Members Area", href: "members/index.html", matches: ["members/"] }
   ];
 
