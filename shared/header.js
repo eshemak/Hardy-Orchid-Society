@@ -26,7 +26,8 @@
     { label: "Membership", href: "membership/index.html", matches: ["membership/", "discussionforum/"] },
     { label: "Events", href: "events/index.html", matches: ["events/", "fieldtrips/"] },
     { label: "Conservation", href: "conservation/index.html", matches: ["conservation/"] },
-    { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] }
+    { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] },
+    { label: "Members Area", href: "members/index.html", matches: ["members/"] }
   ];
 
   const isActive = (item) => current === root + item.href || item.matches.some((prefix) => current.startsWith(root + prefix));

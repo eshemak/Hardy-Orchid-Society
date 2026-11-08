@@ -642,22 +642,7 @@ h3 {
     }
 }
 
-@media (max-width: 760px) {
-    body {
-        padding-top: 88px;
-    }
-
-    .site-logo {
-        width: 46px;
-        height: 46px;
-        margin-right: 23px;
-        transform: translateY(2px) scale(1.5);
-    }
-
-    .site-title {
-        font-size: 1rem;
-    }
-
+@media (max-width: 1000px) {
     .nav-toggle {
         display: inline-block;
     }
@@ -692,6 +677,23 @@ h3 {
 
     .navbar {
         position: relative;
+    }
+}
+
+@media (max-width: 760px) {
+    body {
+        padding-top: 88px;
+    }
+
+    .site-logo {
+        width: 46px;
+        height: 46px;
+        margin-right: 23px;
+        transform: translateY(2px) scale(1.5);
+    }
+
+    .site-title {
+        font-size: 1rem;
     }
 
     .carousel-wrapper {
