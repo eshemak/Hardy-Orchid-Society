@@ -126,7 +126,7 @@ h3 {
 }
 
 .nav-links li {
-    text-align: center;
+    text-align: right;
     text-wrap: balance;
 }
 
@@ -682,7 +682,6 @@ h3 {
 
     .nav-links li {
         width: 100%;
-        text-align: center;
     }
 
     .nav-links a {
