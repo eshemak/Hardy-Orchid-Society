@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>British &amp; Irish Orchids – Hardy Orchid Society</title>
+  <meta name="description" content="A photographic identification guide to the wild orchids of Britain and Ireland. Species profiles with habitats, whole plants and close-ups.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fbf8;
+      --bg-soft: #eef5ee;
+      --text: #163123;
+      --text-muted: #3d5a4a;
+      --green: #1a6b4a;
+      --green-dark: #0f4a32;
+      --green-light: #d4e8dc;
+      --orange: #e07a2f;
+      --orange-hover: #c96820;
+      --white: #ffffff;
+      --border: #d6e5db;
+      --shadow: 0 4px 20px rgba(22, 49, 35, 0.06);
+      --shadow-hover: 0 8px 28px rgba(22, 49, 35, 0.10);
+      --radius: 14px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', Aptos, Calibri, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: var(--green-dark);
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+    }
+    .nav {
+      display: flex;
+      gap: 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .nav a {
+      color: var(--text);
+    }
+    .nav a:hover {
+      color: var(--green);
+    }
+    .nav a.active {
+      color: var(--green);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, #e8f2eb 0%, #f4f9f5 100%);
+      padding: 3.5rem 1.5rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 62ch;
+      margin-bottom: 0;
+    }
+
+    /* Main content */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.75rem 1.5rem 4rem;
+    }
+
+    .intro-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.75rem;
+      border: 1px solid var(--border);
+    }
+    .intro-card p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+    .intro-card p + p {
+      margin-top: 0.85rem;
+    }
+
+    /* Group sections */
+    .group {
+      margin-bottom: 3rem;
+    }
+    .group-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .group-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .group-header span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .species-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .species-card {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 1.15rem 1.25rem;
+      transition: box-shadow 0.2s ease, transform 0.15s ease, border-color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 110px;
+    }
+    .species-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--green-light);
+    }
+    .species-card .common {
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+      line-height: 1.35;
+    }
+    .species-card .scientific {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      flex-grow: 1;
+    }
+    .species-card .link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .species-card:hover .link {
+      color: var(--green-dark);
+    }
+    .species-card .link::after {
+      content: "→";
+      transition: transform 0.15s ease;
+    }
+    .species-card:hover .link::after {
+      transform: translateX(3px);
+    }
+
+    /* Other / rare section emphasis */
+    .group.other .species-card {
+      border-left: 3px solid var(--green);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      margin-top: 1rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .footer-inner a {
+      color: var(--text-muted);
+    }
+    .footer-inner a:hover {
+      color: var(--green);
+    }
+
+    /* Mobile nav */
+    @media (max-width: 820px) {
+      .nav {
+        display: none;
+      }
+      .header-inner {
+        justify-content: flex-start;
+      }
+    }
+    @media (max-width: 560px) {
+      .species-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 2.5rem 1.25rem 2rem;
+      }
+      .intro-card {
+        padding: 1.35rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-label">Identification guide</p>
+      <h1>British &amp; Irish Orchids</h1>
+      <p class="hero-lead">
+        A photographic guide to the wild orchids of Britain and Ireland, prepared as an aid to identification.
+        Each species profile includes images of habitats, whole plants and close-ups, together with descriptive notes.
+      </p>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="intro-card">
+      <p>
+        The species are arranged in taxonomic groups below. Select any name to open its profile page for further photographs and information.
+        All species pages are currently available.
+      </p>
+    </div>
+
+    <div id="groups">
+
+      <!-- Orchis -->
+      <section class="group" aria-labelledby="g-orchis">
+        <div class="group-header">
+          <h2 id="g-orchis">Orchis</h2>
+          <span>5 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/orchis-mascula/jQueryGallery1/o-mascula.html">
+            <div class="common">Early-purple Orchid</div>
+            <div class="scientific">Orchis mascula</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/orchis-anthropophora/jQueryGallery1/o-anthropophora.html">
+            <div class="common">Man Orchid</div>
+            <div class="scientific">Orchis anthropophora</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/orchis-purpurea/jQueryGallery1/o-purpurea.html">
+            <div class="common">Lady Orchid</div>
+            <div class="scientific">Orchis purpurea</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/orchis-militaris/jQueryGallery1/o-militaris.html">
+            <div class="common">Military Orchid</div>
+            <div class="scientific">Orchis militaris</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/orchis-simia/jQueryGallery1/o-simia.html">
+            <div class="common">Monkey Orchid</div>
+            <div class="scientific">Orchis simia</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Anacamptis & Neotinea -->
+      <section class="group" aria-labelledby="g-anacamptis">
+        <div class="group-header">
+          <h2 id="g-anacamptis">Anacamptis &amp; Neotinea</h2>
+          <span>5 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/anacamptis-laxiflora/jQueryGallery1/a-laxiflora.html">
+            <div class="common">Loose-flowered Orchid</div>
+            <div class="scientific">Anacamptis laxiflora</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/anacamptis-morio/jQueryGallery1/a-morio.html">
+            <div class="common">Green-winged Orchid</div>
+            <div class="scientific">Anacamptis morio</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/anacamptis-pyramidalis/jQueryGallery1/a-pyramidalis.html">
+            <div class="common">Pyramidal Orchid</div>
+            <div class="scientific">Anacamptis pyramidalis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/neotinea-maculata/jQueryGallery1/n-maculata.html">
+            <div class="common">Dense-flowered Orchid</div>
+            <div class="scientific">Neotinea maculata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/neotinea-ustulata/jQueryGallery1/n-ustulata.html">
+            <div class="common">Burnt Orchid</div>
+            <div class="scientific">Neotinea ustulata</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Ophrys -->
+      <section class="group" aria-labelledby="g-ophrys">
+        <div class="group-header">
+          <h2 id="g-ophrys">Ophrys</h2>
+          <span>4 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/ophrys-apifera/jQueryGallery1/o-apifera.html">
+            <div class="common">Bee Orchid</div>
+            <div class="scientific">Ophrys apifera</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/ophrys-insectifera/jQueryGallery1/o-insectifera.html">
+            <div class="common">Fly Orchid</div>
+            <div class="scientific">Ophrys insectifera</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/ophrys-fuciflora/jQueryGallery1/o-fuciflora.html">
+            <div class="common">Late Spider-orchid</div>
+            <div class="scientific">Ophrys fuciflora</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/ophrys-sphegodes/jQueryGallery1/o-sphegodes.html">
+            <div class="common">Early Spider-orchid</div>
+            <div class="scientific">Ophrys sphegodes</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Dactylorhiza -->
+      <section class="group" aria-labelledby="g-dactylorhiza">
+        <div class="group-header">
+          <h2 id="g-dactylorhiza">Dactylorhiza</h2>
+          <span>9 taxa</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-viridis/jQueryGallery1/d-viridis.html">
+            <div class="common">Frog Orchid</div>
+            <div class="scientific">Dactylorhiza viridis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-incarnata/jQueryGallery1/d-incarnata.html">
+            <div class="common">Early Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza incarnata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-maculata/jQueryGallery1/d-maculata.html">
+            <div class="common">Heath Spotted-orchid</div>
+            <div class="scientific">Dactylorhiza maculata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-fuchsii/jQueryGallery1/d-fuchsii.html">
+            <div class="common">Common Spotted-orchid</div>
+            <div class="scientific">Dactylorhiza fuchsii</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-praetermissa/jQueryGallery1/d-praetermissa.html">
+            <div class="common">Southern Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza praetermissa</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-traunsteinerioides/jQueryGallery1/d-traunsteinerioides.html">
+            <div class="common">Narrow-leaved Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza traunsteinerioides</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-ebudensis/jQueryGallery1/d-ebudensis.html">
+            <div class="common">Hebridean Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza traunsteinerioides subsp. francis-drucei</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-purpurella/jQueryGallery1/d-purpurella.html">
+            <div class="common">Northern Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza purpurella</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/dactylorhiza-occidentalis/jQueryGallery1/d-occidentalis.html">
+            <div class="common">Irish Marsh-orchid</div>
+            <div class="scientific">Dactylorhiza kerryensis subsp. occidentalis</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Platanthera & Gymnadenia -->
+      <section class="group" aria-labelledby="g-platanthera">
+        <div class="group-header">
+          <h2 id="g-platanthera">Platanthera &amp; Gymnadenia</h2>
+          <span>5 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/platanthera-chlorantha/jQueryGallery1/p-chlorantha.html">
+            <div class="common">Greater Butterfly-orchid</div>
+            <div class="scientific">Platanthera chlorantha</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/platanthera-bifolia/jQueryGallery1/p-bifolia.html">
+            <div class="common">Lesser Butterfly-orchid</div>
+            <div class="scientific">Platanthera bifolia</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/gymnadenia-conopsea/jQueryGallery1/g-conopsea.html">
+            <div class="common">Chalk Fragrant Orchid</div>
+            <div class="scientific">Gymnadenia conopsea</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/gymnadenia-borealis/jQueryGallery1/g-borealis.html">
+            <div class="common">Heath Fragrant Orchid</div>
+            <div class="scientific">Gymnadenia borealis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/gymnadenia-densiflora/jQueryGallery1/g-densiflora.html">
+            <div class="common">Marsh Fragrant Orchid</div>
+            <div class="scientific">Gymnadenia densiflora</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Cephalanthera -->
+      <section class="group" aria-labelledby="g-cephalanthera">
+        <div class="group-header">
+          <h2 id="g-cephalanthera">Cephalanthera</h2>
+          <span>3 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/cephalanthera-rubra/jQueryGallery1/c-rubra.html">
+            <div class="common">Red Helleborine</div>
+            <div class="scientific">Cephalanthera rubra</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/cephalanthera-damasonium/jQueryGallery1/c-damasonium.html">
+            <div class="common">White Helleborine</div>
+            <div class="scientific">Cephalanthera damasonium</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/cephalanthera-longifolia/jQueryGallery1/c-longifolia.html">
+            <div class="common">Narrow-leaved Helleborine</div>
+            <div class="scientific">Cephalanthera longifolia</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Epipactis -->
+      <section class="group" aria-labelledby="g-epipactis">
+        <div class="group-header">
+          <h2 id="g-epipactis">Epipactis</h2>
+          <span>8 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-palustris/jQueryGallery1/e-palustris.html">
+            <div class="common">Marsh Helleborine</div>
+            <div class="scientific">Epipactis palustris</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-helleborine/jQueryGallery1/e-helleborine.html">
+            <div class="common">Broad-leaved Helleborine</div>
+            <div class="scientific">Epipactis helleborine</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-atrorubens/jQueryGallery1/e-atrorubens.html">
+            <div class="common">Dark-red Helleborine</div>
+            <div class="scientific">Epipactis atrorubens</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-purpurata/jQueryGallery1/e-purpurata.html">
+            <div class="common">Violet Helleborine</div>
+            <div class="scientific">Epipactis purpurata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-dunensis/jQueryGallery1/e-dunensis.html">
+            <div class="common">Dune Helleborine</div>
+            <div class="scientific">Epipactis dunensis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-leptochila/jQueryGallery1/e-leptochila.html">
+            <div class="common">Narrow-lipped Helleborine</div>
+            <div class="scientific">Epipactis leptochila</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-phyllanthes/jQueryGallery1/e-phyllanthes.html">
+            <div class="common">Green-flowered Helleborine</div>
+            <div class="scientific">Epipactis phyllanthes</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipactis-sancta/jQueryGallery1/e-sancta.html">
+            <div class="common">Lindisfarne Helleborine</div>
+            <div class="scientific">Epipactis sancta</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Lady’s-tresses, Twayblades etc. -->
+      <section class="group" aria-labelledby="g-neottia">
+        <div class="group-header">
+          <h2 id="g-neottia">Lady’s-tresses, Twayblades &amp; allies</h2>
+          <span>7 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/goodyera-repens/jQueryGallery1/g-repens.html">
+            <div class="common">Creeping Lady’s-tresses</div>
+            <div class="scientific">Goodyera repens</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/spiranthes-romanzoffiana/jQueryGallery1/s-romanzoffiana.html">
+            <div class="common">Irish Lady’s-tresses</div>
+            <div class="scientific">Spiranthes romanzoffiana</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/spiranthes-spiralis/jQueryGallery1/s-spiralis.html">
+            <div class="common">Autumn Lady’s-tresses</div>
+            <div class="scientific">Spiranthes spiralis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/spiranthes-aestivalis/jQueryGallery1/s-aestivalis.html">
+            <div class="common">Summer Lady’s-tresses</div>
+            <div class="scientific">Spiranthes aestivalis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/neottia-cordata/jQueryGallery1/n-cordata.html">
+            <div class="common">Lesser Twayblade</div>
+            <div class="scientific">Neottia cordata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/neottia-ovata/jQueryGallery1/n-ovata.html">
+            <div class="common">Common Twayblade</div>
+            <div class="scientific">Neottia ovata</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/neottia-nidus-avis/jQueryGallery1/n-nidus-avis.html">
+            <div class="common">Bird’s-nest Orchid</div>
+            <div class="scientific">Neottia nidus-avis</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Other / rare -->
+      <section class="group other" aria-labelledby="g-other">
+        <div class="group-header">
+          <h2 id="g-other">Other species</h2>
+          <span>10 species</span>
+        </div>
+        <div class="species-grid">
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/cypripedium-calceolus/jQueryGallery1/c-calceolus.html">
+            <div class="common">Lady’s-slipper Orchid</div>
+            <div class="scientific">Cypripedium calceolus</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/epipogium-aphyllum/jQueryGallery1/e-aphyllum.html">
+            <div class="common">Ghost Orchid</div>
+            <div class="scientific">Epipogium aphyllum</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/liparis-loeselii/jQueryGallery1/l-loeselii.html">
+            <div class="common">Fen Orchid</div>
+            <div class="scientific">Liparis loeselii</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/h-paludosa/jQueryGallery1/h-paludosa.html">
+            <div class="common">Bog Orchid</div>
+            <div class="scientific">Hammarbya paludosa</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/corallorhiza-trifida/jQueryGallery1/c-trifida.html">
+            <div class="common">Coralroot Orchid</div>
+            <div class="scientific">Corallorhiza trifida</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/herminium-monorchis/jQueryGallery1/h-monorchis.html">
+            <div class="common">Musk Orchid</div>
+            <div class="scientific">Herminium monorchis</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/pseudorchis-albida/jQueryGallery1/p-albida.html">
+            <div class="common">Small-white Orchid</div>
+            <div class="scientific">Pseudorchis albida</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/himantoglossum-hircinum/jQueryGallery1/h-hircinum.html">
+            <div class="common">Lizard Orchid</div>
+            <div class="scientific">Himantoglossum hircinum</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/serapias%20parviflora/jQueryGallery1/s-parviflora.html">
+            <div class="common">Lesser Tongue-orchid</div>
+            <div class="scientific">Serapias parviflora</div>
+            <span class="link">View profile</span>
+          </a>
+          <a class="species-card" href="https://www.hardyorchidsociety.org/orchidphotos/serapias-lingua/jQueryGallery1/s-lingua.html">
+            <div class="common">Greater Tongue-orchid</div>
+            <div class="scientific">Serapias lingua</div>
+            <span class="link">View profile</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
