@@ -40,6 +40,11 @@ a {
     text-decoration: none;
 }
 
+.inline-link {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
 p,
 li {
     line-height: 1.65;
