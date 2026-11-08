@@ -121,7 +121,13 @@ h3 {
 
 @media (min-width: 1201px) {
     .nav-links li {
+        flex: 0 0 auto;
+        width: min-content;
         text-align: center;
+    }
+
+    .nav-links .nav-item--identification {
+        width: 12.25rem;
     }
 
     .nav-links a {

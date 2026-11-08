@@ -27,7 +27,7 @@
     { label: "Events", href: "events/index.html", matches: ["events/", "fieldtrips/"] },
     { label: "Conservation", href: "conservation/index.html", matches: ["conservation/"] },
     { label: "Growing Orchids", href: "cultivation/index.html", matches: ["cultivation/"] },
-    { label: "Identification of British and Irish orchids", href: "Identification-guide.html", matches: ["orchids/"] },
+    { label: "Identification of British and Irish orchids", href: "Identification-guide.html", matches: ["orchids/"], className: "nav-item--identification" },
     { label: "Members Area", href: "members/index.html", matches: ["members/"] }
   ];
 
@@ -46,7 +46,7 @@
         <ul id="primary-menu" class="nav-links">
           ${navItems
             .map(
-              (item) => `<li><a href="${root + item.href}" class="${isActive(item) ? "active" : ""}"${isActive(item) ? ' aria-current="page"' : ""}>${item.label}</a></li>`
+              (item) => `<li${item.className ? ` class="${item.className}"` : ""}><a href="${root + item.href}" class="${isActive(item) ? "active" : ""}"${isActive(item) ? ' aria-current="page"' : ""}>${item.label}</a></li>`
             )
             .join("")}
         </ul>
