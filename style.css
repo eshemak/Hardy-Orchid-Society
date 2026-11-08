@@ -120,6 +120,15 @@ h3 {
 }
 
 @media (min-width: 1201px) {
+    body {
+        padding-top: 104px;
+    }
+
+    .navbar {
+        padding-top: calc(0.95rem + 2px);
+        padding-bottom: calc(0.95rem + 2px);
+    }
+
     .nav-links li {
         flex: 0 0 auto;
         width: min-content;
