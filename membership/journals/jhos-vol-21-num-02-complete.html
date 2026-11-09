@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JHOS Vol. 21 No. 2 (113) Spring 2024 – Complete – Hardy Orchid Society</title>
+  <style>
+    :root {
+      --hos-green: #2e5a3c;
+      --hos-dark: #1a3c28;
+      --hos-muted: #5c6b5e;
+      --hos-bg: #f7faf7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      background: var(--hos-bg);
+    }
+    .site-header {
+      background: white;
+      border-bottom: 1px solid #dce8dc;
+      padding: 0.85rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+      color: var(--hos-dark);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .site-logo { height: 36px; width: auto; }
+    .nav-links { display: flex; list-style: none; gap: 1.4rem; }
+    .nav-links a {
+      color: var(--hos-green);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: var(--hos-muted);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--hos-green); text-decoration: none; }
+    h1 {
+      font-size: 1.75rem;
+      color: var(--hos-dark);
+      margin-bottom: 0.25rem;
+      line-height: 1.3;
+    }
+    .meta {
+      color: var(--hos-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .actions a {
+      background: var(--hos-green);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: 1.35rem;
+      color: var(--hos-green);
+      margin: 2.6rem 0 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #c8e0c8;
+    }
+    h3 {
+      font-size: 1.12rem;
+      color: var(--hos-dark);
+      margin: 1.6rem 0 0.6rem;
+    }
+    p { margin-bottom: 1.05rem; }
+    ul, ol { margin: 0.6rem 0 1.2rem 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    .author {
+      font-weight: 600;
+      color: var(--hos-dark);
+      margin-bottom: 0.7rem;
+    }
+    figure {
+      margin: 1.8rem 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 50%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      object-fit: contain;
+    }
+    .figure-grid img {
+      max-width: 100%;
+    }
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--hos-muted);
+      margin-top: 0.55rem;
+      line-height: 1.4;
+    }
+    .figure-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.8rem 0;
+    }
+    .figure-grid figure { margin: 0; }
+    .contents-box {
+      background: white;
+      border: 1px solid #dce8dc;
+      border-radius: 8px;
+      padding: 1.3rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .contents-box ol { margin: 0.4rem 0 0 1.2rem; }
+    .contents-box li { margin-bottom: 0.4rem; }
+    .note {
+      background: #fff8e6;
+      border-left: 4px solid #e0a800;
+      padding: 0.85rem 1.1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+    }
+    .committee {
+      font-size: 0.9rem;
+      background: white;
+      border: 1px solid #e8f0e8;
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin: 1.5rem 0;
+      line-height: 1.55;
+    }
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .results-table th, .results-table td {
+      border: 1px solid #dce8dc;
+      padding: 0.45rem 0.7rem;
+      text-align: left;
+    }
+    .results-table th {
+      background: var(--hos-light, #e8f5e9);
+      color: var(--hos-dark);
+    }
+    .site-footer {
+      background: white;
+      border-top: 1px solid #dce8dc;
+      padding: 2.5rem 1.5rem 1.5rem;
+      margin-top: 3rem;
+    }
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+    .footer-section h3 {
+      font-size: 0.95rem;
+      color: var(--hos-dark);
+      margin-bottom: 0.7rem;
+    }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.35rem; }
+    .footer-section a {
+      color: var(--hos-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-section a:hover { color: var(--hos-green); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e8f0e8;
+      text-align: center;
+      color: var(--hos-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .figure-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+
+  <h1>Journal of the Hardy Orchid Society</h1>
+  <p class="meta">Vol. 21 No. 2 (113) · Spring 2024 · ISSN 2977-0513</p>
+
+  <div class="actions">
+    <a href="index.html">← All issues</a>
+  </div>
+
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-000.jpg" alt="Front cover">
+    <figcaption>
+      Front cover: Neil Hubbard’s <em>Ophrys tenthredinifera</em>, a winner in Class 2 of the 2024 Plant Show. Photography by Jon Evans.
+    </figcaption>
+  </figure>
+
+  <p>Our aim is to promote interest in the study of Native European Orchids and those from similar temperate climates throughout the world. We cover such varied aspects as field study, cultivation and propagation, photography, taxonomy and systematics, and practical conservation. We welcome articles relating to any of these subjects. Views expressed in journal articles are those of their author(s) and may not reflect those of HOS.</p>
+
+  <h2>Contents</h2>
+  <div class="contents-box">
+    <ol>
+      <li><a href="#editorial">Editorial Note by Mike Gasson</a></li>
+      <li><a href="#chairs-note">Chair’s Note by Celia Wright</a></li>
+      <li><a href="#field-trips">Field Trips 2024</a></li>
+      <li><a href="#plant-show">Results of HOS Plant Show 2024</a></li>
+      <li><a href="#rewilding">Rewilding and Other Modes of Ecological Restoration by Richard Bateman</a></li>
+      <li><a href="#orchid-meadows">Orchid Meadows and Rewilding by Bill Temple</a></li>
+      <li><a href="#platantheras">Puzzling Platantheras by Richard Mielcarek</a></li>
+      <li><a href="#monkton">Monkton Nature Reserve: Reflections on a Former Rubbish Tip by James Douglas Bonthron</a></li>
+    </ol>
+  </div>
+
+  <h2 id="editorial">Editorial Note</h2>
+  <p class="author">Mike Gasson</p>
+  <p>Details of the 2024 field trip programme and results from the recent Plant Show are included in this JHOS. Articles include a discussion of unusual versions of <em>Platanthera</em> species and a profile of Monkton Nature Reserve with a first report on their rabbit deterrent research; something supported by one of the first HOSCG grants.</p>
+  <p>A major part of this issue is the inclusion of articles from Richard Bateman and Bill Temple on the growing interest in creating and maintaining orchid meadows and how this relates to ‘rewilding’. The profile of the latter is also growing but its original or modified definitions would not embrace a focus on single species or a group of related species as envisaged by orchid enthusiasts. Rewilding as a term has massively drifted in meaning but its core drivers to let nature take control and minimise human intervention are at odds with the introduction and protection of orchids. Hopefully these articles from Richard and Bill will provide a useful perspective.</p>
+
+  <h2 id="chairs-note">Chair’s Note</h2>
+  <p class="author">Celia Wright</p>
+  <p>Welcome to a new year of HOS activities following the AGM at Kidlington two weeks ago. A special welcome to Colin Rainbow who returns to the role of HOS Treasurer following Christopher Snelson’s decision to stand down. Christopher will support Colin with some involvement until the necessary changes in banking arrangements are complete. The updated Constitution was passed by an overwhelming majority. Thank you to all who voted in favour of it, either at the meeting or by email.</p>
+  <p>Talks at the meeting were varied and interesting as usual. A special thank you to our President, Richard Bateman, who stood in at the last moment with a fascinating talk entitled “One Frog or Two?” when David Pearce was unable to travel to Kidlington. We will welcome David instead to the Autumn meeting to tell us about his experiences during “16 years with the Butterfly Orchid”.</p>
+  <p>Thanks to Richard Kulczycki – with help from Charlie Philpotts in the north of England – we have more Field Trips this year than ever before. We know that these trips are a major reason why many of our members join HOS. The Forum also plays an important role from this month onwards as members help each other with details of the location of wild orchid populations and flowering times in the current season.</p>
+  <p>For many years now, June has brought the Malvern Orchid Show with many orchid society stands, including the one that I have managed for HOS. This year will be different as circumstances at the Three Counties Showground have resulted in a change of location to the NEC in Birmingham as part of Gardeners’ World Live. We expect this to bring many more visitors to the Orchid Show than we had at Malvern and hope to be able to recruit more new HOS members as a result. There will be orchids for sale as well as displays. Reduced price tickets to Gardeners’ World Live are available through orchid societies. Iain Wright (who manages this for HOS) posted the details of how to obtain these on the Forum on 28th March, so do take advantage of the offer if you can.</p>
+  <p>As well as the role of HOS Chair, I also manage the speaker programmes for our three meetings each year. This must be done well in advance as the booking forms with the programmes are sent out with the previous Journal. I’m always looking for members or others with orchid knowledge or experience who are willing to speak. Can you help with this? If so, please get in touch. I wish you all a happy summer with hardy orchids, whether at home, across the UK or overseas and look forward to seeing many of you, whether at a meeting, on a field trip or maybe unexpectedly in a field of orchids.</p>
+
+  <h2 id="field-trips">Field Trips 2024</h2>
+  <p>You must make your decision whether you are fit and healthy enough to participate in any particular walk. General indications of difficulty are given, but on the day weather and underfoot conditions may make the trip more difficult. You should prepare as for a remote country walk and expect uneven ground. The general principle is: participants are responsible for their own safety. Prepare as if you were going hill walking with friends. Do communicate any concerns you have to the leader and your fellow participants as early as possible on the day or, better still, beforehand. The leader does not carry any first-aid or emergency equipment. The leader’s role is to help you find your way around the area and help you to see more orchids than you would if you went on your own. It is not to ensure your safety – you are solely responsible for that. Areas visited often have no mobile signal.</p>
+  <p>We normally collect a voluntary donation to any non-government organisation, such as a Wildlife Trust, that maintains a site visited. Every year recently we have collected several hundred pounds for conservation – thank you. Our insurance only covers our own members, so it is not normally possible to take a non-member friend with you. Family membership can include children too. You cannot bring a dog unless the trip leader explicitly agrees to this. With this number of trips, some trips will have to be rescheduled, or perhaps even cancelled, if the orchids do not flower or are affected by the season. Please be sympathetic.</p>
+  <p>To register on a trip, please email the individual contact given and include your membership number (or perhaps a small apology if you have lost it!). Any enquiries, ideas, problems, queries, please write to one of the Field Trip Co-ordinators – fieldtrips@hardyorchidsociety.org.</p>
+
+  <h3>Selected trips</h3>
+  <ul>
+    <li><strong>Saturday 16th March: Oxfordshire, near Didcot</strong> – Leader: Hamza Nobes<br>
+      To see the Giant Orchids (<em>Himantoglossum robertianum</em>) discovered two years ago. One or two orchids should be near the path but most are a few metres down a very steep and slippery grass bank. Stiff soled shoes are preferable and the short descent requires extreme care.</li>
+    <li><strong>Saturday 11th May: Thames Valley, Oxfordshire</strong> – Leader: Keith Boseley<br>
+      To see the Lady and Monkey Orchids at Hartslock, plus the famous hybrids. Meet by Goring Station and walk a mile to the reserve (and back).</li>
+    <li><strong>Thursday 16th May: East Chilterns, South Beds</strong> – Leader: Alec Latham<br>
+      Three miles connecting the Hoo Bit, the Pegsdon Hills and Knocking Hoe reserves. White Helleborine, Fly Orchid and Burnt Orchid expected. Sturdy footwear required.</li>
+    <li><strong>Tuesday 28th May: East Kent</strong> – Leader: Colin Sillence<br>
+      Parkgate and Denge Wood to see Monkey Orchid, Lady Orchid, Fly Orchid and Greater Butterfly-orchids. Up to twelve orchid species possible. Car sharing required.</li>
+    <li><strong>Wednesday 5th June: East Kent</strong> – Leader: Colin Sillence<br>
+      Monkton Nature Reserve – the first ever recipient of our conservation grant. Nine orchids should be in flower with impressive numbers of Man Orchid. Afternoon visit to Sandwich for Lizard Orchid.</li>
+    <li><strong>Friday 7th June: Braunton Burrows, North Devon</strong> – Leader: Roger Harding<br>
+      Guided by legendary local botanist Mary Breeds on one of the finest sand dune systems in the country. Early and Southern Marsh-orchids, Bee Orchid, Pyramidal Orchid, Twayblade and more.</li>
+    <li><strong>Sunday 23rd June: Kenfig Dunes, Glamorgan</strong> – Leader: Steve Parsons<br>
+      Primary focus on the Fen Orchid, plus high-summer and late-summer species.</li>
+    <li><strong>Sunday 23rd June: near Leeds</strong> – Leader: Charlie Philpotts<br>
+      Three varied sites. Northern and Southern Marsh-orchids, Common Spotted-orchid, Twayblade, Bee Orchid and hybrids.</li>
+    <li><strong>Saturday 29th June: Cloud Wood, Leicestershire</strong> – Leader: Neil Hubbard<br>
+      SSSI and the best Leicestershire &amp; Rutland Wildlife Trust reserve for orchids. Common Spotted-orchid, Bee Orchid, Twayblade, Pyramidal Orchid, Greater Butterfly-orchid and more.</li>
+    <li><strong>Sunday 30th June: Perthshire</strong> – Leader: Dave Trudgill<br>
+      Visit to Dave Trudgill’s orchid meadow with both Butterfly-orchids, Marsh-orchids, Helleborines and many others.</li>
+    <li><strong>Tuesday 9th July: Cliburn Moss, Penrith, Cumbria</strong> – Leader: Alan Gendle<br>
+      For Creeping Lady’s-tresses. Annual count. Wellies or waterproof walking boots essential.</li>
+    <li><strong>Sunday 14th July: Kirkby Stephen, Cumbria</strong> – Leader: Charlie Philpotts<br>
+      Waitby Greenriggs and Augill pasture. Northern Marsh-orchid, Common and Heath Spotted-orchids, Greater and Lesser Butterfly-orchid, Marsh Helleborine, Twayblade, Frog Orchid and three Fragrant-orchids.</li>
+    <li><strong>Sunday 28th July (afternoon): South of Newbury, North Hampshire</strong> – Leader: Simon Melville<br>
+      A trip for helleborines. <em>Epipactis helleborine</em>, <em>E. helleborine</em> var. <em>chlorantha</em>, <em>E. purpurata</em>, <em>E. × schultzei</em> and <em>E. phyllanthes</em> (var. <em>pendula</em>) all possible.</li>
+  </ul>
+
+  <h2 id="plant-show">Results of HOS Plant Show 2024</h2>
+  <p>The Plant Show was judged by Nick Fry. Photography of the winning plants by Jon Evans.</p>
+
+  <table class="results-table">
+    <tr><th>Class</th><th>Result</th></tr>
+    <tr><td>Class 2: Three pots native European (not native to Britain) orchids, distinct varieties</td><td>1st Neil Hubbard: <em>Ophrys lutea</em>, <em>O. tenthredinifera</em>, <em>O. fusca</em><br>2nd Moira Tarrant: <em>Ophrys oestrifera</em>, <em>O. mammosa</em>, <em>O. fusca</em> var. <em>calocaerina</em></td></tr>
+    <tr><td>Class 4: Three pots hardy orchids, distinct varieties, any country of origin</td><td>1st Moira Tarrant: <em>Ophrys bombyliflora</em>, <em>O. lutea</em> var. <em>melena</em>, <em>O. tenthredinifera</em></td></tr>
+    <tr><td>Class 5: One pot native British orchid</td><td>1st Neil Hubbard: <em>Anacamptis morio</em><br>2nd Neil Hubbard: <em>Orchis anthropophora</em></td></tr>
+    <tr><td>Class 7: One pot non-European orchid</td><td>1st Mike Powell: <em>Pterostylis curta</em><br>2nd Moira Tarrant: <em>Pterostylis</em> ‘Dusky Duke’<br>3rd Mike Powell: <em>Cymbidium cyperifolium</em></td></tr>
+    <tr><td>Class 8: One pot <em>Dactylorhiza</em></td><td>1st Neil Hubbard: <em>Dactylorhiza romana</em></td></tr>
+    <tr><td>Class 9: One pot <em>Orchis</em>, <em>Anacamptis</em> or <em>Neotinea</em></td><td>1st Moira Tarrant: <em>Orchis italica</em><br>2nd Neil Evans: <em>Neotinea lactea</em><br>3rd Neil Hubbard: <em>Orchis anthropophora</em></td></tr>
+    <tr><td>Class 10: One pot <em>Ophrys</em></td><td>1st Neil Hubbard: <em>Ophrys speculum</em></td></tr>
+    <tr><td>Class 16: One plant or pan of plants raised from seed by the grower</td><td>1st Moira Tarrant: <em>Ophrys lutea</em></td></tr>
+  </table>
+
+  <p><strong>Winner of Best in Show Trophy:</strong> Moira Tarrant for <em>Orchis italica</em> in Class 9<br>
+  <strong>Chairman’s Award:</strong> Neil Hubbard for <em>Orchis anthropophora</em><br>
+  <strong>Grower’s Trophy:</strong> Moira Tarrant for <em>Ophrys lutea</em> in Class 16<br>
+  <strong>Banksian Medal:</strong> Moira Tarrant</p>
+
+  <p>Some of the winning entries are featured below. Numbers match the Class entered and the position (e.g. 2-1 is the first placed entry in Class 2). Photography by Jon Evans.</p>
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-004.jpg" alt="2-1c Ophrys fusca">
+      <figcaption>2-1c: Neil Hubbard – <em>Ophrys fusca</em> (Class 2, 1st)</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-005.jpg" alt="2-1a Ophrys lutea">
+      <figcaption>2-1a: Neil Hubbard – <em>Ophrys lutea</em> (Class 2, 1st)</figcaption>
+    </figure>
+  </div>
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-006.jpg" alt="4-1c">
+      <figcaption>4-1c: Moira Tarrant – <em>Ophrys tenthredinifera</em> (Class 4, 1st)</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-007.jpg" alt="4-1a">
+      <figcaption>4-1a: Moira Tarrant – <em>Ophrys bombyliflora</em> (Class 4, 1st)</figcaption>
+    </figure>
+  </div>
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-010.jpg" alt="5-2">
+      <figcaption>5-2: Neil Hubbard – <em>Orchis anthropophora</em> (Class 5, 2nd)</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-011.jpg" alt="5-1">
+      <figcaption>5-1: Neil Hubbard – <em>Anacamptis morio</em> (Class 5, 1st)</figcaption>
+    </figure>
+  </div>
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-012.jpg" alt="9-2">
+      <figcaption>9-2: Neil Evans – <em>Neotinea lactea</em> (Class 9, 2nd)</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-013.jpg" alt="10-1 Ophrys speculum">
+      <figcaption>10-1: Neil Hubbard – <em>Ophrys speculum</em> (Class 10, 1st)</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="rewilding">Rewilding and Other Modes of Ecological Restoration, as Viewed From the Perspective of a Hardy Orchid</h2>
+  <p class="author">Richard Bateman</p>
+  <p>Many countries, including the UK, have recently experienced an upsurge of interest in various aspects of ecological restoration. This enthusiasm is epitomised by Target 2 of the Global Biodiversity Framework, which commits to ensuring that 30% of degraded habitats will be under effective restoration by 2030. This is no mean task – for example, the excellent recent report by State of Nature (Burns et al. 2023) notes that only 25% of the UK’s peatlands and a startlingly low 7% of woodlands are formally categorised as being in “good condition.” If our more modest community of orchid enthusiasts is also to address this challenge, we need to begin by identifying realistic goals, and deciding what kind and scale of projects are needed to achieve them. In particular, we should determine exactly which roles hardy orchids are best qualified to play in restoration, and distinguish them from roles that orchids are, by their very nature, obliged to leave to other, better suited groups of plants.</p>
+
+  <h3>What is restoration ecology?</h3>
+  <p>Ecological restoration is an umbrella term that covers a multitude of sins. It is defined by Wikipedia as “the practice of renewing and restoring degraded, damaged, or destroyed ecosystems and habitats in the environment by active human interruption and action”. For the Society for Ecological Restoration it is “an intentional activity that initiates or accelerates the recovery of an ecosystem with respect to its health, integrity and sustainability”, ecosystems being “dynamic communities of plants, animals, and microorganisms interacting with their physical environment as a functional unit.”</p>
+  <p>Missing from these definitions, but nonetheless implicit in most texts addressing restoration, is the idea that the aspects of degradation, damage and/or destruction in question are the result of mankind’s activities, rather than being a purely natural phenomenon. Also missing from these definitions, but this time deliberately, is a sense of scale – both the scale of the damage already done and the scale of the area of landscape that has been affected are relevant.</p>
+
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-015.jpg" alt="Fig. 1 scale of ecological degradation">
+    <figcaption>Fig. 1: Diagram summarising what was termed “the wilderness continuum” by Carver et al. (2021). As human-induced modification of the landscape intensifies, the task of reversing the degradation becomes more complex.</figcaption>
+  </figure>
+
+  <p>The first three principles of rewilding focus on “trophic interactions” (crudely, who eats who), “landscape-scale [spatial] connectivity” and “recovery of ecological processes.” But orchids constitute only a tiny proportion of the biomass in any habitat in which they occur, reliably failing the criterion for ecological dominance. The one arguable exception where orchids constitute a significant percentage of the ground flora – the presence of Birds-nest Orchid and some Helleborines in densely shading woodlands – simply reflects the absence of most other flowering plants, which lack the orchid’s ability to use mycorrhizal networks to plumb into surrounding trees as a convenient source of nutrients. Across all habitats, orchids are too uncommon to aid long-distance connectivity among non-orchid species, and have no involvement in ecological processes that are likely to dictate the overall nature of the local vegetation.</p>
+  <p>Plant species restoration projects are probably best epitomised by orchids, most notably several decades of (rather accident-prone) attempts to bulk up the representation in northern England of the formerly far more widespread Lady’s-slipper Orchid. Rather than emphasising reintroductions, British and Irish conservationists remain focused on trying to prevent further losses among our ca 1390 unequivocally native plant species. The one officially recognised loss of a native orchid – Summer Ladies-tresses, eliminated from the New Forest by 1953 – is generally attributed not to indirect human effects on the relevant habitat but instead to the direct impact of the vast numbers of plants collected for herbaria.</p>
+
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-016.jpg" alt="Climate winners and losers – top">
+    <figcaption>Fig. 2 (part): Possible climate-change winners and losers – Creeping Lady’s-tresses and Small-white Orchid (cold specialists already in retreat).</figcaption>
+  </figure>
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-017.jpg" alt="Climate winners and losers – bottom">
+    <figcaption>Fig. 2 (part): Giant Orchid and Small-flowered Tongue-orchid (southerly species migrating northwards).</figcaption>
+  </figure>
+
+  <h2 id="orchid-meadows">Orchid Meadows and Rewilding</h2>
+  <p class="author">Bill Temple</p>
+  <p>Bill Temple discusses the practical creation and management of orchid meadows and how these activities relate (or conflict) with contemporary rewilding concepts. The article draws on conservation experience and the Society’s own grant-supported work, including observations from wildlife areas in summer and winter.</p>
+
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-018.jpg" alt="Wildlife area in summer">
+      <figcaption>Fig. 1: Wildlife area in summer. Photo by Bill Temple</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-019.jpg" alt="Wildlife area in winter">
+      <figcaption>Fig. 2: Wildlife area in winter. Photo by Bill Temple</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="platantheras">Puzzling Platantheras</h2>
+  <p class="author">Richard Mielcarek</p>
+  <p>UK field guides all agree that the best way to distinguish between the two species of <em>Platanthera</em> that occur here is to examine the pollinia; ‘close together and vertically parallel’ in <em>Platanthera bifolia</em>, Lesser Butterfly-orchid, and ‘relatively far apart and diverge sharply from the top downwards’ in <em>Platanthera chlorantha</em>, Greater Butterfly-orchid, according to Ettlinger. Harrap &amp; Harrap (2005) and Cole &amp; Waller (2020) provide illustrations showing obvious differences in the pollinia.</p>
+  <p>Stace says the parallel pollinia of <em>P. bifolia</em> are 0.3–1.2 mm apart while the base of angled pollinia in <em>P. chlorantha</em> are 2.5–4.8 mm apart. These differences mean the mouth of the spur is obvious in <em>P. chlorantha</em> but largely obscured in <em>P. bifolia</em>. Swainbank (2017) suggests, based on a limited study, that the subtended angle between the pollinia averages 45° in <em>P. chlorantha</em> but no more than 5° in <em>P. bifolia</em>. However, later observations reduced the angle for <em>P. chlorantha</em> to somewhere between 38° and 32°.</p>
+  <p>So identification and separation should be straightforward, but it is not always so simple in the field. This is particularly true in the Stroud area of the Cotswolds where it is not hard to find plants whose pollinia do not easily fit either species.</p>
+
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-022.jpg" alt="Platanthera at Edge">
+    <figcaption>Figs. 1 &amp; 2: <em>Platanthera</em> sp. at Edge, 2 June 2017, among a colony of <em>P. chlorantha</em>.</figcaption>
+  </figure>
+  <div class="figure-grid">
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-023.jpg" alt="Platanthera pollinia detail">
+      <figcaption>Pollinia detail – intermediate form</figcaption>
+    </figure>
+    <figure>
+      <img src="../../images/jhos-vol-21-num-02/figures/img-024.jpg" alt="Platanthera pollinia detail">
+      <figcaption>Pollinia detail – intermediate form</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="monkton">Monkton Nature Reserve: Reflections on a Former Rubbish Tip</h2>
+  <p class="author">James Douglas Bonthron</p>
+  <p>A profile of Monkton Nature Reserve (a former rubbish tip) and a first report on rabbit-deterrent research supported by one of the early Hardy Orchid Society Conservation Grants (HOSCG). The reserve has become an important orchid site and was the first recipient of an HOS conservation grant. Nine orchid species can be in flower, with impressive numbers of Man Orchid.</p>
+
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-029.jpg" alt="Monkton Nature Reserve – former quarry">
+    <figcaption>Fig. 1: View of Monkton Nature Reserve illustrating its former use as a quarry. Photo by Simon Tarrant</figcaption>
+  </figure>
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-030.jpg" alt="Man Orchids at Monkton">
+    <figcaption>Fig. 2: Impressive colony of Man Orchids (<em>Orchis anthropophora</em>) within Monkton Nature Reserve. Photo by Simon Tarrant</figcaption>
+  </figure>
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-031.jpg" alt="Monkton / conservation illustration">
+    <figcaption>Illustration from the Monkton Nature Reserve article</figcaption>
+  </figure>
+  <figure>
+    <img src="../../images/jhos-vol-21-num-02/figures/img-032.jpg" alt="Rear cover – Orchis italica">
+    <figcaption>Rear cover: Moira Tarrant’s <em>Orchis italica</em>, which won Class 9 and the ‘Best in Show’ trophy. Photography by Jon Evans.</figcaption>
+  </figure>
+
+  <hr style="margin: 2.5rem 0; border: none; border-top: 1px solid #dce8dc;">
+
+  <p style="font-size: 0.95rem; color: var(--hos-muted);">
+    This is a readable conversion of JHOS Vol. 21 No. 2 (113) Spring 2024. The original PDF remains the definitive designed version for print.
+  </p>
+
+  <p style="margin-top: 1.5rem;">
+    <a href="index.html">← Back to Journals archive</a>
+  </p>
+</main>
+
+</body>
+</html>

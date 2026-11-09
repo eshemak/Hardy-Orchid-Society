@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journals &amp; Newsletters – Hardy Orchid Society</title>
+  <style>
+    :root {
+      --hos-green: #2e5a3c;
+      --hos-dark: #1a3c28;
+      --hos-muted: #5c6b5e;
+      --hos-bg: #f7faf7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: #222;
+      background: var(--hos-bg);
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    h1 {
+      font-size: 1.9rem;
+      color: var(--hos-dark);
+      margin-bottom: 0.4rem;
+    }
+    .intro {
+      color: var(--hos-muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: var(--hos-green);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #c8e0c8;
+    }
+    .issue-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+    .issue-card {
+      background: white;
+      border: 1px solid #dce8dc;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .issue-card:hover {
+      border-color: var(--hos-green);
+      box-shadow: 0 2px 8px rgba(46,90,60,0.12);
+    }
+    .issue-card strong {
+      color: var(--hos-dark);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .issue-card span {
+      color: var(--hos-muted);
+      font-size: 0.9rem;
+    }
+    .badge {
+      background: #e8f5e9;
+      color: var(--hos-green);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .note {
+      margin-top: 2.5rem;
+      color: var(--hos-muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      .issue-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Journals &amp; Newsletters</h1>
+  <p class="intro">
+    Archive of the <em>Journal of the Hardy Orchid Society</em> (JHOS) and earlier Society newsletters.
+    Available issues are presented as readable webpages with article text and captions.
+  </p>
+
+  <h2>Journals</h2>
+  <div class="issue-list">
+    <a class="issue-card" href="jhos-vol-21-num-02-complete.html">
+      <div>
+        <strong>JHOS Vol. 21 No. 2 (113)</strong>
+        <span>Spring 2024 – complete text</span>
+      </div>
+      <span class="badge">36 pages</span>
+    </a>
+    <div class="issue-card">
+      <div>
+        <strong>JHOS Vol. 18 No. 1</strong>
+        <span>Winter 2021 – archive page not yet available</span>
+      </div>
+      <span class="badge">Coming soon</span>
+    </div>
+  </div>
+
+  <h2>Newsletters</h2>
+  <div class="issue-list">
+    <div class="issue-card">
+      <div>
+        <strong>Newsletter 10</strong>
+        <span>Archive page not yet available</span>
+      </div>
+      <span class="badge">Coming soon</span>
+    </div>
+    <div class="issue-card">
+      <div>
+        <strong>Newsletter 8</strong>
+        <span>Archive page not yet available</span>
+      </div>
+      <span class="badge">Coming soon</span>
+    </div>
+  </div>
+
+  <p class="note">
+    <a href="../journal.html">← Membership: Journal &amp; Publications</a><br>
+    More issues will be added as they are prepared.
+  </p>
+</main>
+</body>
+</html>
