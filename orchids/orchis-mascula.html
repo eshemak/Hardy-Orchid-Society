@@ -4,30 +4,526 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Early-purple Orchid (Orchis mascula) – Hardy Orchid Society</title>
-  <meta name="description" content="Identification profile for Early-purple Orchid (Orchis mascula), a British and Irish orchid.">
+  <meta name="description" content="Identification guide, distribution, key features and photographs of the Early-purple Orchid (Orchis mascula) in Britain and Ireland.">
   <link rel="stylesheet" href="/Hardy-Orchid-Society/style.css">
+  <style>
+    .profile-card {
+      margin-bottom: 1.35rem;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 0.85rem;
+    }
+
+    .profile-card p {
+      color: var(--color-muted);
+      margin: 0 0 0.85rem;
+    }
+
+    .profile-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.35rem;
+    }
+
+    .profile-grid .profile-card {
+      margin-bottom: 1.35rem;
+    }
+
+    .features {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 0.75rem;
+      font-size: 0.98rem;
+    }
+
+    .feature dt {
+      font-weight: 600;
+    }
+
+    .feature dd {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .gallery-item a,
+    .map-item a {
+      display: block;
+      border-radius: var(--radius-sm);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      background: #f3f7f3;
+      transition: opacity 0.2s ease;
+    }
+
+    .gallery-item a:hover img,
+    .map-item a:hover img {
+      opacity: 0.86;
+    }
+
+    .gallery-item a:focus-visible,
+    .map-item a:focus-visible,
+    .lightbox button:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    .gallery-caption,
+    .map-caption {
+      padding: 0.65rem 0.1rem 0;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .gallery-caption strong,
+    .map-caption strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      color: var(--color-text);
+      font-size: 0.9rem;
+    }
+
+    .gallery-caption .credit {
+      font-size: 0.8rem;
+    }
+
+    .map-item {
+      max-width: 160px;
+    }
+
+    .map-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      background: #f3f7f3;
+      transition: opacity 0.2s ease;
+    }
+
+    .articles {
+      padding: 0;
+      list-style: none;
+    }
+
+    .articles li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-muted);
+      font-size: 0.98rem;
+    }
+
+    .articles li:last-child {
+      border-bottom: 0;
+    }
+
+    .page-note {
+      margin-top: 2rem;
+      color: var(--color-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.78);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-panel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(760px, 100%);
+      max-height: 100%;
+      padding: 2.7rem 1rem 1rem;
+      border-radius: var(--radius-md);
+      background: #111;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .lightbox-img-wrap img {
+      width: auto;
+      max-width: 100%;
+      max-height: min(68vh, 700px);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      max-width: 100%;
+      margin-top: 0.75rem;
+      color: #f1f1f1;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .lightbox-caption .credit {
+      opacity: 0.75;
+      font-size: 0.82rem;
+    }
+
+    .lightbox button {
+      position: absolute;
+      border: 0;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+
+    .lightbox-close {
+      top: 0.5rem;
+      right: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .lightbox-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0.4rem 0.65rem;
+      border-radius: 4px;
+      font-size: 1.8rem;
+    }
+
+    .lightbox-nav:hover,
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .lightbox-prev {
+      left: 0.3rem;
+    }
+
+    .lightbox-next {
+      right: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+
+      .lightbox {
+        padding: 0.5rem;
+      }
+
+      .lightbox-panel {
+        padding: 2.7rem 0.5rem 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
   <main class="site-main">
     <div id="site-breadcrumbs" data-page-title="Early-purple Orchid" data-parent-title="British &amp; Irish Orchids" data-parent-path="Identification-guide.html"></div>
+
     <section class="intro-panel intro-panel--text-only">
       <div class="intro-panel__content">
-        <span class="eyebrow">British &amp; Irish Orchids</span>
+        <span class="eyebrow">Species profile</span>
         <h1 class="page-title">Early-purple Orchid</h1>
         <p class="page-summary"><i>Orchis mascula</i></p>
       </div>
     </section>
-    <section class="text-card">
-      <h2>Profile coming soon</h2>
-      <p>The photographic identification profile for Early-purple Orchid is being prepared. Please check back for photographs and species information.</p>
-      <div class="button-row">
-        <a class="button-link button-link--primary" href="/Hardy-Orchid-Society/Identification-guide.html">Back to the identification guide</a>
+
+    <section class="text-card profile-card" aria-label="About the Early-purple Orchid">
+      <p>
+        The Early-purple Orchid is one of the earliest flowering orchids in Britain and Ireland and its appearance heralds a new orchid season.
+        It is widely distributed and occurs in both woodland and in more open unimproved grassland habitats, including roadsides.
+        In woodland it favours the edges and areas of recent coppice, where there is more abundant light.
+        It is slow to colonise new areas and is regarded as a good indicator of ancient woodland.
+      </p>
+      <p>
+        The flowering period extends from early April into June, varying with the timing of the season.
+        The vegetative rosettes appear early in winter and in some areas they can be a target for browsing deer.
+        In general the leaves are heavily spotted, but occasional plants occur without the characteristic marking.
+        As its common name suggests, the flowers are usually a shade of purple, but pink and white flowers are present in many populations.
+      </p>
+    </section>
+
+    <section class="text-card profile-card">
+      <h2>Key features</h2>
+      <dl class="features">
+        <div class="feature">
+          <dt>Plant</dt>
+          <dd>10–40 cm, occasionally 50–60 cm; stem flushed purple towards the top.</dd>
+        </div>
+        <div class="feature">
+          <dt>Leaves</dt>
+          <dd>3–8 long lanceolate-oval in a basal rosette with 2–3 smaller leaves sheathing the stem; glossy green and usually variably spotted.</dd>
+        </div>
+        <div class="feature">
+          <dt>Bracts</dt>
+          <dd>Lanceolate, clasping the ovary; variably purple.</dd>
+        </div>
+        <div class="feature">
+          <dt>Flowers</dt>
+          <dd>10–50 flowers; upper sepal and petals form a hood, lateral sepals erect; lip three-lobed and directed downwards; spur 10–12 mm, bent upwards. Usually various shades of purple with a paler white-yellow base to the lip marked with purple spots; occasionally pink or white.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="text-card profile-card">
+      <h2>Distribution</h2>
+      <p>Click the map to view the latest BSBI distribution records for the Early-purple Orchid.</p>
+      <div class="map-item">
+        <a href="https://bsbi.org/maps?taxonid=2cd4p9h.caq" target="_blank" rel="noopener noreferrer" title="Open current BSBI distribution map">
+          <img src="../images/orchis-mascula/o-mascula-map.jpg" alt="Distribution map of Orchis mascula in Britain and Ireland" loading="lazy">
+        </a>
+        <div class="map-caption">
+          <strong>BSBI distribution map</strong>
+          Click to view current records
+        </div>
       </div>
     </section>
+
+    <section class="text-card profile-card">
+      <h2>Photographs</h2>
+      <div class="gallery-grid" id="gallery">
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula1.jpg" data-index="0" data-caption="Flower spike of Early-purple Orchid, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula1.jpg" alt="Flower spike of Early-purple Orchid, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Flower spike of Early-purple Orchid, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula2.jpg" data-index="1" data-caption="Early-purple Orchids with bluebells" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula2.jpg" alt="Early-purple Orchids with bluebells" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Early-purple Orchids with bluebells</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula3.jpg" data-index="2" data-caption="Group of Early-purple Orchids with colour variations, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula3.jpg" alt="Group of Early-purple Orchids with colour variations, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Group of Early-purple Orchids with colour variations, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula4.jpg" data-index="3" data-caption="Close-up of Early-purple Orchid, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula4.jpg" alt="Close-up of Early-purple Orchid, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Close-up of Early-purple Orchid, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula5.jpg" data-index="4" data-caption="Early-purple Orchid with previous year's spike" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula5.jpg" alt="Early-purple Orchid with previous year's spike" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Early-purple Orchid with previous year's spike</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula6.jpg" data-index="5" data-caption="Early-purple Orchid with deer-graze damage, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula6.jpg" alt="Early-purple Orchid with deer-graze damage, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Early-purple Orchid with deer-graze damage, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula7.jpg" data-index="6" data-caption="Early-purple Orchids with deer-graze damage, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula7.jpg" alt="Early-purple Orchids with deer-graze damage, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Early-purple Orchids with deer-graze damage, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula8.jpg" data-index="7" data-caption="Flower spike of Early-purple Orchid, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula8.jpg" alt="Flower spike of Early-purple Orchid, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Flower spike of Early-purple Orchid, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula9.jpg" data-index="8" data-caption="Pale form of Early-purple Orchid, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula9.jpg" alt="Pale form of Early-purple Orchid, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Pale form of Early-purple Orchid, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <a href="../images/orchis-mascula/o-mascula10.jpg" data-index="9" data-caption="Early-purple Orchid, Norfolk" data-credit="© Mike Gasson">
+            <img src="../images/orchis-mascula/o-mascula10.jpg" alt="Early-purple Orchid, Norfolk" loading="lazy">
+          </a>
+          <figcaption class="gallery-caption"><strong>Early-purple Orchid, Norfolk</strong><span class="credit">© Mike Gasson</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="profile-grid">
+      <section class="text-card profile-card">
+        <h2>Pollination</h2>
+        <p>
+          The Early-purple Orchid is allogamous and depends on insect visitors for pollination.
+          It is a deceit orchid that attracts insects without offering a reward and does not produce nectar.
+          The most widely accepted view is that the main pollinators are various species of bumblebee; the flowers are especially attractive to naïve queens early in their flight period.
+          The efficiency of seed set varies between populations, probably in relation to the amount of insect activity.
+        </p>
+      </section>
+      <section class="text-card profile-card">
+        <h2>Taxonomy &amp; hybrids</h2>
+        <p>
+          The Early-purple Orchid belongs to the subgenus <em>Masculae</em> and is defined as the subspecies <em>Orchis mascula</em> subsp. <em>mascula</em>.
+        </p>
+        <p>
+          Hybrids with the Green-winged Orchid <em>Anacamptis morio</em> (<em>Orchis</em> × <em>morioides</em>) and the Lady Orchid <em>Orchis purpurea</em> (<em>Orchis</em> × <em>wilmsii</em>) have been described, but they are regarded as doubtful by some <em>Orchis</em> experts (Kretzschmar et al., 2007).
+        </p>
+      </section>
+    </div>
+
+    <section class="text-card profile-card">
+      <h2>Articles in <em>JHOS</em></h2>
+      <ul class="articles">
+        <li>Mike Gasson (2013) Pollination in the Early-purple Orchid. <em>JHOS</em> 10: 60–66.</li>
+      </ul>
+    </section>
+
+    <p class="page-note">
+      Texts and photographs on this page are subject to international copyright legislation.
+      Copyright belongs to the contributing members of the Hardy Orchid Society.
+      Image copyright remains with the individual photographer (Mike Gasson).
+      Material cannot be reproduced without permission from the copyright holder.
+    </p>
   </main>
   <div id="site-footer"></div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <div class="lightbox-panel">
+      <button class="lightbox-close" id="lb-close" type="button" aria-label="Close image viewer">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lb-prev" type="button" aria-label="Previous image">‹</button>
+      <button class="lightbox-nav lightbox-next" id="lb-next" type="button" aria-label="Next image">›</button>
+      <div class="lightbox-img-wrap">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <div class="lightbox-caption" id="lb-caption"></div>
+    </div>
+  </div>
+
   <script src="/Hardy-Orchid-Society/shared/header.js"></script>
   <script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+  <script>
+    (() => {
+      const links = Array.from(document.querySelectorAll("#gallery a[data-index]"));
+      const items = links.map((link) => ({
+        src: link.getAttribute("href"),
+        caption: link.dataset.caption || "",
+        credit: link.dataset.credit || ""
+      }));
+      const lightbox = document.getElementById("lightbox");
+      const image = document.getElementById("lb-img");
+      const caption = document.getElementById("lb-caption");
+      const closeButton = document.getElementById("lb-close");
+      const previousButton = document.getElementById("lb-prev");
+      const nextButton = document.getElementById("lb-next");
+      let currentIndex = 0;
+      let returnFocusTo = null;
+
+      function show(index) {
+        currentIndex = (index + items.length) % items.length;
+        const item = items[currentIndex];
+        image.src = item.src;
+        image.alt = item.caption;
+        caption.replaceChildren(document.createTextNode(item.caption));
+        if (item.credit) {
+          caption.append(document.createElement("br"));
+          const credit = document.createElement("span");
+          credit.className = "credit";
+          credit.textContent = item.credit;
+          caption.append(credit);
+        }
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function hide() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        image.removeAttribute("src");
+        if (returnFocusTo) returnFocusTo.focus();
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          returnFocusTo = link;
+          show(Number(link.dataset.index));
+          closeButton.focus();
+        });
+      });
+
+      closeButton.addEventListener("click", hide);
+      previousButton.addEventListener("click", () => show(currentIndex - 1));
+      nextButton.addEventListener("click", () => show(currentIndex + 1));
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) hide();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (event.key === "Escape") hide();
+        if (event.key === "ArrowLeft") show(currentIndex - 1);
+        if (event.key === "ArrowRight") show(currentIndex + 1);
+        if (event.key === "Tab") {
+          const buttons = [closeButton, previousButton, nextButton];
+          const firstButton = buttons[0];
+          const lastButton = buttons[buttons.length - 1];
+          if (event.shiftKey && document.activeElement === firstButton) {
+            event.preventDefault();
+            lastButton.focus();
+          } else if (!event.shiftKey && document.activeElement === lastButton) {
+            event.preventDefault();
+            firstButton.focus();
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

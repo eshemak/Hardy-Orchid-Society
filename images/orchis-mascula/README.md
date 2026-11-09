@@ -1,3 +1,3 @@
 # Orchis mascula images
 
-Upload the Early-purple Orchid photographs to this folder. Once they are added, they can be included in the species page at `orchids/orchis-mascula.html`.
+The Early-purple Orchid distribution map and photographs in this folder are used by `orchids/orchis-mascula.html`. Image copyright remains with the individual photographer, Mike Gasson; permission is required before reusing the photographs.
