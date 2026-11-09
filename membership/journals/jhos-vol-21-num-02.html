@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JHOS Vol. 21 No. 2 (113) Spring 2024 – Complete – Hardy Orchid Society</title>
+  <link rel="stylesheet" href="/Hardy-Orchid-Society/style.css">
   <style>
     :root {
       --hos-green: #2e5a3c;
@@ -18,39 +19,6 @@
       color: #222;
       background: var(--hos-bg);
     }
-    .site-header {
-      background: white;
-      border-bottom: 1px solid #dce8dc;
-      padding: 0.85rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .navbar {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .site-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      text-decoration: none;
-      color: var(--hos-dark);
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    .site-logo { height: 36px; width: auto; }
-    .nav-links { display: flex; list-style: none; gap: 1.4rem; }
-    .nav-links a {
-      color: var(--hos-green);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .nav-links a:hover { text-decoration: underline; }
     main {
       max-width: 760px;
       margin: 0 auto;
@@ -214,14 +182,13 @@
       font-size: 0.85rem;
     }
     @media (max-width: 700px) {
-      .nav-links { display: none; }
       .figure-grid { grid-template-columns: 1fr; }
       h1 { font-size: 1.45rem; }
     }
   </style>
 </head>
 <body>
-
+<div id="site-header"></div>
 <main>
 
   <h1>Journal of the Hardy Orchid Society</h1>
@@ -456,6 +423,8 @@
     <a href="index.html">← Back to Journals archive</a>
   </p>
 </main>
-
+<div id="site-footer"></div>
+<script src="/Hardy-Orchid-Society/shared/header.js"></script>
+<script src="/Hardy-Orchid-Society/shared/footer.js"></script>
 </body>
 </html>
