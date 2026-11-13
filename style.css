@@ -316,6 +316,11 @@ h3 {
     margin: 0;
 }
 
+.carousel-caption .eyebrow {
+    color: #fff;
+    margin-bottom: 0.35rem;
+}
+
 .carousel-caption p {
     font-size: 0.98rem;
     margin-top: 0.35rem;
