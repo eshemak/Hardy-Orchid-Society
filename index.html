@@ -9,56 +9,22 @@
 <body>
   <div id="site-header"></div>
   <main class="site-main">
-    <section class="hero-carousel" aria-label="Featured orchid photography">
+    <section class="hero-carousel" aria-label="Hardy Orchid Society">
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-slide active" aria-hidden="false">
             <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Hardy orchids growing on a clifftop meadow">
             <div class="carousel-caption">
-              <h2>Discover hardy orchids in gardens and wild places</h2>
-              <p>The Society brings together growers, field botanists, and conservation volunteers.</p>
+              <span class="eyebrow">Welcome</span>
+              <h2>Hardy Orchid Society</h2>
+              <p>The Hardy Orchid Society promotes the study, conservation, and cultivation of hardy orchids through meetings, publications, field activity, and shared expertise.</p>
             </div>
-          </div>
-          <div class="carousel-slide" aria-hidden="true">
-            <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="A bee orchid flowering in grassland">
-            <div class="carousel-caption">
-              <h2>Learn from practical experience</h2>
-              <p>Explore cultivation, meetings, journals, and hands-on support for members.</p>
-            </div>
-          </div>
-          <div class="carousel-slide" aria-hidden="true">
-            <img src="/Hardy-Orchid-Society/assets/photos/homepage-wildflower-orchids.jpg" alt="Wild orchids among summer flowers">
-            <div class="carousel-caption">
-              <h2>Support conservation and research</h2>
-              <p>Find projects, field surveys, and ways to contribute to orchid knowledge and protection.</p>
-            </div>
-          </div>
-          <div class="carousel-dots" aria-label="Carousel navigation">
-            <button class="dot active" type="button" aria-label="Show slide 1" aria-pressed="true"></button>
-            <button class="dot" type="button" aria-label="Show slide 2" aria-pressed="false"></button>
-            <button class="dot" type="button" aria-label="Show slide 3" aria-pressed="false"></button>
           </div>
         </div>
       </div>
-      <div class="carousel-controls">
-        <button id="carouselToggle" class="button-link button-link--secondary carousel-toggle" type="button" aria-pressed="false">
-          Pause rotation
-        </button>
-      </div>
-    </section>
-
-    <section class="intro-panel">
-      <div class="intro-panel__content">
-        <span class="eyebrow">Welcome</span>
-        <h1 class="page-title">Hardy Orchid Society</h1>
-        <p class="page-summary">The Hardy Orchid Society promotes the study, conservation, and cultivation of hardy orchids through meetings, publications, field activity, and shared expertise.</p>
-        <div class="button-row">
-          <a class="button-link button-link--accent" href="/Hardy-Orchid-Society/membership/join.html">Join or renew membership</a>
-          <a class="button-link button-link--secondary" href="/Hardy-Orchid-Society/events/index.html">View events</a>
-        </div>
-      </div>
-      <div class="intro-panel__image">
-        <img src="/Hardy-Orchid-Society/assets/photos/homepage-bee-orchid.jpg" alt="Bee orchid featured on the Hardy Orchid Society homepage">
+      <div class="button-row">
+        <a class="button-link button-link--accent" href="/Hardy-Orchid-Society/membership/join.html">Join or renew membership</a>
+        <a class="button-link button-link--secondary" href="/Hardy-Orchid-Society/events/index.html">View events</a>
       </div>
     </section>
 
@@ -106,68 +72,5 @@
   <div id="site-footer"></div>
   <script src="/Hardy-Orchid-Society/shared/header.js"></script>
   <script src="/Hardy-Orchid-Society/shared/footer.js"></script>
-  <script>
-    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-    const dots = Array.from(document.querySelectorAll('.dot'));
-    const carouselToggle = document.getElementById('carouselToggle');
-    let currentSlideIndex = 0;
-    let rotationTimer = null;
-    let isPaused = false;
-
-    function showSlide(index) {
-      slides.forEach((slide, slideIndex) => {
-        const isActive = slideIndex === index;
-        slide.classList.toggle('active', isActive);
-        slide.setAttribute('aria-hidden', String(!isActive));
-      });
-      dots.forEach((dot, dotIndex) => {
-        const isActive = dotIndex === index;
-        dot.classList.toggle('active', isActive);
-        dot.setAttribute('aria-pressed', String(isActive));
-      });
-      currentSlideIndex = index;
-    }
-
-    function nextSlide() {
-      showSlide((currentSlideIndex + 1) % slides.length);
-    }
-
-    function updateCarouselToggle() {
-      if (!carouselToggle) return;
-      carouselToggle.textContent = isPaused ? 'Resume rotation' : 'Pause rotation';
-      carouselToggle.setAttribute('aria-pressed', String(isPaused));
-    }
-
-    function startRotation() {
-      clearInterval(rotationTimer);
-      rotationTimer = setInterval(nextSlide, 20000);
-      isPaused = false;
-      updateCarouselToggle();
-    }
-
-    function stopRotation() {
-      clearInterval(rotationTimer);
-      rotationTimer = null;
-      isPaused = true;
-      updateCarouselToggle();
-    }
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => showSlide(index));
-    });
-
-    if (carouselToggle) {
-      carouselToggle.addEventListener('click', () => {
-        if (isPaused) {
-          startRotation();
-        } else {
-          stopRotation();
-        }
-      });
-    }
-
-    startRotation();
-    window.addEventListener('pagehide', () => clearInterval(rotationTimer));
-  </script>
 </body>
 </html>
