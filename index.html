@@ -13,12 +13,23 @@
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <div class="carousel-slide active" aria-hidden="false">
-            <img src="/Hardy-Orchid-Society/assets/photos/homepage-clifftop-orchid.jpg" alt="Hardy orchids growing on a clifftop meadow">
-            <div class="carousel-caption">
-              <span class="eyebrow">Welcome</span>
-              <h2>Hardy Orchid Society</h2>
-              <p>Promoting the study, cultivation and conservation of wild orchids through education, research, field activities and shared expertise.</p>
-            </div>
+            <img src="/Hardy-Orchid-Society/images/homepage-carousel/slide-1.jpg" alt="Fragrant orchids flowering in an alpine meadow below a mountain" style="object-position: center 70%">
+          </div>
+          <div class="carousel-slide" aria-hidden="true">
+            <img src="/Hardy-Orchid-Society/images/homepage-carousel/slide-2.jpg" alt="Close-up of a bee orchid flower" style="object-position: center 60%">
+          </div>
+          <div class="carousel-slide" aria-hidden="true">
+            <img src="/Hardy-Orchid-Society/images/homepage-carousel/slide-3.jpg" alt="Green-winged orchids flowering in grassland" style="object-position: center 25%">
+          </div>
+          <div class="carousel-caption">
+            <span class="eyebrow">Welcome</span>
+            <h2>Hardy Orchid Society</h2>
+            <p>Promoting the study, cultivation and conservation of wild orchids through education, research, field activities and shared expertise.</p>
+          </div>
+          <div class="carousel-dots" aria-label="Carousel navigation">
+            <button class="dot active" type="button" aria-label="Show slide 1" aria-pressed="true"></button>
+            <button class="dot" type="button" aria-label="Show slide 2" aria-pressed="false"></button>
+            <button class="dot" type="button" aria-label="Show slide 3" aria-pressed="false"></button>
           </div>
         </div>
       </div>
@@ -71,5 +82,42 @@
   <div id="site-footer"></div>
   <script src="/Hardy-Orchid-Society/shared/header.js"></script>
   <script src="/Hardy-Orchid-Society/shared/footer.js"></script>
+  <script>
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let currentSlideIndex = 0;
+    let rotationTimer = null;
+
+    function showSlide(index) {
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === index;
+        slide.classList.toggle('active', isActive);
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === index;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-pressed', String(isActive));
+      });
+      currentSlideIndex = index;
+    }
+
+    function startRotation() {
+      clearInterval(rotationTimer);
+      rotationTimer = setInterval(() => showSlide((currentSlideIndex + 1) % slides.length), 8000);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        startRotation();
+      });
+    });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      startRotation();
+    }
+    window.addEventListener('pagehide', () => clearInterval(rotationTimer));
+  </script>
 </body>
 </html>
