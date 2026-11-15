@@ -193,6 +193,10 @@ h3 {
     padding: 1.5rem 1rem 3rem;
 }
 
+.site-main:has(> #site-breadcrumbs) {
+    padding-top: 20px;
+}
+
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -236,7 +240,7 @@ h3 {
 }
 
 .breadcrumb {
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
     color: var(--color-muted);
     font-size: 0.95rem;
 }
