@@ -381,6 +381,17 @@ h3 {
     grid-template-columns: minmax(0, 1fr);
 }
 
+.page-hero--main {
+    grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);
+    gap: 1rem;
+    align-items: center;
+    min-height: 224px;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(160deg, #e8f2eb 0%, #f4f9f5 100%);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+}
+
 .page-hero__content,
 .page-hero__image,
 .intro-panel__content,
@@ -396,6 +407,24 @@ h3 {
     padding: 2rem;
 }
 
+.page-hero--main .page-hero__content,
+.page-hero--main .page-hero__image {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.page-hero--main .page-hero__content {
+    padding: 0.5rem;
+}
+
+.page-hero--main .page-hero__image {
+    height: 176px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
 .page-hero__image img,
 .intro-panel__image img {
     width: 100%;
@@ -403,6 +432,12 @@ h3 {
     min-height: 280px;
     object-fit: cover;
     border-radius: 18px;
+}
+
+.page-hero--main .page-hero__image img {
+    min-height: 0;
+    height: 100%;
+    border-radius: 0;
 }
 
 .eyebrow {
@@ -668,6 +703,16 @@ h3 {
 
     .page-hero__image {
         order: -1;
+    }
+
+    .page-hero--main {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 1.2rem;
+    }
+
+    .page-hero--main .page-hero__image {
+        height: 224px;
     }
 
     .main-section-grid,

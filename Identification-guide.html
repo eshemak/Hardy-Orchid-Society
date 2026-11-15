@@ -59,12 +59,22 @@
     /* Hero */
     .hero {
       background: linear-gradient(160deg, #e8f2eb 0%, #f4f9f5 100%);
-      padding: 3.5rem 1.5rem 3rem;
+      padding: 1.25rem 1.5rem;
       border-bottom: 1px solid var(--border);
     }
     .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      align-items: center;
+      gap: 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
+    }
+    .hero-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
     }
     .hero-label {
       font-size: 0.8rem;
@@ -200,7 +210,14 @@
         grid-template-columns: 1fr;
       }
       .hero {
-        padding: 2.5rem 1.25rem 2rem;
+        padding: 1rem 1.25rem;
+      }
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr) 110px;
+        gap: 0.75rem;
+      }
+      .hero-image {
+        height: 130px;
       }
       .intro-card {
         padding: 1.35rem 1.4rem;
@@ -212,12 +229,15 @@
   <div id="site-header"></div>
   <section class="hero">
     <div class="hero-inner">
-      <p class="hero-label">Identification guide</p>
-      <h1>British &amp; Irish Orchids</h1>
-      <p class="hero-lead">
-        A photographic guide to the wild orchids of Britain and Ireland, prepared as an aid to identification.
-        Each species profile includes images of habitats, whole plants and close-ups, together with descriptive notes.
-      </p>
+      <div>
+        <p class="hero-label">Identification guide</p>
+        <h1>British &amp; Irish Orchids</h1>
+        <p class="hero-lead">
+          A photographic guide to the wild orchids of Britain and Ireland, prepared as an aid to identification.
+          Each species profile includes images of habitats, whole plants and close-ups, together with descriptive notes.
+        </p>
+      </div>
+      <img class="hero-image" src="/Hardy-Orchid-Society/assets/photos/homepage-wildflower-orchids.jpg" alt="Wild orchids growing in a natural meadow">
     </div>
   </section>
 
