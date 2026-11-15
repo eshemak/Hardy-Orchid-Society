@@ -194,7 +194,7 @@ h3 {
 }
 
 .site-main:has(> #site-breadcrumbs) {
-    padding-top: 20px;
+    padding-top: 0;
 }
 
 .skip-link {
@@ -240,7 +240,7 @@ h3 {
 }
 
 .breadcrumb {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     color: var(--color-muted);
     font-size: 0.95rem;
 }
@@ -791,6 +791,10 @@ h3 {
 @media (max-width: 760px) {
     body {
         padding-top: 88px;
+    }
+
+    body:has(.site-main > #site-breadcrumbs) {
+        padding-top: calc(46px + 1.9rem + 1px);
     }
 
     .site-logo {
