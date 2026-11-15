@@ -65,7 +65,10 @@
     const parentTitle = breadcrumbMount.dataset.parentTitle ? escapeHtml(breadcrumbMount.dataset.parentTitle) : "";
     const parentPath = breadcrumbMount.dataset.parentPath;
     const safeParentHref = getSafeInternalHref(parentPath);
-    const parts = [`<li><a href="${root}index.html">Home</a></li>`];
+    const isHome = current === root || current === root + "index.html";
+    const parts = [isHome
+      ? '<li><span aria-current="page">Home</span></li>'
+      : `<li><a href="${root}index.html">Home</a></li>`];
 
     if (parentTitle && safeParentHref) {
       parts.push(`<li><a href="${safeParentHref}">${parentTitle}</a></li>`);
